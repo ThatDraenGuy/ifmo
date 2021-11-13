@@ -1,0 +1,2 @@
+Main-class: lab2
+Class-Path: Pokemon.jar
