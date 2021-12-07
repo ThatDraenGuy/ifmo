@@ -1,0 +1,165 @@
+touch azurill3
+echo “Живет Freshwater” > azurill3
+
+mkdir nidoranF3
+cd nidoranF3
+
+touch politoed
+echo "satk=9 sdef=10" > politoed
+echo "spd=7" >> politoed
+
+touch skiploom
+echo "Живет Forest Grassland" > skiploom
+
+mkdir combusken
+
+touch clamperl
+echo "Развитые способности" > clamperl
+echo "Rattled" >> clamperl
+
+cd ..
+
+touch sneasel6
+echo "Возможности Overland=7 Surface=4 Jump=3 Power=3" > sneasel6
+echo "Intelligence=4 Icestep=0 Stealth=0" >> sneasel6
+
+mkdir tyranitar7
+cd tyranitar7
+
+mkdir drifblim
+mkdir whimsicott
+
+touch drowzee
+echo "weigth=71.4 height=39.0" > drowzee
+echo "atk=5 def=5" >> drowzee
+
+mkdir hippowdon
+
+cd ..
+
+touch volcarona6
+echo "weigth=101.4 height=63.0 atk=6" > volcarona6
+echo "def=7" >> volcarona6
+
+mkdir yanma5
+cd yanma5
+
+mkdir bastiodon
+
+touch victreebel
+echo "Тип диеты Phototroph Carnivore" > victreebel
+
+mkdir accelgor
+
+touch banette
+echo "Тип диеты" > banette
+echo "Nullivore" >> banette
+
+touch porygon2
+echo "Ходы Conversion Conversion2 Defence Curl" > porygon2
+echo "Double-Edge Electroweb Foul Play Gravity Icy Wind Iron Tail Last" >> porygon2
+echo "Resort Magic Coat Magnet Rise Mimic Pain Split Recycle Role Play Shock" >> porygon2
+echo "Wave Signal Beam Sleep Talk Snore Swift Tackle Trick Wonder Room Zen" >> porygon2
+echo "Headbutt" >> porygon2
+
+
+chmod 044 azurill3
+
+chmod 576 nidoranF3
+
+cd nidoranF3
+
+chmod u=rw,g=,o= politoed
+
+chmod u=rw,g=w,o=w skiploom
+
+chmod 307 combusken
+
+chmod 644 clamperl
+
+cd ..
+
+chmod u=,g=r,o=r sneasel6
+
+chmod 305 tyranitar7
+
+cd tyranitar 7
+
+chmod 764 drifblim
+
+chmod 373 whimsicott
+
+chmod 404 drowzee
+
+chmod 312 hippowdon
+
+cd ..
+
+chmod u=rw,g=w,o= volcarona6
+
+chmod 700 yanma5 
+
+cd yanma5
+
+chmod 312 bastiodon
+
+chmod u=r,g=,o= victreebel
+
+chmod 363 accelgor
+
+chmod 622 banette
+
+chmod 101 porygon2
+
+
+cd ..
+
+ln volcarona6 nidoranF3/politoedvolcarona
+
+cp volcarona6 tyranitar7/drowzeevolcarona
+
+cat nidoranF3/clamperl nidoranF3/politoed > azurill3_32
+
+chmod u+r azurill3
+cp azurill3 tyranitar7/hippowdon
+chmod u-r azurill3
+
+chmod u+r yanma5/bastiodon
+chmod u+r yanma5/accelgor
+chmod u+w tyranitar7/drifblim
+cp -R yanma5 tyranitar7/drifblim
+chmod u-r yanma5/bastiodon
+chmod u-r yanma5/accelgor
+chmod u-w tyranitar7/drifblim
+
+ln -s volcarona6 yanma5/porygon2volcarona
+ln -s nidoranF3 Copy_53
+
+
+
+chmod u+r tyranitar7
+wc -l tyranitar7/* 2>/dev/null | sort -nr
+chmod u-r tyranitar7
+
+output: 
+4 total
+2 tyranitar7/drowzeevolcarona
+2 tyranitar7/drowzee
+0 tyranitar7/drifblim
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
