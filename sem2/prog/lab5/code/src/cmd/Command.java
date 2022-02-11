@@ -1,4 +1,4 @@
-package comms;
+package cmd;
 
 public abstract class Command {
     protected String name;

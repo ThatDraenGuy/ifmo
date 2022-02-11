@@ -1,16 +1,16 @@
-package comms;
+package cmd;
 
 import java.util.HashMap;
 
-public class CommList {
-    protected HashMap<String, Command> comms;
-    public CommList() {
-        this.comms=new HashMap<>();
+public class CmdHandler {
+    protected HashMap<String, Command> cmds;
+    public CmdHandler() {
+        this.cmds=new HashMap<>();
     }
     public void addComm(Command c) {
         final String name = c.getName();
         if (!isInComms(name)) {
-            this.comms.put(name,c);
+            this.cmds.put(name,c);
         }
     }
     public void addComms(Command ... comms) {
@@ -19,6 +19,6 @@ public class CommList {
         }
     }
     public boolean isInComms(String name) {
-        return this.comms.containsKey(name);
+        return this.cmds.containsKey(name);
     }
 }

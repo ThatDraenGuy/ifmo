@@ -1,6 +1,6 @@
-package comms.commands;
+package cmd.commands;
 
-import comms.Command;
+import cmd.Command;
 
 public class Help extends Command {
     public Help() {
