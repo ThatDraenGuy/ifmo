@@ -1,0 +1,24 @@
+if x==0: x-A LD A ST
+if x>0: x+x+x+x-B ST
+if x<0: x-A+A+x+x+x-B ST
+
+if x==0: A
+if x>0: 4x-B
+if x<0: 4x-B
+
+if x==0: A
+if x!=0: 4x-B
+--------------------------------------------
+495 a
+496 b
+497 c
+498 R=0
+
+R+=f(b+1)
+
+R=f(c)-R
+
+R=R+f(a-1)
+
+
+R=f(c)-f(b+1)+f(a-1)
