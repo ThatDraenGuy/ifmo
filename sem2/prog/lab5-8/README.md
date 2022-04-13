@@ -1,0 +1,1 @@
+prog labs for this semestr are located here - https://github.com/ThatDraenGuy/ifmo_prog_sem2/tree/dev
