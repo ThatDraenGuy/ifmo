@@ -1,4 +1,4 @@
-	ORG	0x0
+	ORG	0x0	; Настройка векторов прерываний
 V0:	WORD	$DEFAULT,0x180
 V1:	WORD	$DEFAULT,0x180
 V2:	WORD	$INT2,0x180
@@ -8,51 +8,52 @@ V5:	WORD	$DEFAULT,0x180
 V6:	WORD	$DEFAULT,0x180
 V7:	WORD	$DEFAULT,0x180
 	ORG	0x012
-X:	WORD	0x0000	; TODO одз
-LOWEST:	WORD	0xFF82
-HIGHEST:	WORD	0x0021
-DEFAULT:	IRET
-START:	DI
-	CLA
-	OUT	1
+X:	WORD	0x0000	; Ячейка для работы основной программы
+LOWEST:	WORD	0xFFE2	; Наименьшее значение ОДЗ
+HIGHEST:	WORD	0x0021	; Наибольшее значение ОДЗ
+DEFAULT:	IRET		; "Пустое" прерывание
+START:	DI		; Запрещаем прерывания
+	CLA		; Очистка аккумулятора (загрузка значения 0)
+	OUT	1	
 	OUT	3
-	LD	#A	; 1010
+	LD	#0xA	; 1010 - значение для MR КВУ-2
 	OUT	5
-	LD	#B	; 1011
+	LD	#0xB	; 1011 - значение для MR КВУ-3
 	OUT	7
-	...
-MAIN:	EI
-	LD	X
-CYCLE:	SUB	#2
+MAIN:	EI		; Разрешаем прерывания
+	LD	X	; Загружаем в аккумулятор X
+CYCLE:	SUB	#0x2	; Уменьшение значения на 2
 	PUSH
-	CALL	CHECK
+	CALL	CHECK	; Вызов подпрограммы проверки ОДЗ
 	POP
-	ST	X
-	JUMP	CYCLE	; TODO одз
-INT2:	NOP
-	IN	4
-	ADD	X	; TODO одз
+	ST	X	; Сохранение значения X
+	JUMP	CYCLE	; Цикл (вечный)
+INT2:	NOP		; Точка отладки, начало прерывания с ВУ-2 (сложить DR ВУ-2 с X)
+	IN	4	; Читаем значение на ВУ-2
+	ADD	X	; Складываем с X
 	PUSH
-	CALL	CHECK
+	CALL	CHECK	; Вызов подпрограммы проверки ОДЗ
 	POP
-	ST	X
-	NOP
-	IRET
-INT3:	NOP
-	PUSH
-	NEG
-	ASL
-	ASL
-	ADD	#6
-	OUT	6
-	POP
-	IRET
-CHECK:	LD	&1
-	CMP	LOWEST
-	BMI	NEWX
-	CMP	HIGHEST
-	BPL	NEWX
-	JUMP	OUT
-NEWX:	LD	HIGHEST
-OUT:	ST	&1
-	RET	
+	ST	X	; Сохранение значения X
+	NOP		; Точка отладки, конец прерывания с ВУ-2
+	IRET		; Возврат из прерывания
+INT3:	NOP		; Точка отладки, начало прерывания с ВУ-3 (вывести -4X+6)
+	PUSH		; Сохраняем в стек текущее значение на аккумуляторе
+	LD	X	; Загружаем текущий X
+	NEG		; -X
+	ASL		; -2X
+	ASL		; -4X
+	ADD	#0x6	; -4X+6
+	OUT	6	; Вывод
+	POP		; Возвращаем значение аккумулятора
+	NOP		; Точка отладки, конец прерывания с ВУ-3
+	IRET		; Возврат из прерывания
+CHECK:	LD	&1	; Загружаем переданное на проверку число
+	CMP	LOWEST	; Если меньше нижней границы, то
+	BMI	NEWX	; ставим максимальное по ОДЗ значение
+	CMP	HIGHEST	; Если больше верхней границы, то
+	BPL	NEWX	; ставим максимальное по ОДЗ значение
+	JUMP	RETURN	; Если значение входит в ОДЗ, то на выход из подпрограммы
+NEWX:	LD	HIGHEST	; Загрузка максимального по ОДЗ значения
+RETURN:	ST	&1	; Сохранение в стек
+	RET		; Возврат из подпрограммы
