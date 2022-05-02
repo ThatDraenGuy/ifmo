@@ -18,7 +18,7 @@ pip install pynput
 4000
 0100
 """
-FILE_PATH = "cmd.txt"
+FILE_PATH = "lab4/cmd2.txt"
 
 keyboard = Controller()
 KEYS = {"enter_addr": Key.f4, "write": Key.f5}
