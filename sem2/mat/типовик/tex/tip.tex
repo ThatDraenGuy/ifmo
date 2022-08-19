@@ -1,0 +1,458 @@
+\documentclass[a4paper, 12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage[english,russian]{babel} 
+\usepackage[left=25mm, top=20mm, right=25mm, bottom=30mm, nohead, nofoot]{geometry} \usepackage{amsmath,amsfonts,amssymb} % математический пакет
+\usepackage{pgfplots}
+\usepgfplotslibrary{fillbetween}
+\pgfplotsset{compat=1.16}
+\usepackage{mathtools}
+
+\usepackage{fancybox,fancyhdr} 
+\setcounter{page}{1} % счетчик нумерации страниц
+\headsep=10mm 
+
+
+\begin{document}
+    \begin{center}
+        \section*{Типовичочек}
+        \section*{Олежа}
+    \end{center}
+
+    \newpage
+    \section{Неопределённый интеграл}
+    
+    \textbf{1.3}
+    \begin{align*}
+    &\int{\left(1-\frac{1}{x^2}\right)\sqrt{x\sqrt{x}}dx} 
+    = \Big|x = t^2, dx = 2tdt\Big| = 
+    \int{\left(1-\frac{1}{t^4}\right)\sqrt{t^3}2tdt} = 
+    2\int{t^\frac{5}{2}dt} - 2\int{t^{-\frac{3}{2}}dt} = \\
+    &= 2*\frac{2}{7}t^\frac{7}{2} - 2*(-2)t^{-\frac{1}{2}} + c = 
+    \frac{4}{7}x^\frac{7}{4}+4x^{-\frac{1}{4}}+C = 
+    \frac{4}{x^\frac{1}{4}}\left(\frac{x^2}{7}+1\right)+C
+    \end{align*}
+    
+    \textbf{1.7}
+    \begin{align*}
+    &\int{\frac{x^3}{\sqrt{2-x}}dx} 
+    = |t = \sqrt{2-x} \Rightarrow x = 2-t^2; dx = -2tdt | = 
+    \int{\frac{(2-t^2)^3}{t}(-2tdt)} = \\
+    &= -2\int{(2-t^2)^3dt} = 
+    -2\int{(8-12t^2+6t^4-t^6)dt} = -2(8t-4t^3+\frac{6}{5}t^5-\frac{1}{7}t^7)+c = \\
+    &= -2\sqrt{2-x}(8-4(2-x)+\frac{6}{5}(2-x)^2-\frac{1}{7}(2-x)^3)+c
+    \end{align*}
+    
+    \textbf{1.11}
+    \begin{align*}
+    &\int{\frac{dx}{\sqrt{1+e^x}}} 
+    = \Big| t = \sqrt{1+e^x} \Rightarrow e^x = t^2-1; e^xdx = 2tdt \Rightarrow dx = \frac{2tdt}{t^2-1} \Big| = \\
+    &= \int{\frac{2tdt}{(t^2-1)t}} = 2\int{\frac{dt}{t^2-1}} = 
+    2\int{\frac{dt}{(t-1)(t+1)}} = 
+    2\int{\frac{1}{2}\frac{(t+1)-(t-1)}{(t-1)(t+1)}dt} = \\
+    &= \int{\frac{dt}{t-1}} - \int{\frac{dt}{t+1}} =
+    \ln{(t-1)} - \ln{(t+1)} + c = 
+    \ln{(\sqrt{e^x+1}-1)} - \ln{(\sqrt{e^x+1}+1)}+c
+    \end{align*}
+    
+    \textbf{1.15}
+    \begin{align*}
+    \int{xe^{-x}}dx = x*(-e^{-x}) - \int{1*(-e^{-x})dx} = -xe^{-x} - e^{-x} + c
+    \end{align*}
+    
+    \textbf{1.19}
+    \begin{align*}
+    &\int{\frac{dx}{1+\sqrt{x^2+2x+2}}} = 
+    \int{\frac{1-\sqrt{x^2+2x+2}}{1-x^2-2x-2}dx} = 
+    -\int{\frac{1 - \sqrt{x^2+2x+2}}{x^2+2x+1}dx} = \\
+    &= -\int{\frac{dx}{(x+1)^2}} + \int{\frac{\sqrt{(x+1)^2+1}}{(x+1)^2}dx} = 
+    \frac{1}{x+1} + \int{\frac{\sqrt{(x+1)^2+1}}{(x+1)^2}dx} = 
+    \Big|t = x+1; dt = dx \Big| = \\
+    &= \frac{1}{x+1} + \int{\frac{\sqrt{t^2+1}}{t^2}dt} = 
+    \frac{1}{x+1} + \int{\frac{t^2+1}{t^2\sqrt{t^2+1}}dt} = 
+    \frac{1}{x+1} + \int{\frac{dt}{\sqrt{t^2+1}}} + \int{\frac{dt}{t^2\sqrt{t^2+1}}} = \\
+    &= \frac{1}{x+1} + \text{arsh}(t) + \int{\frac{dt}{t^2\sqrt{t^2+1}}} = 
+    \Big| k = \frac{1}{t^2}; dk = -\frac{2dt}{t^3} \Rightarrow dt = -\frac{1}{2}t^3dk \Big| = \\
+    &= \frac{1}{x+1} + \text{arsh}(x+1) -\frac{1}{2}\int{\frac{tdk}{\sqrt{\frac{1}{k}+1}}} = 
+    \frac{1}{x+1} + \text{arsh}(x+1) -\frac{1}{2}\int{\frac{\sqrt{\frac{1}{k}}dk}{\sqrt{\frac{1}{k}+1}}} = \\
+    &= \frac{1}{x+1} + \text{arsh}(x+1) -\frac{1}{2}\int{\frac{dk}{\sqrt{k+1}}} = 
+    \frac{1}{x+1} + \text{arsh}(x+1) - \sqrt{k+1} +c = \\
+    &= \frac{1}{x+1} + \text{arsh}(x+1) - \sqrt{\frac{1}{x^2+1}+1} +c = 
+    \frac{1+(x+1)\text{arsh}(x+1)-\sqrt{(x+1)^2+1}}{x+1}+c
+    \end{align*}
+    
+    \section{Понятие о дифференциальном исчислении функций многих переменных}
+    
+    \subsection{Найти частные производные первого и второго порядков от следующих функицй}
+    
+    \textbf{2.1.1}
+    \begin{align*}
+    f(x,y) &= x^4+y^4-4x^2y^2 \\
+    \frac{\partial f}{\partial x} &= 4x^3-8y^2x \\
+    \frac{\partial^2 f}{\partial x^2} &= 12x^2 - 8y^2 \\
+    \frac{\partial^2 f}{\partial x \partial y} &= -16xy\\
+    \frac{\partial f}{\partial y} &= 4y^3-8x^2y \\
+    \frac{\partial^2 f}{\partial y^2} &= 12y^2 - 8x^2 \\
+    \frac{\partial^2 f}{\partial y \partial x} &= -16xy\\
+    \end{align*}
+    
+    \textbf{2.1.5}
+    \begin{align*}
+    &f(x,y,z) = \frac{1}{\sqrt{x^2+y^2+z^2}} \\
+    &\frac{\partial f}{\partial x} = -\frac{x}{(x^2+y^2+z^2)^\frac{3}{2}} \\ 
+    &\frac{\partial^2 f}{\partial x^2} = -\frac{(x^2+y^2+z^2)^\frac{3}{2} - \frac{3}{2}(x^2+y^2+z^2)^\frac{1}{2}*2x*x}{(x^2+y^2+z^2)^3} = 
+    -\frac{(x^2+y^2+z^2)^\frac{1}{2}(-2x^2+y^2+z^2)}{(x^2+y^2+z^2)^3} = \\    
+    &= \frac{2x^2-y^2-z^2}{(x^2+y^2+z^2)^\frac{5}{2}} \\
+    &\frac{\partial^2 f}{\partial x \partial y} = -x*(-\frac{3}{2})\frac{1}{(x^2+y^2+z^2)^\frac{5}{2}}*2y = \frac{3xy}{(x^2+y^2+z^2)^\frac{5}{2}} \\
+    &\frac{\partial^2 f}{\partial x \partial z} = \frac{3xz}{(x^2+y^2+z^2)^\frac{5}{2}} \\
+    &\frac{\partial f}{\partial y} = -\frac{y}{(x^2+y^2+z^2)^\frac{3}{2}} \\
+    &\frac{\partial^2 f}{\partial y^2} = \frac{2y^2-x^2-z^2}{(x^2+y^2+z^2)^\frac{5}{2}} \\
+    &\frac{\partial^2 f}{\partial y \partial x} = \frac{3xy}{(x^2+y^2+z^2)^\frac{5}{2}} \\
+    &\frac{\partial^2 f}{\partial y \partial z} = \frac{3yz}{(x^2+y^2+z^2)^\frac{5}{2}} \\
+    &\frac{\partial f}{\partial z} = -\frac{z}{(x^2+y^2+z^2)^\frac{3}{2}} \\
+    &\frac{\partial^2 f}{\partial z^2} = \frac{2z^2-x^2-y^2}{(x^2+y^2+z^2)^\frac{5}{2}} \\
+    &\frac{\partial^2 f}{\partial z \partial x} = \frac{3xz}{(x^2+y^2+z^2)^\frac{5}{2}} \\
+    &\frac{\partial^2 f}{\partial z \partial y} = \frac{3yz}{(x^2+y^2+z^2)^\frac{5}{2}}
+    \end{align*}
+    
+    \subsection{Проверить равенство:}
+    
+    \subsection{Найти указанные частные производные:}
+    
+    \textbf{2.3.1}
+    \begin{align*}
+    \frac{\partial^3 u}{\partial^2 x \partial y} \text{, где } u &= x\ln{(x)}y \\
+    \frac{\partial u}{\partial x} &= y(\ln{x}+1) \\
+    \frac{\partial^2 u}{\partial^2 x} &= \frac{y}{x} \\
+    \frac{\partial^3 u}{\partial^2 x \partial y} &= \frac{1}{x}
+    \end{align*}
+    
+    \subsection{Показать, что в функция}
+    
+    \subsection{Найти дифференциал указанного порядка в следующих примерах:}
+    
+    \textbf{2.5.2}
+    \begin{align*}
+    &d^3u\text{, если } u = sin(x^2+y^2) \\
+    &\frac{\partial u}{\partial x} = \cos{(x^2+y^2)*2x} \\
+    &\frac{\partial^2 u}{\partial x^2} = -\sin{(x^2+y^2)}*2x*2x+2\cos{(x^2+y^2)} = 
+    2\cos{(x^2+y^2)} - 4x^2\sin{(x^2+y^2)} \\
+    &\frac{\partial^3 u}{\partial x^3} = -2\sin{(x^2+y^2)}*2x-4(2x\sin{(x^2+y^2)}+\cos{(x^2+y^2)}*2x*x^2) = \\
+    &-4x(3\sin{(x^2+y^2)}+2x^2\cos{(x^2+y^2)}) \\
+    &\frac{\partial^3 u}{\partial x^2 \partial y} = 
+    -2\sin{(x^2+y^2)}*2y - 4x^2\cos{(x^2+y^2)}*2y = 
+    -4y(\sin{(x^2+y^2)}+2x^2\cos{(x^2+y^2)}) \\
+    &\frac{\partial^3 u}{\partial y^3} = 
+    -4y(3\sin{(x^2+y^2)}+2y^2\cos{(x^2+y^2)}) \\
+    &\frac{\partial^3 u}{\partial x^2 \partial y} = -4x(\sin{(x^2+y^2)}+2y^2\cos{(x^2+y^2)} \\ 
+    &d^3u = 
+    -4x(3\sin{(x^2+y^2)}+2x^2\cos{(x^2+y^2)})dx^3 
+    -12y(\sin{(x^2+y^2)}+2x^2\cos{(x^2+y^2)})dx^2dy - \\
+    &-12x(\sin{(x^2+y^2)}+2y^2\cos{(x^2+y^2)}dxdy^2
+    -4y(\sin{(x^2+y^2)}+2x^2\cos{(x^2+y^2)})dy^3
+    \end{align*}
+    
+    \subsection{Найти производные первого и второго порядков от следующих сложных функций:}
+    
+    \textbf{2.6.1}
+    $u = f(x^2+y^2+z^2) //TODO$
+    
+    \section{Интеграл Римана}
+    
+    \subsection{применяя формулу Ньютона-Лейбница, найти следующие интегралы и нарисовать соответствующие криволинейные площади}
+    
+    \textbf{3.1.3}
+    \begin{align*}
+    \int\limits_{\frac{1}{\sqrt{3}}}^{\sqrt{3}}\frac{dx}{1+x^2} = 
+    \arctg{x}\Big|_{\frac{1}{\sqrt{3}}}^{\sqrt{3}} = 
+    \arctg{\sqrt{3}}-\arctg{\frac{1}{\sqrt{3}}} = 
+    \frac{\pi}{3}-\frac{\pi}{6} = \frac{\pi}{6}
+    \end{align*} \\ [15pt]
+    \begin{tikzpicture}
+    \begin{axis}[
+    title = {$\frac{1}{1+x^2} $} ,
+    xlabel ={$ x $} ,
+    ylabel ={$ y $} ,
+    width = 15cm ,
+    grid = both, minor tick num = 3,
+    ]
+    \addplot[name path = f ,red, domain = 1/ sqrt(3) : sqrt(3),
+    samples = 100,]{1/(1+x^2)};
+    \addplot[red, domain = -5 : 5, samples = 100,]{1/(1+x^2)};
+    \addplot[name path = zer, blue, domain = 1/ sqrt(3) : sqrt(3),
+    samples = 100,]{0};
+    \addplot[blue, domain = -5 : 5, samples = 100,]{0};
+    \addplot coordinates {(0,0) (0,1)};
+    \addplot[green!50] fill between[of=zer and f];
+    \end{axis}
+    \end{tikzpicture} \\
+
+    
+    \subsection{Объяснить почему формальное применение формулы Ньютона-Лейбница приводит к неверным результатам:}
+    
+    \subsection{С помощью неопределённых интегралов посчитать пределы следующих сумм:}
+    
+    \textbf{3.3.2}
+    \begin{align*}
+    &\lim\limits_{n \to \infty}\left(\frac{1}{n+1}+\frac{1}{n+2}+\text{...}+\frac{1}{n+n}\right) = 
+    \lim\limits_{n \to \infty}\frac{1}{n}\left(\frac{n}{n+1}+\frac{n}{n+2}+\text{...}+\frac{n}{n+n}\right) = \\
+    &\lim\limits_{n \to \infty}\frac{1}{n}\left(\frac{1}{1+\frac{1}{n}}+\frac{1}{1+\frac{2}{n}}+\frac{1}{1+\frac{3}{n}}+\text{...}+\frac{1}{1+\frac{n}{n}}\right) = 
+    \int\limits_0^1\frac{1}{1+x}dx = \ln{(x+1)} \Big|_0^1 = \ln2
+    \end{align*}
+    
+    \subsection{Вычислить интегралы:}
+    
+    \textbf{3.4.3}
+    \begin{align*}
+    &\int\limits_1^9x\sqrt[3]{1-x}dx \\
+    &\int x\sqrt[3]{1-x}dx = \Big| t = \sqrt[3]{1-x} \Rightarrow x = 1-t^3; dx = -3t^2dt \Big| = 
+    \int{(1-t^3)t*(-3)t^2dt} = \\
+    &= -3\int(t^3-t^6)dt = -3(\frac{1}{4}t^4 - \frac{1}{7}t^7)+c = 
+    -3\left(\frac{1}{4}(1-x)^\frac{4}{3} - \frac{1}{7}(1-x)^\frac{7}{3}\right)+c .\\
+    & \int\limits_1^9x\sqrt[3]{1-x}dx = 
+    -3\left(\frac{1}{4}(1-x)^\frac{4}{3} - \frac{1}{7}(1-x)^\frac{7}{3}\right)\Big|_1^9 = \\
+    &= -3\left(\frac{1}{4}(1-9)^\frac{4}{3} - \frac{1}{7}(1-9)^\frac{7}{3}\right) - 
+    -3\left(\frac{1}{4}(1-1)^\frac{4}{3} - \frac{1}{7}(1-1)^\frac{7}{3}\right) = \\
+    &= -3\left(\frac{1}{4}*16 - \frac{1}{7}*(-128)\right) = 
+    -66\frac{6}{7}
+    \end{align*}
+    
+    \subsection{Определить знак интеграла:}
+    
+    \subsection{Какой интеграл больше:}
+    $$\int\limits_0^{\frac{\pi}{2}}\sin^{10}xdx \text{ или } 
+    \int\limits_0^{\frac{\pi}{2}}\sin^{2}xdx$$ \\
+    при $x \in \left(0; \frac{\pi}{2}\right) $: 
+    $ 0 < \sin x < 1 $, т.е. 
+    $0 \leq \sin^{10}x < \sin^2 x $. При $x=0$ и $x=\frac{\pi}{2}$: 
+    $\sin^{10}x = \sin^2x $ \\
+    Т.е. можно утверждать, что $S_{sin^{10}x} < S_{sin^2x}$, где 
+    $S_{f(x)} $ - площадь под графиком на $[0, \frac{\pi}{2}]$ \\
+    (обе функции неотрицательные и $sin^{10}x \leq sin^2x$), что равносильно утверждению, что
+    $$\int\limits_0^{\frac{\pi}{2}}\sin^{10}xdx < 
+    \int\limits_0^{\frac{\pi}{2}}\sin^{2}xdx$$
+    
+    \subsection{Определить среднее значение данных функций в указанных промежутках:}
+    
+    \subsection{Вычислить}
+    
+    \textbf{3.8.2}
+    \begin{align*}
+    &\int\limits_0^1\ln xdx \\
+    &\int \ln xdx = x\ln x - \int x\frac{1}{x}dx = x\ln x-x \\
+    &\int\limits_0^1\ln xdx =\lim_{\epsilon \to 0} 
+    (x\ln x - x)\Big|_\epsilon^1 = 
+    1*\ln1 -1 - \lim_{\epsilon \to 0} \left( \epsilon \ln \epsilon - \epsilon \right)= 
+    -1 - 0 = -1 \\
+    & P.s:
+    \lim\limits_{x \to 0}(x\ln x) = 
+    \lim\limits_{x \to 0}\frac{\ln x}{\frac{1}{x}}= 
+    \lim\limits_{x \to 0}\frac{\frac{1}{x}}{-\frac{1}{x^2}}= 
+    \lim\limits_{x \to 0}-x = 0 \\
+    \end{align*}
+    
+    \subsection{Исследовать на сходимость интегралы:}
+    \textbf{3.9.1}
+    \begin{align*}
+    &\int\limits_0^\infty \frac{x^2dx}{x^4-x^2+1}
+    \end{align*}
+    \begin{align*}
+     &\frac{x^2}{x^4-x^2+1} = 
+     \frac{x^2}{\left(x^2 - \frac{1-i\sqrt{3}}{2}\right)\left(x^2-\frac{1+i\sqrt{3}}{2}\right)} = 
+     \frac{\frac{1}{2}-\frac{1}{2\sqrt{3}}i}{x^2 - \frac{1-i\sqrt{3}}{2}} +
+     \frac{\frac{1}{2}+\frac{1}{2\sqrt{3}}i}{x^2-\frac{1+i\sqrt{3}}{2}} \\
+     &\int\frac{x^2dx}{x^4-x^2+1} = 
+     \int\frac{\frac{1}{2}-\frac{1}{2\sqrt{3}}i}{x^2 - \frac{1-i\sqrt{3}}{2}}dx +
+     \int\frac{\frac{1}{2}+\frac{1}{2\sqrt{3}}i}{x^2-\frac{1+i\sqrt{3}}{2}}dx = \\
+     &=\left(\frac{1}{2}-\frac{i}{2\sqrt{3}}\right)\int\frac{dx}{x^2 - \frac{1-i\sqrt{3}}{2}} + 
+     \left(\frac{1}{2}+\frac{i}{2\sqrt{3}}\right)\int\frac{dx}{x^2 - \frac{1+i\sqrt{3}}{2}} = \\
+     & = \frac{\left(\frac{1}{2}-\frac{i}{2\sqrt{3}}\right)\arctg\frac{x\sqrt{2}}{\sqrt{-1-i\sqrt{3}}}}{\frac{\sqrt{-1-i\sqrt{3}}}{\sqrt{2}}} +
+     \frac{\left(\frac{1}{2}+\frac{i}{2\sqrt{3}}\right)\arctg\frac{x\sqrt{2}}{\sqrt{-1+i\sqrt{3}}}}{\frac{\sqrt{-1+i\sqrt{3}}}{\sqrt{2}}} = \\
+     &= \frac{\left(\sqrt{3}-i\right)\arctg\frac{x\sqrt{2}}{\sqrt{-1-i\sqrt{3}}}}{\sqrt{6}\sqrt{-1-i\sqrt{3}}} +
+     \frac{\left(\sqrt{3}+i\right)\arctg\frac{x\sqrt{2}}{\sqrt{-1+i\sqrt{3}}}}{\sqrt{6}\sqrt{-1+i\sqrt{3}}} \\
+     &\int\limits_0^\infty \frac{x^2dx}{x^4-x^2+1} = 
+     \lim_{R \to \infty} \left.\frac{\left(\sqrt{3}-i\right)\arctg\frac{x\sqrt{2}}{\sqrt{-1-i\sqrt{3}}}}{\sqrt{6}\sqrt{-1-i\sqrt{3}}} +
+     \frac{\left(\sqrt{3}+i\right)\arctg\frac{x\sqrt{2}}{\sqrt{-1+i\sqrt{3}}}}{\sqrt{6}\sqrt{-1+i\sqrt{3}}}\right|_0^R = \\
+     &= \lim_{R \to \infty} \frac{\left(\sqrt{3}-i\right)\arctg\frac{R\sqrt{2}}{\sqrt{-1-i\sqrt{3}}}}{\sqrt{6}\sqrt{-1-i\sqrt{3}}} +
+     \frac{\left(\sqrt{3}+i\right)\arctg\frac{R\sqrt{2}}{\sqrt{-1+i\sqrt{3}}}}{\sqrt{6}\sqrt{-1+i\sqrt{3}}} -0 = \\
+    \end{align*}
+    $\left(\lim_{R \to \infty} \arctg R = \frac{\pi}{2}\right)$
+    \begin{align*}
+     &= \frac{\left(\sqrt{3}-i\right)\frac{\pi}{2}}{\sqrt{6}\sqrt{-1-i\sqrt{3}}} +
+     \frac{\left(\sqrt{3}+i\right)\frac{\pi}{2}}{\sqrt{6}\sqrt{-1+i\sqrt{3}}} = 
+     \frac{\pi}{2}\frac{1}{\sqrt{6}}\left(
+     \frac{\left(\sqrt{3}-i\right)}{\sqrt{-1-i\sqrt{3}}} +
+     \frac{\left(\sqrt{3}+i\right)}{\sqrt{-1+i\sqrt{3}}}\right) = \\
+     &= \frac{\pi}{2}\frac{1}{\sqrt{6}}\left(
+     \frac{\left(\sqrt{3}-i\right)\sqrt{-1+i\sqrt{3}}+\left(\sqrt{3}+i\right)\sqrt{-1-i\sqrt{3}}}{\sqrt{\left(-1-i\sqrt{3}\right)\left(-1+i\sqrt{3}\right)}}\right) = \\
+     &= \frac{\pi}{2}\frac{1}{2\sqrt{6}}\left(
+     \left(\sqrt{3}-i\right)\sqrt{-1+i\sqrt{3}}+\left(\sqrt{3}+i\right)\sqrt{-1-i\sqrt{3}}\right) = \\
+     &= \frac{\pi}{2}\frac{1}{2\sqrt{6}}\left(
+     \left(\sqrt{3}-i\right)i\sqrt{1-i\sqrt{3}}+\left(\sqrt{3}+i\right)i\sqrt{1+i\sqrt{3}}
+     \right) = \\
+     &= \frac{\pi}{2}\frac{1}{2\sqrt{6}}\left(
+     \left(i\sqrt{3}+1\right)\sqrt{1-i\sqrt{3}}+\left(i\sqrt{3}-1\right)\sqrt{1+i\sqrt{3}}
+     \right) = \\
+     &= \frac{\pi}{2}\frac{1}{2\sqrt{6}}\left(
+     \sqrt{\left(1-i\sqrt{3}\right)\left(1+i\sqrt{3}\right)}\left(
+     \sqrt{1+i\sqrt{3}}-\sqrt{1-i\sqrt{3}}
+     \right)
+     \right) = \\
+     &= \frac{\pi}{2}\frac{1}{\sqrt{6}}\left(     
+     \sqrt{1+i\sqrt{3}}-\sqrt{1-i\sqrt{3}}\right) = \\
+     &= \frac{\pi}{2}\frac{1}{\sqrt{6}}\left(     
+     \sqrt{-\frac{1}{2}+\frac{3}{2}+2\frac{i}{\sqrt{2}}\sqrt{\frac{3}{2}}}-
+     \sqrt{-\frac{1}{2}+\frac{3}{2}-2\frac{i}{\sqrt{2}}\sqrt{\frac{3}{2}}}
+     \right) = \\
+     &= \frac{\pi}{2}\frac{1}{\sqrt{6}}\left(     
+     \sqrt{\left(\frac{i+\sqrt{3}}{\sqrt{2}}\right)^2}-
+     \sqrt{\left(\frac{i-\sqrt{3}}{\sqrt{2}}\right)^2}
+     \right) = \\
+     &= \frac{\pi}{2}\frac{1}{\sqrt{6}}\left(     
+     \frac{i+\sqrt{3}-i+\sqrt{3}}{\sqrt{2}}
+     \right) = \frac{\pi}{2}\frac{1}{\sqrt{6}}\sqrt{6} = \frac{\pi}{2} \text{ - т.е. сходится}
+    \end{align*}
+
+
+    \textbf{3.9.5}
+    \begin{align*}
+    &\int\limits_1^\infty \frac{dx}{x^p\ln^qx} 
+    \end{align*} 
+    В условии это не было точно прописано, так что примем p и q за целые неотрицательные числа. \\
+    Рассмотрим $y = \ln x $ и $y = x-1$ при $x \geq 1$. \\
+    \begin{tikzpicture}
+     \begin{axis} [ 
+     title = {$x-1, \ln x$},
+     xlabel = {$x$},
+     ylabel = {$y$},
+     xmin = 0,
+     ymin = 0,
+     legend pos = north west ]
+     \legend {
+     $x-1$,
+     $\ln x$
+     };
+     \addplot{x-1};
+     \addplot{ln(x)};
+     \end{axis}
+    \end{tikzpicture} \\ [15pt]
+    Понятно, что $\ln x \leq x-1$ при $x \geq 1$ (да и на всей оси определения в целом) \\
+    Тогда $\frac{1}{\ln x} \geq \frac{1}{x-1}$, т.е. \\
+    $\frac{1}{x^p\ln^q x} \geq \frac{1}{x^p(x-1)^q}$ (обе функции неотрицательные на 
+    промежутке рассмотрения) \\
+    \begin{tikzpicture}
+     \begin{axis}
+      [
+      title = {$\frac{1}{x^p\ln^q x} \geq \frac{1}{x^p(x-1)^q}$},
+      xlabel = {$x$},
+      ylabel = {$y$},
+      ymin = 0,
+      domain = 0:4,
+      restrict y to domain = 0:10,
+      legend pos = north east
+      ]
+      \legend {
+      $\frac{1}{x^p\ln^q x}$,
+      $\frac{1}{x^p(x-1)^q}$,
+      (p=q=1)
+      };
+      \addplot[blue, samples = 100]{1/(x*ln(x))};
+      \addplot[red, samples = 100]{1/(x*(x-1))};
+      \end{axis}
+    \end{tikzpicture} \\
+    
+    \begin{align*}
+     &\text{1) Для $p > 0, q>0 $:} \\
+     &\frac{1}{x^p(x-1)^q} = 
+     \frac{A_1}{x}+\frac{A_2}{x^2}+...+\frac{A_p}{x^p} +
+     \frac{B_1}{(x-1)}+\frac{B_2}{(x-1)^2}+...+\frac{B_q}{(x-1)^q} \\
+     &\text{т.е. }
+     \int\frac{dx}{x^p(x-1)^q} = 
+     A_1\ln x -\frac{A_2}{x} - \frac{A_3}{2x^2}- ... - \frac{A_p}{(p-1)x^{p-1}} + \\
+     &+ B_1\ln (x-1) - \frac{B_2}{x-1} -...- \frac{B_q}{(q-1)(x-1)^{q-1}} \\
+     &\text{Подсчёт интеграла} \int\limits_1^\infty\frac{dx}{x^p(x-1)^q} 
+     \text{ сведётся  к пределу } \lim_{R \to \infty} \left( A_1 \ln R + B_1 \ln (R-1)\right) = \infty
+     \text{,} \\
+     &\text{т.е. интеграл не сойдётся (можно сказать, что площадь под графиком бесконечна)} \\
+     &\text{Но, как мы установили, $\frac{1}{x^p\ln^q x} \geq \frac{1}{x^p(x-1)^q}$ на рассматриваемом промежутке} \\
+     &\text{(и обе функции неотрицательны), т.е.
+     площадь под графиком $\frac{1}{x^p\ln^q x}$ \Big(она же $\int\limits_1^\infty \frac{dx}{x^p\ln^qx}$\Big)} \\
+     &\text{больше площади под графиком $\frac{1}{x^p(x-1)^q}$, которая, как мы установили, бесконечна.} \\
+     &\text{Отсюда получается очевидный вывод, что площадь под графиком 
+     $\frac{1}{x^p\ln^q x}$} \\
+     &\text{тоже бесконечна, или, иными словами, $\int\limits_1^\infty \frac{dx}{x^p\ln^qx}$ разойдётся.}  \\
+     &\text{2) Для $p=0, q>0:$} \\
+     &\int\limits_1^\infty \frac{dx}{(x-1)^q} =
+     \left.-\frac{1}{(q-1)(x-1)^{q-1}}\right|_1^\infty \text{(при q>1)} = \\ 
+     &=\lim_{R \to \infty}-\frac{1}{(q-1)(R-1)^{q-1}} - 
+     \lim_{\epsilon \to 1+0}-\frac{1}{(q-1)(\epsilon-1)^{q-1}} =
+     \infty. \\ 
+     &\text{при $q=1$:} \int\limits_1^\infty \frac{1}{(x-1)^q} =
+     \left. \ln (x-1) \right|_1^\infty = 
+     \lim_{R \to \infty} \ln (R-1) - \lim_{\epsilon \to 1+0} \ln (\epsilon -1) = \infty. \\
+     &\text{ Делаем аналогичный пункту 1 вывод} \\
+     &\text{3)Для p>0, q=0:} \\
+     &\int\limits_1^\infty \frac{dx}{x^p} = 
+     \lim_{R \to \infty}\left.-\frac{1}{(p-1)x^{p-1}}\right|_1^R = \frac{1}{p-1} 
+     \text{при $p>1$. При $p = 1$ интеграл разойдётся.} \\
+     &\text{В этом пункте нам даже не нужна была замена логарифма на x-1} \\
+     &\text{4)p=q=0:} \\
+     &\int\limits_1^\infty dx = \lim_{R \to \infty} x \Big|_1^R = \infty. \text{ (т.е. разойдётся)} \\
+     &\text{Итог: интеграл расходится, кроме случая p=1,q=0}
+    \end{align*}
+    
+    \subsection{Найти площади фигур, ограниченных кривыми заданными в прямоугольных координатах: }
+    \textbf{3.10.4}
+    \begin{align*}
+     &\frac{x^2}{4}+\frac{y^2}{9} = 1
+    \end{align*}
+    \begin{tikzpicture}
+     \begin{axis}
+      [
+      title = эллипс,
+      xlabel = {$x$},
+      ylabel = {$y$},
+      ymin = -4,
+      ymax = 4,
+      xmin = -4,
+      xmax = 4,
+      grid = major
+      ]
+      \addplot[red, samples = 500]{3*(1-(x^2/4))^(1/2)};
+      \addplot[blue, samples = 500]{-3*(1-(x^2/4))^(1/2)};
+     \end{axis}
+    \end{tikzpicture} \\
+    \begin{align*}
+     &\frac{x^2}{4}+\frac{y^2}{9} = 1 \\
+     &y = \pm 3 \sqrt{1-\frac{x^2}{4}} \text{; y=0 при x=2;-2} \\
+     &\int\limits_{-2}^2 3 \sqrt{1-\frac{x^2}{4}}dx \\
+     &\int 3 \sqrt{1-\frac{x^2}{4}}dx = 
+     3\int \sqrt{1-\left(\frac{x}{2}\right)^2}dx = 
+     \Big| \frac{x}{2} = \sin t; \frac{dx}{2} = \cos t dt \Big| = 
+     3\int\sqrt{1-\sin^2t}*2\cos t dt = \\
+     &= 6\int \cos^2 t dt = 6\int \frac{\cos 2t + 1}{2}dt = 
+     6\int \frac{\cos 2t}{2}dt + 3\int dt = 6\frac{\sin 2t}{4} + 3t + c = \\
+     &= 3\sin t \cos t + 3t + c 
+     = 3\frac{x}{2}\sqrt{1-\frac{x^2}{4}} + 3 \arcsin \frac{x}{2} + c \\
+     &\int\limits_{-2}^2 3 \sqrt{1-\frac{x^2}{4}}dx = 
+     \left. 3\frac{x}{2}\sqrt{1-\frac{x^2}{4}} + 3 \arcsin \frac{x}{2} \right|_{-2}^2 = 
+     3 \left(\arcsin 1 - \arcsin (-1) \right) = 3\pi \\
+     &\text{Понятно, что площадь нижней части графика тоже равна $3\pi$.} \\
+     &\text{Т.е. общая площадь равна $6\pi$}
+    \end{align*}
+
+
+
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+\end{document}

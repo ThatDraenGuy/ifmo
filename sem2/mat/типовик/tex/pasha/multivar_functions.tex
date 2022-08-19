@@ -1,0 +1,145 @@
+\section{Ф-ии многих переменных}
+\subsection{Найти частные производные первого и второго порядков}
+\begin{enumerate}\interlinepenalty10000
+  \item %1.
+$f(x, y) = x^4 + y^4 - 4x^2y^2$ \\
+\columnratio{0.5}
+\begin{paracol}{2}
+\begin{align*}
+  &\frac{\partial f}{\partial x} = 4x^3 - 8y^2x \\
+  &\frac{\partial^2 f}{\partial x^2} = 12x^2 - 8y^2 \\
+  &\frac{\partial^2 f}{\partial x \partial y} = - 16xy \\
+\end{align*}
+\switchcolumn%
+\begin{align*}
+  &\frac{\partial f}{\partial y} = 4y^3 - 8x^2y \\
+  &\frac{\partial^2 f}{\partial y^2} = 12y^2 - 8x^2 \\
+  &\frac{\partial^2 f}{\partial y \partial x} = - 16xy \\
+\end{align*}
+\end{paracol}
+
+  \item %2.
+$f(x, y) = x\sin(x + y)$ \\
+\columnratio{0.5}
+\begin{paracol}{2}
+\begin{align*}
+  &\frac{\partial f}{\partial x} = \sin(x+y) + x\cos(x+y) \\
+  &\frac{\partial^2 f}{\partial x^2} = \cos(x+y) - x\sin(x+y) + \cos(x+y) \\
+  &\frac{\partial^2 f}{\partial x \partial y} = \cos(x+y) - x\sin(x+y) \\
+\end{align*}
+\switchcolumn%
+\begin{align*}
+  &\frac{\partial f}{\partial y} = x\cos(x+y) \\
+  &\frac{\partial^2 f}{\partial y^2} = -x\sin(x+y) \\
+  &\frac{\partial^2 f}{\partial y \partial x} = \cos(x+y) - x\sin(x+y) \\
+\end{align*}
+\end{paracol}
+
+  \item %3.
+$f(x, y) = \frac{x}{y^2}$ \\
+\columnratio{0.5}
+\begin{paracol}{2}
+\begin{align*}
+  &\frac{\partial f}{\partial x} = \frac{1}{y^2} \\
+  &\frac{\partial^2 f}{\partial x^2} = 0 \\
+  &\frac{\partial^2 f}{\partial x \partial y} = -\frac{2}{y^3} \\
+\end{align*}
+\switchcolumn%
+\begin{align*}
+  &\frac{\partial f}{\partial y} = -\frac{2x}{y^3}\\
+  &\frac{\partial^2 f}{\partial y^2} = -\frac{6x}{y^4} \\
+  &\frac{\partial^2 f}{\partial y \partial x} = -\frac{2}{y^3}\\
+\end{align*}
+\end{paracol}
+
+  \item %4.
+$f(x, y) = \frac{\cos x^2}{y}$ \\
+\columnratio{0.5}
+\begin{paracol}{2}
+\begin{align*}
+  &\frac{\partial f}{\partial x} = -\frac{2x\cdot \sin x^2}{y} \\
+  &\frac{\partial^2 f}{\partial x^2} = -\frac{2\sin x^2 + 2x\cdot 2x\cos x^2}{y} \\
+  &\frac{\partial^2 f}{\partial x \partial y} = \frac{2x\cdot \sin x^2}{y^2} \\
+\end{align*}
+\switchcolumn%
+\begin{align*}
+  &\frac{\partial f}{\partial y} = -\frac{\cos x^2}{y^2} \\
+  &\frac{\partial^2 f}{\partial y^2} = \frac{\cos x^2}{y^3} \\
+  &\frac{\partial^2 f}{\partial y \partial x} = \frac{2x\cdot \sin x^2}{y^3} \\
+\end{align*}
+\end{paracol}
+
+  \item %5.
+$f(x, y) = \frac{1}{\sqrt{x^2+y^2+z^2}}$ \\
+\columnratio{0.5}
+\begin{paracol}{2}
+\begin{align*}
+  &\frac{\partial f}{\partial x} = \ldots  \\
+  &\frac{\partial^2 f}{\partial x^2} = \ldots  \\
+  &\frac{\partial^2 f}{\partial x \partial y} = \ldots  \\
+\end{align*}
+\switchcolumn
+\begin{align*}
+  &\frac{\partial f}{\partial y} = ... \\
+  &\frac{\partial^2 f}{\partial y^2} = ... \\
+  &\frac{\partial^2 f}{\partial y \partial x} = ... \\
+\end{align*}
+\end{paracol}
+
+\end{enumerate}
+\subsection{Проверить равенство}
+$\frac{\partial^2 u}{\partial x \partial y} = \frac{\partial^2 u}{\partial y \partial x}$;\quad
+\begin{enumerate}\interlinepenalty10000
+  \item %1
+$y = x^2 - 2xy - 3y^2 $ \\
+\begin{align*}
+    &\frac{\partial u}{\partial x} = 2x - 2y; \quad
+    \frac{\partial^2 u}{\partial x \partial y} = -2 \\
+    \
+    &\frac{\partial u}{\partial y} = -2x - 6y;\quad
+    \frac{\partial^2 u}{\partial y \partial x} = -2 \\
+\end{align*}
+  \item %2
+  \item %3
+\end{enumerate}
+\subsection{Найти указанные частные производные}
+\begin{enumerate}\interlinepenalty10000
+  \item %1.
+  \item %2. + 
+    \begin{align*}
+      &\frac{\partial ^3 u}{\partial ^2 x \partial y} \text{ если, } u = x\ln(xy)\\
+      &\frac{\partial u}{\partial x} = \ln(xy) + 1;\quad
+      \frac{\partial^2 u}{\partial x^2} = \frac{1}{x};\quad 
+      \frac{\partial^3 u}{\partial x^2 \partial y} = 0; \\
+    \end{align*}
+  \item %3.
+\end{enumerate}
+\subsection{Показать, что функция}
+\subsection{Найти дифференциалы указанного порядка}
+\begin{enumerate}\interlinepenalty10000
+  \item %1.
+  \item %2.
+  \item %3.
+    \begin{align*}
+      d^{10}u \text { если } u = \ln(x+y) \\
+      \frac{\partial u}{\partial y} = \frac{\partial u}{\partial x} = \frac{1}{x+y} \\
+      \frac{\partial^2 u}{\partial y^2} = \frac{\partial^2 u}{\partial x^2} = -\frac{1}{(x+y)^2} \\
+      \frac{\partial^2 u}{\partial y \partial x} = \frac{\partial^2 u}{\partial x \partial y} = -\frac{1}{(x+y)^2} \\
+      \text{Заметим закономерность, получим } \frac{\partial^n u}{\partial x^n} =
+      \frac{(-1)^{n-1} (n-1)!}{(x+y)^n}\cdot (dx+dy)^{n} \\
+      d^{10}\ln(x+y) = \frac{- 9!}{(x+y)^{10}}\cdot (dx+dy)^{10} \\
+    .\end{align*}
+  \item %4.
+  \item %5.
+\end{enumerate}
+\subsection{Найти производные первого и второго порядков от следующих сложных функций}
+\begin{enumerate}\interlinepenalty10000
+  \item %1.
+  \item %2.
+    \begin{align*}j
+      u = f\left( x, \frac{x}{y} \right) \\
+      \frac{\partial u}{\partial x} = 
+      \frac{\partial u}{\partial y} = \ldots 
+      \frac{\partial }{\partial x} 
+    .\end{align*}
+\end{enumerate}

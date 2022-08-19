@@ -1,0 +1,30 @@
+\documentclass[../main.tex]{subfiles}
+\graphicspath{{\subfix{../pictures/}}}
+\begin{document}
+\section{Дополнительное задание №2}
+\begin{tikzpicture}[round/.style={circle, draw=black, minimum size=7mm}]
+\node[round] (main) {$b_5$};
+\node[round] (left) [left=of main] {$b_4$};
+\node[round] (upperleft) [above=of left] {$b_1$};
+\node[round] (upper) [above=of main] {$b_2$};
+\node[round] (upperright) [right=of upper] {$b_3$};
+\node[round] (right) [right=of main] {$b_6$};
+
+\draw[->] (left.north) -- (upperleft.south) node[midway, left] {$z_1$};
+\draw[->] (upperleft.east) -- (upper.west) node[midway, above] {$z_3$};
+\draw[->] (upperleft.south east) -- (main.north west) node[midway, above right] {$z_2$};
+\draw[->] (main.west) -- (left.east) node[midway, below] {$z_2$};
+\draw[->] (upperright.west) -- (upper.east) node[midway, above] {$z_2$};
+\draw[->] (main.north east) -- (upperright.south west) node[left] {$z_3$};
+\draw[->] (upper.south east) -- (right.north west) node[left] {$z_1$};
+\draw[->] (right.north) -- (upperright.south) node[midway, left] {$z_3$};
+
+\path [-stealth]
+	(upperleft) edge [loop left] node {$z_1$}()
+	(left) edge [loop left] node {$z_3$}()
+	(upper) edge [loop above] node {$z_2$}()
+	(right) edge [bend left] node[below] {$z_2$} (left)
+	(upperright) edge [bend left] node[right] {$z_1$} (right)
+	(upperleft) edge [bend left] node[left] {$z_4$} (main);
+\end{tikzpicture}
+\end{document}

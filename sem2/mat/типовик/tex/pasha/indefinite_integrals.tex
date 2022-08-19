@@ -1,0 +1,104 @@
+% ! TeX root = ../main.tex
+
+\section{Неопределённый интеграл}
+\begin{enumerate}\interlinepenalty10000
+  \item %1.
+    \begin{align*}
+      \xint{(3-x^2)^3} &= \xint{27 - 27x^2  + 9x^4 - x^8} =
+      27x - 9x^3 + \frac{9}{5}x^5 - \frac{8}{9}x^9 + C
+    \end{align*}
+  \item %2.
+    \begin{align*}
+      \xint{x^2\cdot (5-x^4)} &= \xint{5x^2} - \xint{x^6} =
+      \frac{5}{3}x^3 - \frac{x^7}{7} + C
+    .\end{align*}
+  \item %3. 
+    \begin{align*}
+      \xint{(1-\frac{1}{x^2})\sqrt{x\sqrt{x}}} 
+      =\xint{x{\frac{3}{4}}} - \xint{\frac{x^{\frac{3}{4}}}{x^2}}
+      =\frac{4}{7}x^{\frac{7}{4}} + 4x^{-\frac{1}{4}} + C
+    .\end{align*}
+  \item %4.
+    \begin{align*}
+      \xint{(2^x + 3^x)^2} 
+      &= \xint{(4^x + 2 \cdot 6^x + 9^x)} = \xint{4^x} + \xint{2 \cdot 6^x} + \xint{9^x} = \\
+      &= \dfrac{4^x}{\ln{4}} + 2 \cdot \dfrac{6^x}{\ln{6}} + \dfrac{9^x}{\ln{9}} + C
+    \end{align*}
+  \item %5.
+  \begin{align*}
+    \xint{\ctg^2x} = \xint{\frac{\cos^2{x}}{\sin^2x}}
+    &= \xint{\frac{1}{\sin^2x} - 1} = -\ctg{x} - x + C
+  .\end{align*}
+  \item %6.
+  \item %7.
+  \item %8.
+\columnratio{0.8}
+\begin{paracol}{2}
+  \begin{align*}
+    &\xint{\cos^{5}x\cdot\sqrt{\sin{x}}} = \int \cos^5{x} \cdot \dfrac{\sqrt{u}}{\cos{x}}\du =
+    \int (1+u^2)^4 \cdot \sqrt{u}\du = \\
+    &= \uPowFr{1}{2} + 4\uPowFr{5}{2} + 6\uPowFr{9}{2} + 4\uPowFr{13}{2} + \uPowFr{17}{2} = \\
+    &= \multAndPowFrU{2}{3} + 4\cdot \multAndPowFrU{2}{7} + 6\cdot \multAndPowFrU{2}{11}
+      + 4\cdot \multAndPowFrU{2}{15} + \multAndPowFrU{2}{19} + C = \\
+    &= \multAndPowFrSinX{2}{3} + 4\cdot \multAndPowFrSinX{2}{7} + 6\cdot \multAndPowFrSinX{2}{11}
+      + 4\cdot \multAndPowFrSinX{2}{15} + \multAndPowFrSinX{2}{19} + C = \\
+  \end{align*}
+  \switchcolumn
+  \begin{align*}
+    u  &= \sin{x} \\
+    du &= \cos{x}\dx \\
+    dx &= \dfrac{du}{\cos{x}}
+  \end{align*}
+\end{paracol}
+  \item %9.
+  \item %10.
+  \item %11.
+  \item %12.
+\columnratio{0.8}
+\begin{paracol}{2}
+  \begin{align*}
+    \xint{\dfrac{\atg{\sqrt{x}}}{\sqrt{x} (1+x)}} =
+    \int 2u\du = u^2 + C = arctg^2 \sqrt{x} + C
+  \end{align*}
+  \switchcolumn%
+  \begin{align*}
+    u  &= \atg{\sqrt{x}} \\
+    du &= \frac{1}{1+x}\cdot \frac{1}{2\sqrt{x}} \dx \\
+    dx &= 2\sqrt{x}(1+x) 
+  \end{align*}
+\end{paracol}
+  \item %13.
+  \item %14.
+  \item %15.
+  \item %16.
+\begin{align*}
+  \xint{x^2 \sin{2x}} 
+  &= - x^2 \frac{\cos{2x}}{2} + \xint{\frac{\cos{2x}}{2}\cdot 2x} =
+     - x^2 \frac{\cos{2x}}{2} + (x\cdot \frac{\sin{2x}}{2} - \frac{1}{2}\xint{\sin{2x}}) = \\
+  &= \frac{1}{2}(-x^2 \cos{2x} + x\cdot \sin{2x} + \frac{1}{2}\cos{2x}) + C
+\end{align*}
+  \item % 17.
+  \item % 18.
+  \item % 19.
+  \item % 20.
+\columnratio{0.8}
+\begin{paracol}{2}
+\begin{align*}
+  &\int \frac{dx}{\sqrt{1-x^2}-1} = \int \frac{\cos{u}}{\cos{u}-1}\du =
+  \int 1 \du + \int \frac{1}{\cos{u}-1}\du = \\
+  &= \arcsin{x} + \frac{\cos{u}+1}{\cos^2{u}-1}\du =
+  \arcsin{x} - \int \frac{1}{\sin^2{u}}\du - \int \frac{\cos{u}}{\sin^2{u}}\du = \\
+  &= \arcsin{x} + \ctg{u} - \int \frac{dx}{x^2} = 
+\arcsin{x} + \frac{\sqrt{1-x^2}}{x} + \frac{1}{x} + C
+\end{align*}
+\switchcolumn
+\begin{align*}
+  x  &= \sin{u} \\
+  dx &= \cos{u} \du \\
+  du &= \frac{dx}{\cos{u}}
+\end{align*}
+\end{paracol}
+  \item % 21.
+  \item % 22.
+  \item % 23.
+\end{enumerate}
