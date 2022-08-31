@@ -1,0 +1,80 @@
+\documentclass[a4paper, 11pt, fleqn]{article}
+
+% Packages
+% \usepackage[T2A]{fontenc}
+
+% tables
+\usepackage[dvipsnames, table]{xcolor}
+\usepackage{makecell}
+\usepackage{float} % fix table position
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{tabularx}
+
+% Math
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsthm} % theorem sections
+\usepackage{mathtools}
+
+\usepackage{indentfirst}
+
+% links
+\usepackage[hidelinks]{hyperref} 
+
+% 2 columns
+\usepackage{paracol}
+% tables
+\usepackage{multirow}
+
+% Poles settings:
+\usepackage[left=30mm, top=10mm, right=20mm, bottom=10mm, head=5mm, foot=9mm]{geometry}
+
+\usepackage{fontspec}
+\setmainfont{FreeSerif}
+\setsansfont{FreeSans}
+\setmonofont{FreeMono}
+
+%% Polyglossia:
+\usepackage{polyglossia}
+\setdefaultlanguage{russian}
+\setotherlanguage{english}
+\newfontfamily\cyrillicfont{FreeSerif}[Script=Cyrillic, Ligatures=TeX]
+
+%% Left-aligned equations
+\setlength{\mathindent}{0cm}
+
+%% Math custom proplem numbering
+\newtheorem{probleminternal}{Задача}[section]
+
+\newcommand{\task}[1]{
+  \IfValueT{#1}{%
+    \renewcommand{\theprobleminternal}{#1}%
+    \addtocounter{probleminternal}{-1}%
+  }%
+  \probleminternal%
+}
+{\endprobleminternal}
+
+%% Custom aliases
+\newcommand{\xint}[1]{\int#1\,dx}
+\newcommand{\tg}[1]{tg\,#1}
+\newcommand{\atg}[1]{arctg\,#1}
+\newcommand{\ctg}[1]{ctg\,#1}
+\newcommand{\du}{\,du}
+\newcommand{\dx}{\,dx}
+\newcommand{\uPowFr}[2]{\int u^{\frac{#1}{#2}} \du}
+\newcommand{\multAndPowFrVar}[3]{\frac{#1}{#2}{#3}^{\frac{#2}{#1}}}
+\newcommand{\multAndPowFrU}[2]{\multAndPowFrVar{#1}{#2}{u}}
+\newcommand{\multAndPowFrSinX}[2]{\multAndPowFrVar{#1}{#2}{\sin{x}}}
+\newcommand{\xtoInf}{\xrightarrow[x \to\infty]{}}%
+
+
+\begin{document}
+Павел: \\
+\input{indefinite_integrals}
+\input{multivar_functions}
+\input{riemann_integral}
+
+\end{document}

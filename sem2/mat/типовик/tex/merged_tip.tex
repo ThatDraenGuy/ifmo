@@ -1,0 +1,1626 @@
+\documentclass[a4paper, 12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage[english,russian]{babel} 
+\usepackage[left=20mm, top=20mm, right=20mm, bottom=30mm, nohead, nofoot]{geometry} \usepackage{amsmath,amsfonts,amssymb} % математический пакет
+\usepackage{pgfplots}
+\usepgfplotslibrary{fillbetween}
+\pgfplotsset{compat=1.16}
+\usepackage{mathtools}
+\usepackage{paracol}
+
+
+\usepackage{fancybox,fancyhdr} 
+\setcounter{page}{1} % счетчик нумерации страниц
+\headsep=10mm 
+
+
+\newcommand{\xint}[1]{\int#1\,dx}
+\newcommand{\atg}[1]{arctg\,#1}
+\newcommand{\du}{\,du}
+\newcommand{\dx}{\,dx}
+\newcommand{\uPowFr}[2]{\int u^{\frac{#1}{#2}} \du}
+\newcommand{\multAndPowFrVar}[3]{\frac{#1}{#2}{#3}^{\frac{#2}{#1}}}
+\newcommand{\multAndPowFrU}[2]{\multAndPowFrVar{#1}{#2}{u}}
+\newcommand{\multAndPowFrSinX}[2]{\multAndPowFrVar{#1}{#2}{\sin{x}}}
+\newcommand{\xtoInf}{\xrightarrow[x \to\infty]{}}
+\newcommand{\lr}[1]{\left({#1}\right)}
+
+
+
+\begin{document}
+ \begin{center}
+  \section*{Типовой расчёт}
+  \section*{Хайкин Олег, P3131}
+ \end{center}
+ 
+ \newpage
+ \section{Неопределённый интеграл}
+ \begin{enumerate}\interlinepenalty10000
+
+ 
+  \item %1
+   \begin{align*}
+      \xint{(3-x^2)^3} &= \xint{\left(27 - 27x^2  + 9x^4 - x^8\right)} =
+      27x - 9x^3 + \frac{9}{5}x^5 - \frac{8}{9}x^9 + C
+   .\end{align*}
+ 
+  \item %2
+   \begin{align*}
+      \xint{x^2  (5-x^4)} &= \xint{5x^2} - \xint{x^6} =
+      \frac{5}{3}x^3 - \frac{x^7}{7} + C
+   .\end{align*}
+ 
+  \item %3. 
+    \begin{align*}
+      \xint{(1-\frac{1}{x^2})\sqrt{x\sqrt{x}}} 
+      =\xint{x^{\frac{3}{4}}} - \xint{\frac{x^{\frac{3}{4}}}{x^2}}
+      =\frac{4}{7}x^{\frac{7}{4}} + 4x^{-\frac{1}{4}} + C
+    .\end{align*}
+ \item %4.
+    \begin{align*}
+      \xint{(2^x + 3^x)^2} 
+      &= \xint{(4^x + 2 \cdot 6^x + 9^x)} = \xint{4^x} + \xint{2 \cdot 6^x} + \xint{9^x} = \\
+      &= \dfrac{4^x}{\ln{4}} + 2 \cdot \dfrac{6^x}{\ln{6}} + \dfrac{9^x}{\ln{9}} + C
+    .\end{align*}
+  \item %5.
+  \begin{align*}
+    \xint{\ctg^2x} = \xint{\frac{\cos^2{x}}{\sin^2x}}
+    &= \xint{\frac{1}{\sin^2x} - 1} = -\ctg{x} - x + C
+  .\end{align*}
+ 
+  \item %6.
+  \begin{align*}
+    &\int x^2\sqrt[3]{1-x}\,dx = -\frac{3}{4}x^2\left(1-x\right)^{\frac{4}{3}}\, +\, \frac{6}{4}\int x\left(1-x\right)^{\frac{4}{3}}\,dx = \\     
+    &-\frac{3}{4}x^2\left(1-x\right)^{\frac{4}{3}}\, - \, \frac{9}{14}x\left(1-x\right)^{\frac{7}{3}}\, +\,\frac{9}{14}\int \left(1-x\right)^{\frac{7}{3}}\,dx = \\ 
+    &-\frac{3}{4}x^2\left(1-x\right)^{\frac{4}{3}}\, - \, \frac{9}{14}x\left(1-x\right)^{\frac{7}{3}}\, -\, \frac{27}{140}\left(1-x\right)^{\frac{10}{3}} + C = \\ 
+    &-\frac{3}{140}\left(1-x\right)^{\frac{4}{3}}\left(14x^2+12x-9\right)+C  
+  .\end{align*}
+  
+  \item %7.
+  \begin{align*}
+    &\int{\frac{x^3}{\sqrt{2-x}}dx} 
+    \Rightarrow \Big| t = \sqrt{2-x} \Rightarrow x = 2-t^2; dx = -2tdt \Big| \Rightarrow
+    \int{\frac{(2-t^2)^3}{t}(-2tdt)} = \\
+    &= -2\int{(2-t^2)^3dt} = 
+    -2\int{(8-12t^2+6t^4-t^6)dt} = \\ 
+    &-2(8t-4t^3+\frac{6}{5}t^5-\frac{1}{7}t^7)+C = \\
+    &= -2\sqrt{2-x}(8-4(2-x)+\frac{6}{5}(2-x)^2-\frac{1}{7}(2-x)^3)+ C
+  .\end{align*}
+    
+  \item %8.
+  \columnratio{0.8}
+  \begin{align*}
+    &\xint{\cos^{5}x\cdot\sqrt{\sin{x}}} \Rightarrow 
+    \Big| u = \sin x, du = \cos x dx \Rightarrow dx = \dfrac{du}{\cos{x}} \Big|
+    \Rightarrow \\
+    &\int \cos^5{x} \cdot \dfrac{\sqrt{u}}{\cos{x}}\du =
+    \int (1+u^2)^4 \cdot \sqrt{u}\du = \\
+    &= \uPowFr{1}{2} + 4\uPowFr{5}{2} + 6\uPowFr{9}{2} + 4\uPowFr{13}{2} + \uPowFr{17}{2} = \\
+    &= \multAndPowFrU{2}{3} + 4\cdot \multAndPowFrU{2}{7} + 6\cdot \multAndPowFrU{2}{11}
+      + 4\cdot \multAndPowFrU{2}{15} + \multAndPowFrU{2}{19} + C = \\
+    &= \multAndPowFrSinX{2}{3} + 4\cdot \multAndPowFrSinX{2}{7} + 6\cdot \multAndPowFrSinX{2}{11}
+      + 4\cdot \multAndPowFrSinX{2}{15} + \multAndPowFrSinX{2}{19} + C
+  .\end{align*}
+ 
+ 
+ \item %9.
+ 
+ \begin{align*}
+  &\int{\frac{lnx}{x\sqrt{1+ \ln x}}dx} = \int{\ln x \frac{1}{x \sqrt{1+\ln x}}dx} \\
+  &u = \ln x; dv = \frac{1}{x \sqrt{1+\ln x}} \Rightarrow v = \int {\frac{dx}{x\sqrt{1+ \ln x}}} \Rightarrow \\
+  &\Rightarrow
+   \Big| t = 1 + \ln x, dt = \frac{1}{x}dx \Rightarrow xdt=dx \Big| \Rightarrow \\
+  &\Rightarrow
+  \int{\frac{xdt}{x\sqrt{t}}} = \int{\frac{dt}{\sqrt{t}}} = \int{t^{-\frac{1}{2}}dt} = 2t^{\frac{1}{2}}=2\sqrt{t} = 2\sqrt{\ln x + 1} \\
+  &\int \frac{\ln x dx}{x \sqrt{1+\ln x}} =  2 \ln x \sqrt{\ln x+1} - 2 \int{\frac{\sqrt{\ln x+1}}{x}dx} \\
+  &\rhd 2\int{\frac{\sqrt{\ln x+1}}{x}dx} \Rightarrow 
+  \Big| k = 1 + \ln x, dk = \frac{1}{x}dx \Rightarrow xdk=dx \Big| \Rightarrow
+  2\int{\frac{\sqrt{t}x}{x}dt} = \\
+  &= 2\int{\sqrt{t}dt} = \frac{2}{3}2t\sqrt{t} = \frac{4t\sqrt{t}}{3}=\frac{4(\ln x + 1)\sqrt{\ln x +1}}{3} \lhd \\
+  &2 \ln x \sqrt{\ln x+1} - 2 \int{\frac{\sqrt{\ln x+1}}{x}dx} = 2 \ln x \sqrt{\ln x+1} - \frac{4}{3}(\ln x + 1) \sqrt{\ln x + 1} + C = \\
+  &= 2 \sqrt{\ln x + 1} (\ln x - \frac{2}{3} (\ln x + +1)) + C = 2\sqrt{\ln x + 1}(\frac{\ln x}{3}-\frac{2}{3})+C  
+ .\end{align*}
+ 
+ \item %10.
+ \begin{align*}
+    &\int \frac{dx}{e^{\frac{x}{2}} + e^x} \Rightarrow
+    \Big|e^{\frac{x}{2}} = t ; dt = \frac{1}{2} e^{\frac{x}{2}}dx \Big| \Rightarrow 
+    2\int \frac{dt}{t\left(t+t^2\right)} = \\
+    &= 2\int \frac{dt}{t^2} - 2\int \frac{dt}{t} + 2\int \frac{dt}{1+t} =
+    -\frac{2}{t} - 2\ln\,t + 2\ln\left(1+t\right)+C= \\ 
+    &= 2\ln\left(1+e^{\frac{x}{2}}\right)-2\ln e^{\frac{x}{2}} - \frac{2}{e^{\frac{x}{2}}}+C = 2\ln\left(1+e^{\frac{x}{2}}\right)-x-2e^{-\frac{x}{2}} + C    
+ .\end{align*}
+ 
+ \item %11.
+ \begin{align*}
+    &\int{\frac{dx}{\sqrt{1+e^x}}} 
+    \Rightarrow \Big| t = \sqrt{1+e^x} \Rightarrow e^x = t^2-1; e^xdx = 2tdt \Rightarrow dx = \frac{2tdt}{t^2-1} \Big| \Rightarrow \\
+    &= \int{\frac{2tdt}{(t^2-1)t}} = 2\int{\frac{dt}{t^2-1}} = 
+    2\int{\frac{dt}{(t-1)(t+1)}} = 
+    2\int{\frac{1}{2}\frac{(t+1)-(t-1)}{(t-1)(t+1)}dt} = \\
+    &= \int{\frac{dt}{t-1}} - \int{\frac{dt}{t+1}} =
+    \ln{(t-1)} - \ln{(t+1)} + c = \\
+    &=\ln{(\sqrt{e^x+1}-1)} - \ln{(\sqrt{e^x+1}+1)}+c
+    \end{align*}
+ 
+ \item %12.
+ \columnratio{0.8}
+  \begin{align*}
+    &\xint{\dfrac{\atg{\sqrt{x}}}{\sqrt{x} (1+x)}} \Rightarrow
+    \Big| u = \atg{\sqrt{x}}, du = \frac{1}{x+1}\frac{1}{2\sqrt{x}}dx \Rightarrow
+    dx = 2\sqrt{x}(1+x)du \Big| \Rightarrow \\
+    &\Rightarrow\int 2u\du = u^2 + C = arctg^2 \sqrt{x} + C
+  .\end{align*}
+  
+  \item %13.
+  \begin{align*}
+   &\int{\ln x dx} \Rightarrow
+    \Big| t = \ln x, dt = \frac{1}{x} dx \Rightarrow xdt=dx, x = e^t \Big| \Rightarrow
+   \int{txdt} = \int{te^tdt} \\
+   &u = t, dv =e^tdt \Rightarrow v = \int{e^t dt} = e^t \Big| \Rightarrow
+   \int{te^tdt} = \ln x e^{\ln x} - e^{\ln x} + C = \\
+   &= x \ln x - x + C
+  .\end{align*}
+  
+  
+  \item %14.
+  \begin{align*}
+    &\int \left(\frac{\ln x}{x}\right)^2\,dx \\
+    &u = \ln^2 x; dv = \frac{dx}{x^2} \Rightarrow v = -\frac{1}{x} \Big| \Rightarrow \\
+    &\Rightarrow\int \left(\frac{\ln x}{x}\right)^2\,dx = -\frac{\ln^2 x}{x} + 2\int \frac{\ln x}{x^2}\,dx = -\frac{\ln^2 x}{x} - \frac{2\ln x}{x} + 2\int \frac{dx}{x^2} =\\
+    &= -\frac{\ln^2 x}{x} - \frac{2\ln x}{x} - \frac{2}{x} + C=-\frac{1}{x}\left(\ln^2x-2\ln x+2\right) +C
+  .\end{align*}
+  
+  \item %15.
+  \begin{align*}
+    \int{xe^{-x}}dx = x \cdot (-e^{-x}) - \int{1 \cdot (-e^{-x})dx} = -xe^{-x} - e^{-x} + C
+  .\end{align*}
+  
+  
+  \item %16.
+  \begin{align*}
+  &\xint{x^2 \sin{2x}} 
+  = - x^2 \frac{\cos{2x}}{2} + \xint{\frac{\cos{2x}}{2}\cdot 2x} = \\
+  &=- x^2 \frac{\cos{2x}}{2} + (x\cdot \frac{\sin{2x}}{2} - \frac{1}{2}\xint{\sin{2x}}) = \\
+  &= \frac{1}{2}(-x^2 \cos{2x} + x\cdot \sin{2x} + \frac{1}{2}\cos{2x}) + C
+  .\end{align*}
+  
+  
+  \item %17.
+  \begin{align*}
+   &\int{x \ln \frac{1+x}{1-x}dx} = \int{x \ln (1+x)dx} - \int{x \ln (1-x)dx} \\
+   &1: \int{x \ln (1+x)dx} \Rightarrow
+   \Big| t = 1+x, dt = dx, x=t-1 \Big| \Rightarrow 
+   \int{(t-1) \ln t dt} = \\
+   &=\int{t \ln t dt} - \int{\ln t dt} =
+   \int{\ln t \cdot t dt }  -\int{\ln t \cdot 1dt} = \\
+   &=\ln t \cdot \frac{t^2}{2} - \int {\frac{t^2}{2}\cdot\frac{1}{t} dt} - \ln t \cdot t + \int {t \cdot \frac{1}{t} dt} = \ln t \cdot \frac{t^2}{2}-\frac{t^4}{4}-\ln t \cdot t + \\
+   &2: \int{x \ln (1-x) dx} \Rightarrow
+   \Big| t_1 = 1-x, \hspace*{5mm} dt_1 = -dx,  \hspace*{5mm} x=1-t_1
+   \Big| \Rightarrow \\
+   &\Rightarrow
+   -\int{(1-t_1)\ln t_1 dt_1} = \int (t_1 -1) \ln t_1 dt_1 = \int{t_1 \ln t_1 dt_1} -\int{ \ln t_1 dt_1} = \\
+   &=\frac{\ln t_1 \cdot t^2_1}{2} - \frac{t^2_1}{4}-\ln t_1 \cdot t_1 + t_1 \\
+   &\int{\ln x dx} = \frac{\ln t \cdot t^2}{2} - \frac{t^2}{4} - \ln t \cdot t + t - \frac{\ln t_1 \cdot t^2_1}{2} + \frac{t^2_1}{4} + \ln t_1 \cdot t_1 - t_1 + C = \\
+   &=\frac{\ln (x+1) \cdot (x+1)^2}{2} - \frac{(x+1)^2}{4} - \ln (x+1) \cdot (x+1) + (x+1) - \\
+   &- \frac{\ln (1-x) \cdot (1-x)^2}{2} + \frac{(1-x)^2}{4} + \ln (1-x)  \cdot (1-x)  - (1-x)  + C
+  .\end{align*}
+  
+  
+  \item %18.
+  \begin{align*}
+    &\int \frac{dx}{\sqrt{x+1}+\sqrt{x-1}} = \int \frac{\sqrt{x+1}-\sqrt{x-1}}{x+1-x+1}\,dx = \int \left(\sqrt{x+1}-\sqrt{x-1}\right)\,dx =\\
+    &= \frac{1}{2} \int \sqrt{x+1}\,dx-\frac{1}{2}\int\sqrt{x-1}\,dx = \frac{\left(x+1\right)^\frac{3}{2}}{3} - \frac{\left(x-1\right)^\frac{3}{2}}{3} + C
+  \end{align*}
+  
+  \item %19.
+  \begin{align*}
+    &\int{\frac{dx}{1+\sqrt{x^2+2x+2}}} = 
+    \int{\frac{1-\sqrt{x^2+2x+2}}{1-x^2-2x-2}dx} = 
+    -\int{\frac{1 - \sqrt{x^2+2x+2}}{x^2+2x+1}dx} = \\
+    &= -\int{\frac{dx}{(x+1)^2}} + \int{\frac{\sqrt{(x+1)^2+1}}{(x+1)^2}dx} = 
+    \frac{1}{x+1} + \int{\frac{\sqrt{(x+1)^2+1}}{(x+1)^2}dx} \Rightarrow \\
+    &\Rightarrow \Big|t = x+1; dt = dx \Big| \Rightarrow 
+    \frac{1}{x+1} + \int{\frac{\sqrt{t^2+1}}{t^2}dt} = \\
+    &=\frac{1}{x+1} + \int{\frac{t^2+1}{t^2\sqrt{t^2+1}}dt} = 
+    \frac{1}{x+1} + \int{\frac{dt}{\sqrt{t^2+1}}} + \int{\frac{dt}{t^2\sqrt{t^2+1}}} = \\
+    &= \frac{1}{x+1} + \text{arsh}(t) + \int{\frac{dt}{t^2\sqrt{t^2+1}}} \Rightarrow 
+    \Big| k = \frac{1}{t^2}; dk = -\frac{2dt}{t^3} \Rightarrow dt = -\frac{1}{2}t^3dk \Big| \Rightarrow \\
+    &\Rightarrow \frac{1}{x+1} + \text{arsh}(x+1) -\frac{1}{2}\int{\frac{tdk}{\sqrt{\frac{1}{k}+1}}} = 
+    \frac{1}{x+1} + \text{arsh}(x+1) -\frac{1}{2}\int{\frac{\sqrt{\frac{1}{k}}dk}{\sqrt{\frac{1}{k}+1}}} = \\
+    &= \frac{1}{x+1} + \text{arsh}(x+1) -\frac{1}{2}\int{\frac{dk}{\sqrt{k+1}}} = 
+    \frac{1}{x+1} + \text{arsh}(x+1) - \sqrt{k+1} +C = \\
+    &= \frac{1}{x+1} + \text{arsh}(x+1) - \sqrt{\frac{1}{x^2+1}+1} +C = \\
+    &=\frac{1+(x+1)\text{arsh}(x+1)-\sqrt{(x+1)^2+1}}{x+1}+C
+   .\end{align*}
+   
+   \item %20.
+   \begin{align*}
+     &\int \frac{dx}{\sqrt{1-x^2}-1} \Rightarrow
+     \Big| x = \sin u, dx = \cos u du \Rightarrow du = \frac{dx}{\cos u} \Big| \Rightarrow
+     \int \frac{\cos{u}}{\cos{u}-1}\du = \\
+     &=\int 1 \du + \int \frac{1}{\cos{u}-1}\du =
+     \arcsin{x} + \frac{\cos{u}+1}{\cos^2{u}-1}\du = \\
+     &=\arcsin{x} - \int \frac{1}{\sin^2{u}}\du - \int \frac{\cos{u}}{\sin^2{u}}\du = \\
+     &= \arcsin{x} + \ctg{u} - \int \frac{dx}{x^2} = 
+     \arcsin{x} + \frac{\sqrt{1-x^2}}{x} + \frac{1}{x} + C
+    .\end{align*}
+    
+    \item %21.
+    \begin{align*}
+     &\int{\frac{1}{\sin x + 3\cos x}} \Rightarrow 
+     \Big| \tan \frac{x}{2}= t,\Rightarrow \sin x = \frac{2t}{1+t^2}, \cos x = \frac{1-t^2}{1+t^2} \Big| \Rightarrow \\
+     &\Rightarrow \int{\frac{dx}{\frac{2t}{1+t^2} + 3 \frac{1-t^2}{1+t^2}}}=\int{\frac{dx}{\frac{-3t^2+2t+3}{1+t^2}}} = \int{\frac{(1+t^2)dx}{-3t^2+2t+3}} =      
+     \int{\frac{(1+t^2)(1+\cos x)dt}{-3t^2+2t+3}} = \\
+     &=\int{\frac{(1+t^2)(1+\frac{1-t^2}{1+t^2})dt}{-3t^2+2t+3}} = \int{\frac{(1+t^2+1-t^2)dt}{-3t^2+2t+3}} = \int{\frac{2dt}{-3t^2+2t+3}} = \\
+     &=-2 \int \frac{1}{3t^2-2t-3} =-\frac{2}{3} \int \frac{dt}{(t-\frac{1}{3})^2 - \frac{10}{9}} =-\frac{2}{3} \int \frac{dt}{(t-\frac{1}{3})^2 - \frac{10}{9}} = \\
+     &=-\frac{2}{3} \int \frac{dz}{z^2 - \frac{10}{9}} = \frac{2}{3} \int \frac{dz}{\frac{10}{9} - z^2}  = \frac{2}{3} \cdot \frac{3}{2 \sqrt{10}} \cdot \ln |\frac{\frac{\sqrt{10}}{3}+z}{\frac{\sqrt{10}}{3}-z}| = \\
+     &=\frac{1}{\sqrt{10}} \ln |\frac{\frac{\sqrt{10}}{3}+z}{\frac{\sqrt{10}}{3}-z}| =  \frac{1}{\sqrt{10}} \ln |\frac{\frac{\sqrt{10}}{3}+t-\frac{1}{3}}{\frac{\sqrt{10}}{3}-t+\frac{1}{3}}| = \frac{1}{\sqrt{10}} \ln |\frac{\frac{\sqrt{10}-1}{3}+\tan \frac{x}{2}}{\frac{\sqrt{10} + 1}{3}-\tan \frac{x}{2}}| + C
+    .\end{align*}
+    
+    \item %22.
+    \begin{align*}
+    &\int \frac{dx}{x^{11}\sqrt{2+x^4}} = \int x^{-11}\left(2+x^4\right)^{-\frac{1}{2}}\,dx \Rightarrow \\
+    &\Rightarrow \Big| 1+2x^4 = t^2 \Rightarrow 2tdt = -8x^{-5}dx \Rightarrow
+    dx = \frac{tdt}{4x^{-5}} \Big| \Rightarrow \\
+    &\Rightarrow\int \left(\frac{2}{t^2-1}\right)^{-\frac{11}{4}}\left(2+\frac{2}{t^2-1}\right)^{-\frac{1}{2}}\left(\frac{2}{t^2-1}\right)^{\frac{5}{4}}\frac{t\,dt}{4} =\\    
+    &= -\int \frac{2^{-\frac{11}{4}}}{\left(t^2-1\right)^{-\frac{11}{4}}} \frac{2^{-\frac{1}{2}}\left(t^{2}\right)^{-\frac{1}{2}}}{\left(t^2-1\right)^{-\frac{1}{2}}} \frac{t\,dt}{4} \frac{2^{\frac{5}{4}}}{\left(t^2-1\right)^{\frac{5}{4}}} = -\frac{1}{16} \int \frac{dt}{\left(t^2-1\right)^{-2}} = \\
+    &= -\frac{1}{16} \int \left(t^4-2t^2+1\right)\,dt = -\frac{1}{16}\left(\frac{t^5}{5}-\frac{2t^3}{3}+t\right) + C \\
+    &= -\frac{1}{240}\frac{\sqrt{x^4+2}}{x^2}\left(3\cdot\frac{\left(x^4+2\right)^2}{x^8}-10\cdot\frac{x^4+2}{x^4}+15\right) + C = \\
+    &= -\frac{\sqrt{x^4+2}}{60x^{10}}\left(2x^8-2x^4+3\right) + C
+   .\end{align*}
+   
+    \end{enumerate}
+   
+   \section{Понятие о дифференциальном исчеслении функций многих переменных}
+   \subsection{Найти частные производные первого и второго порядков от следующих функций:}
+   \begin{enumerate}
+   
+   \item %1.
+$f(x, y) = x^4 + y^4 - 4x^2y^2$ \\
+\columnratio{0.5}
+\begin{paracol}{2}
+\begin{align*}
+  &\frac{\partial f}{\partial x} = 4x^3 - 8y^2x \\
+  &\frac{\partial^2 f}{\partial x^2} = 12x^2 - 8y^2 \\
+  &\frac{\partial^2 f}{\partial x \partial y} = - 16xy \\
+\end{align*}
+\switchcolumn%
+\begin{align*}
+  &\frac{\partial f}{\partial y} = 4y^3 - 8x^2y \\
+  &\frac{\partial^2 f}{\partial y^2} = 12y^2 - 8x^2 \\
+  &\frac{\partial^2 f}{\partial y \partial x} = - 16xy \\
+\end{align*}
+\end{paracol}
+
+  \item %2.
+$f(x, y) = x\sin(x + y)$ \\
+\columnratio{0.5}
+\begin{paracol}{2}
+\begin{align*}
+  &\frac{\partial f}{\partial x} = \sin(x+y) + x\cos(x+y) \\
+  &\frac{\partial^2 f}{\partial x^2} = \cos(x+y) - x\sin(x+y) + \cos(x+y) \\
+  &\frac{\partial^2 f}{\partial x \partial y} = \cos(x+y) - x\sin(x+y) \\
+\end{align*}
+\switchcolumn%
+\begin{align*}
+  &\frac{\partial f}{\partial y} = x\cos(x+y) \\
+  &\frac{\partial^2 f}{\partial y^2} = -x\sin(x+y) \\
+  &\frac{\partial^2 f}{\partial y \partial x} = \cos(x+y) - x\sin(x+y) \\
+\end{align*}
+\end{paracol}
+
+  \item %3.
+$f(x, y) = \frac{x}{y^2}$ \\
+\columnratio{0.5}
+\begin{paracol}{2}
+\begin{align*}
+  &\frac{\partial f}{\partial x} = \frac{1}{y^2} \\
+  &\frac{\partial^2 f}{\partial x^2} = 0 \\
+  &\frac{\partial^2 f}{\partial x \partial y} = -\frac{2}{y^3} \\
+\end{align*}
+\switchcolumn%
+\begin{align*}
+  &\frac{\partial f}{\partial y} = -\frac{2x}{y^3}\\
+  &\frac{\partial^2 f}{\partial y^2} = -\frac{6x}{y^4} \\
+  &\frac{\partial^2 f}{\partial y \partial x} = -\frac{2}{y^3}\\
+\end{align*}
+\end{paracol}
+
+  \item %4.
+$f(x, y) = \frac{\cos x^2}{y}$ \\
+\columnratio{0.5}
+\begin{paracol}{2}
+\begin{align*}
+  &\frac{\partial f}{\partial x} = -\frac{2x\cdot \sin x^2}{y} \\
+  &\frac{\partial^2 f}{\partial x^2} = -\frac{2\sin x^2 + 2x\cdot 2x\cos x^2}{y} \\
+  &\frac{\partial^2 f}{\partial x \partial y} = \frac{2x\cdot \sin x^2}{y^2} \\
+\end{align*}
+\switchcolumn%
+\begin{align*}
+  &\frac{\partial f}{\partial y} = -\frac{\cos x^2}{y^2} \\
+  &\frac{\partial^2 f}{\partial y^2} = \frac{\cos x^2}{y^3} \\
+  &\frac{\partial^2 f}{\partial y \partial x} = \frac{2x\cdot \sin x^2}{y^3} \\
+\end{align*}
+\end{paracol}
+
+  \item %5.
+$f(x, y) = \frac{1}{\sqrt{x^2+y^2+z^2}}$ \\
+\begin{align*}
+ &\frac{\partial f}{\partial x} = -\frac{x}{(x^2+y^2+z^2)^\frac{3}{2}} \\ 
+    &\frac{\partial^2 f}{\partial x^2} = -\frac{(x^2+y^2+z^2)^\frac{3}{2} - \frac{3}{2}(x^2+y^2+z^2)^\frac{1}{2}*2x*x}{(x^2+y^2+z^2)^3} = \\
+    &=-\frac{(x^2+y^2+z^2)^\frac{1}{2}(-2x^2+y^2+z^2)}{(x^2+y^2+z^2)^3} =
+    \frac{2x^2-y^2-z^2}{(x^2+y^2+z^2)^\frac{5}{2}} \\
+    &\frac{\partial^2 f}{\partial x \partial y} = -x*(-\frac{3}{2})\frac{1}{(x^2+y^2+z^2)^\frac{5}{2}}*2y = \frac{3xy}{(x^2+y^2+z^2)^\frac{5}{2}} \\
+\end{align*}
+
+\columnratio{0.33}
+\begin{paracol}{3}
+\begin{align*}
+  &\frac{\partial f}{\partial x} = -\frac{x}{(x^2+y^2+z^2)^\frac{3}{2}} \\
+  &\frac{\partial^2 f}{\partial x^2} = \frac{2x^2-y^2-z^2}{(x^2+y^2+z^2)^\frac{5}{2}}  \\
+  &\frac{\partial^2 f}{\partial x \partial y} = \frac{3xy}{(x^2+y^2+z^2)^\frac{5}{2}}  \\
+  &\frac{\partial^2 f}{\partial x \partial z} = \frac{3xz}{(x^2+y^2+z^2)^\frac{5}{2}}  \\
+\end{align*}
+\switchcolumn
+\begin{align*}
+  &\frac{\partial f}{\partial y} = -\frac{y}{(x^2+y^2+z^2)^\frac{3}{2}} \\
+  &\frac{\partial^2 f}{\partial y^2} = \frac{2y^2-x^2-z^2}{(x^2+y^2+z^2)^\frac{5}{2}} \\
+  &\frac{\partial^2 f}{\partial y \partial x} = \frac{3xy}{(x^2+y^2+z^2)^\frac{5}{2}} \\
+  &\frac{\partial^2 f}{\partial y \partial z} = \frac{3yz}{(x^2+y^2+z^2)^\frac{5}{2}}  \\
+\end{align*}
+\switchcolumn
+\begin{align*}
+  &\frac{\partial f}{\partial z} = -\frac{z}{(x^2+y^2+z^2)^\frac{3}{2}} \\
+  &\frac{\partial^2 f}{\partial z^2} = \frac{2z^2-x^2-y^2}{(x^2+y^2+z^2)^\frac{5}{2}} \\
+  &\frac{\partial^2 f}{\partial z \partial x} = \frac{3xz}{(x^2+y^2+z^2)^\frac{5}{2}} \\
+  &\frac{\partial^2 f}{\partial z \partial y} = \frac{3yz}{(x^2+y^2+z^2)^\frac{5}{2}} \\
+\end{align*}
+\end{paracol}
+\end{enumerate}
+
+\subsection{Проверить равенство:}
+$$\frac{\partial^2 u}{\partial x \partial y} = \frac{\partial^2 u}{\partial y \partial x}$$
+\begin{enumerate}\interlinepenalty10000
+  \item %1
+$u = x^2 - 2xy - 3y^2$  \\
+\begin{align*}
+    &\frac{\partial u}{\partial x} = 2x - 2y; \quad
+    \frac{\partial^2 u}{\partial x \partial y} = -2 \\
+    \
+    &\frac{\partial u}{\partial y} = -2x - 6y;\quad
+    \frac{\partial^2 u}{\partial y \partial x} = -2 \\
+\end{align*}
+  \item %2
+  $u = x^{y^{2}}$ \\
+  \begin{align*}
+&\boxed{\frac{\partial u}{\partial x}} = \boxed{y^2 x^{y^2-1}} \\
+&\boxed{\frac{\partial^2 f}{\partial x \partial y}} = (y^2\cdot x^{y^2-1})^{'} = 2y \cdot x^{y^2-1} + (x^{y^2-1}) y^2 = \boxed{2yx^{y^2-1} + x{y^2-1}\cdot \ln x \cdot 2y^3} \\
+&\boxed{\frac{\partial u}{\partial y}} = \boxed{x^{y^2} \cdot \ln x \cdot 2y} \\
+&\boxed{\frac{\partial^2 f}{\partial y \partial x}} = (x^{y^2}\ln x \cdot 2y)^{'} = 2y (\frac{1}{x} \cdot x^{y^2} + (x^{y^2})\cdot \ln x) = 2y (x^{y^2-1} + y^2x^{y^2-1}\ln x) = \\
+&=\boxed{2yx^{y^2-1}+x^{y^2-1} \cdot \ln x \cdot 2y^3} \\
+&\frac{\partial^2u}{\partial x \partial y} = \frac{\partial^2 u}{\partial y \partial x}, \; \text{чтд.}
+  \end{align*}
+  
+  \item %3
+  $u = \arccos\sqrt{\frac{x}{y}}$
+  \begin{align*}
+    &\boxed{\frac{\partial u}{\partial x}} =  -\frac{1}{\sqrt{1 -\frac{x}{y}}} \cdot \frac{1}{\sqrt{y}} \cdot \frac{1}{2\sqrt{x}} =
+    -\frac{\sqrt{y}}{\sqrt{y-x}}\cdot\frac{1}{\sqrt{y}}\cdot\frac{1}{2\sqrt{x}} = \boxed{-\frac{1}{2\sqrt{x}\sqrt{y-x}}}\\
+    &\boxed{\frac{\partial^2 u}{\partial x\:\partial y}} = \frac{\left(\frac{1}{2\sqrt{x}}\cdot 2y\sqrt{y-x} - \sqrt{x}\cdot \frac{2y}{2\sqrt{y-x}}\cdot (-1) \right)}{4y^2\left(y-x\right)} = \\
+    &= \left(\frac{y\sqrt{y-x}}{\sqrt{x}} + \frac{y\sqrt{x}}{\sqrt{y-x}}\right) \cdot \frac{1}{4y^2\left(y-x\right)} = \frac{y}{\sqrt{x}\sqrt{y-x}} \cdot \frac{1}{4y\left(y-x\right)} = \boxed{\frac{1}{4\sqrt{x}\left(\sqrt{y-x}\right)^3}}\\
+    &\boxed{\frac{\partial u}{\partial y}} = -\frac{\sqrt{xy}}{\sqrt{y-x}}\cdot\left(y^{-\frac{1}{2}}\right)' =
+    \frac{\sqrt{xy}}{\sqrt{y-x}}\cdot \frac{1}{2(\sqrt{y})^3} = \boxed{\frac{\sqrt{x}}{2y\sqrt{y-x}}}\\
+    &\boxed{\frac{\partial^2 u}{\partial y\:\partial x}} = -\frac{1}{2\sqrt{x}}\cdot \left(\left(y-x\right)^{-\frac{1}{2}}\right)' =
+    \frac{1}{4\sqrt{x}} \cdot \left(y-x\right)^{-\frac{3}{2}} = \boxed{\frac{1}{4\sqrt{x}\left(\sqrt{y-x}\right)^3}}
+  \end{align*}
+  \end{enumerate}
+  
+  \subsection{Найти указанные частные производные}
+  \begin{enumerate}\interlinepenalty10000
+  \item %1.
+  \begin{align*}
+    &\frac{\partial^3 u}{\partial^2 x \partial y} \text{, где } u = x\ln{(x)}y \\
+    &\frac{\partial u}{\partial x} = y(\ln{x}+1);\quad
+    \frac{\partial^2 u}{\partial^2 x} = \frac{y}{x};\quad
+    \frac{\partial^3 u}{\partial^2 x \partial y} = \frac{1}{x}
+    \end{align*}
+  \item %2. + 
+    \begin{align*}
+    &\frac{\partial^6 u}{\partial x^3 \partial y^3} \text{, где } u = 
+    x^3\sin y +y^3 \sin x \\
+    &\frac{\partial u}{\partial x} = 3x^2\sin y +y^3 \cos y;\quad
+    \frac{\partial^2 u}{\partial x^2} = 6x \sin y -y^3 \sin x;\quad
+    \frac{\partial^3 u}{\partial x^3} = 6\sin y -y^3\cos x; \\
+    &\frac{\partial^4 u}{\partial x^3 \partial y} = 
+    6\cos y -3y^2\cos x;\quad
+    \frac{\partial^5 u}{\partial x^3 \partial y^2} = 
+    -6\sin y -6y\cos x; \\
+    &\frac{\partial^6 u}{\partial x^3 \partial y^3} = -6\cos y -6\cos x
+    \end{align*}
+  \item %3.
+  \begin{align*}
+   &\frac{\partial^3 u}{\partial x \partial y \partial z}, \text{ если } u = \arctan \frac{x+y+z-xyz}{1-xy-xz-yz} \\
+   &\frac{\partial u}{\partial x} =  \frac{1}{1+\frac{x+y+z-xyz}{1-xy-xz-yz}} \cdot \frac{(1-yz)(1-xy-xz-yz)+(y+z)(x+y-z-xyz)}{(1-xy-xz-yz)^2} = \\
+   &=\frac{(1-yz)(1-xy-xz-yz)+(y+z)(x+y+z-xyz)}{(1-xy-xz-yz)^2+(x+y+z-xyz)^2} =  \\
+   &=\frac{y^2z^2+z^2+y^2+1}{y^2z^2(x^2+1)+z^2(x^2+1)+y^2(x^2+1)+x^2+1}=\frac{y^2z^2+z^2+y^2+1}{(x^2+1)(y^2z^2+z^2+y^2+1)} = \\
+   &= \frac{1}{x^2+1} \\
+   &\frac{\partial ^2 u}{\partial x \partial y} = (\frac{1}{x^2+1})_y^{'} = 0 \\
+   &\frac{\partial^3 u}{\partial x \partial y \partial z} = 0
+  \end{align*}
+\end{enumerate}
+
+\subsection{Показать, что функция}
+$$f(x,y) = \frac{xy}{\sqrt{x^2+y^2}} \text{, если } x^2+y^2 \neq 0 \text{ и } f(0,0)=0, $$
+в окресности точки   (0,0) непрерывна и имеет ограниченные частные производные 
+$f_x^{'}(x,y) $ и $f_y^{'}(x,y) $. Однако эта функция недифференцируема в точке (0,0) \\
+1) Покажем непрерывность $f(x,y)$: \\
+\begin{align*}
+ &\lim_{x,y \to 0} \frac{xy}{\sqrt{x^2 + y^2}} = ? \\
+ &(x-y)^2 \geq 0 \Rightarrow x^2+y^2 \geq 2xy; \\
+ &(x+y)^2 \geq 0 \Rightarrow x^2+y^2 \geq -2xy.\\
+ &\frac{xy}{x^2+y^2} \leq \frac{xy}{2xy} = \frac{1}{2}; \\
+ &\frac{xy}{x^2+y^2} \leq \frac{xy}{-2xy} = -\frac{1}{2} \text{, т.е.} \\
+ &-\frac{1}{2} \leq \frac{xy}{x^2+y^2} \leq \frac{1}{2} \Rightarrow \\
+ & 0 \leq \sqrt{\frac{xy}{x^2+y^2}} \leq \frac{1}{\sqrt{2}} \text{, т.е. можно сказать:}\\
+ &-\frac{\sqrt{xy}}{\sqrt{2}} \leq \sqrt{\frac{xy}{x^2+y^2}}\cdot \sqrt{xy} \leq
+ \frac{\sqrt{xy}}{\sqrt{2}} \\
+ &-\frac{\sqrt{xy}}{\sqrt{2}} \leq \frac{xy}{\sqrt{x^2+y^2}} \leq
+ \frac{\sqrt{xy}}{\sqrt{2}} \\
+ &\lim_{x,y \to 0}\frac{\sqrt{xy}}{\sqrt{2}} = \lim_{x,y \to 0}-\frac{\sqrt{xy}}{\sqrt{2}} = 0 \Rightarrow \lim_{x,y \to 0} \frac{xy}{\sqrt{x^2 + y^2}} = 0 = f(0,0) \Rightarrow \\
+ &\Rightarrow\text{ функция непрерывна}
+\end{align*}
+2) Посчитаем частные производные: \\
+\begin{align*}
+ &\frac{\partial f}{\partial x} = 
+ \frac{y\sqrt{x^2+y^2} - \frac{x}{\sqrt{x^2+y^2}}xy}{x^2+y^2} = 
+ \frac{x^2y+y^3 - x^2y}{(x^2+y^2)^{\frac{3}{2}}} = \frac{y^3}{(x^2+y^2)^\frac{3}{2}}; \\
+ &\frac{\partial f}{\partial y} = \frac{x^3}{(x^2+y^2)^\frac{3}{2}}
+\end{align*}
+3) Проверим ограниченность частных производных: 
+\begin{align*}
+ &\frac{\partial f}{\partial x} = \frac{y^3}{(x^2+y^2)^\frac{3}{2}} \\
+ &y \leq \sqrt{x^2+y^2} \Rightarrow y^3 \leq (x^2+y^2)^\frac{3}{2} \Rightarrow
+ \frac{y^3}{(x^2+y^2)^\frac{3}{2}} \leq 1; \\
+ &\text{аналогично }
+ \frac{\partial f}{\partial y} = \frac{x^3}{(x^2+y^2)^\frac{3}{2}} \leq 1
+\end{align*}
+4) Докажем недифференцируемость функции в точке (0,0): \\
+Функция дифференцируема в точке $(x_0,y_0)$, если её приращение в этой точке представляется в виде:
+\begin{align*}
+&\Delta f(x_0,y_0) = f(x_0+\Delta x,y_0+\Delta y) - f(x_0,y_0) = 
+A\Delta x + B\Delta y +o(p) \text{, где } \\
+&p = \sqrt{(\Delta x)^2 + (\Delta y)^2} \\
+&\text{Попробуем посчитать такое приращение для данной функции:} \\
+&\Delta f(0,0) = f(\Delta x, \Delta y) - f(0,0) = 
+\frac{\Delta x \Delta y}{\sqrt{(\Delta x)^2 + (\Delta y)^2}} - 0 \text{ т.е.} \\
+&A = B = 0, \Delta f(0,0) = \frac{\Delta x \Delta y}{\sqrt{(\Delta x)^2 + (\Delta y)^2}} = o(p) \text{ при } \Delta x, \Delta y \to 0. \text{ Остаётся проверить, что } \\
+&\frac{\Delta x \Delta y}{\sqrt{(\Delta x)^2 + (\Delta y)^2}} = o(p),\text{ т.е. }
+\lim_{\Delta x, \Delta y \to 0}\frac{\Delta x \Delta y}{\sqrt{(\Delta x)^2 + (\Delta y)^2}\cdot p} = 0\\
+&\lim_{\Delta x, \Delta y \to 0}\frac{\Delta x \Delta y}{\sqrt{(\Delta x)^2 + (\Delta y)^2}\cdot\sqrt{(\Delta x)^2 + (\Delta y)^2}} = 
+\lim_{\Delta x, \Delta y \to 0}\frac{\Delta x \Delta y}{(\Delta x)^2 + (\Delta y)^2} \\
+&\text{Покажем, что этот предел расходится, рассмотрев значение на 2-ух различных путях:} \\
+&\text{вдоль }\Delta x=0: 
+\lim_{\Delta x, \Delta y \to 0}\frac{\Delta x \Delta y}{(\Delta x)^2 + (\Delta y)^2} = 
+\lim_{\Delta y \to 0}\frac{0}{0+(\Delta y)^2} = 0; \\
+&\text{вдоль }\Delta x=y:
+\lim_{\Delta x, \Delta y \to 0}\frac{\Delta x \Delta y}{(\Delta x)^2 + (\Delta y)^2} = 
+\lim_{\Delta y \to 0}\frac{(\Delta y)^2}{(\Delta y)^2+(\Delta y)^2} = \frac{1}{2} \Rightarrow \text{ предел расходится,} \\
+&\text{т.е. } \frac{\Delta x \Delta y}{\sqrt{(\Delta x)^2 + (\Delta y)^2}} \neq o(p) \Rightarrow \Delta f(0,0) \neq
+A\Delta x + B\Delta y +o(p) \Rightarrow \\
+&\Rightarrow \text{функция недифференцируема в (0,0)}
+\end{align*}
+
+\subsection{Найти дифференциалы указанного порядка в следующих примерах: }
+\begin{enumerate}
+ \item %1.
+ \begin{align*}
+  & d^3 u \text{, если } u = x^3+y^3 - 3xy(x-y)  \\
+  &\frac{\partial u}{\partial x} = 3x^2-6xy+3y^2 \\
+  &\frac{\partial^2 u}{\partial x^2} = 6x -6y \\
+  &\boxed{\frac{\partial^3 u}{\partial x^3}} = \boxed{6} \\
+  &\boxed{\frac{\partial^3 u}{\partial x^2 \partial y}} = \boxed{-6} \\
+  &\frac{\partial u}{\partial y} = 3y^2+6xy-3x^2 \\
+  &\frac{\partial^2 u}{\partial y^2} = 6y + 6x \\
+  &\boxed{\frac{\partial^3 u}{\partial y^3}} = \boxed{6} \\
+  &\boxed{\frac{\partial^3 u}{\partial x^2 \partial y}} = \boxed{6} \\
+  &\boxed{d^3u} = \frac{\partial^3 u}{\partial x^3}dx^3 + 3\frac{\partial^3 u}{\partial x^2 \partial y}dx^2dy + 3\frac{\partial^3 u}{\partial x \partial y^2}dxdy^2 +
+  \frac{\partial^3 u}{\partial y^3}dy^3 = \\
+  &= \boxed{6d^3x-18dy\,d^2x+18d^2y\,dx +6d^3y}
+ \end{align*}
+ 
+ \item %2.
+ \begin{align*}
+    &d^3u\text{, если } u = sin(x^2+y^2) \\
+    &\frac{\partial u}{\partial x} = \cos{(x^2+y^2)*2x} \\
+    &\frac{\partial^2 u}{\partial x^2} = -\sin{(x^2+y^2)}*2x*2x+2\cos{(x^2+y^2)} = 
+    2\cos{(x^2+y^2)} - 4x^2\sin{(x^2+y^2)} \\
+    &\boxed{\frac{\partial^3 u}{\partial x^3}} = -2\sin{(x^2+y^2)}*2x-4(2x\sin{(x^2+y^2)}+\cos{(x^2+y^2)}*2x*x^2) = \\
+    &=\boxed{-4x(3\sin{(x^2+y^2)}+2x^2\cos{(x^2+y^2)})} \\
+    &\boxed{\frac{\partial^3 u}{\partial x^2 \partial y}} = 
+    -2\sin{(x^2+y^2)}*2y - 4x^2\cos{(x^2+y^2)}*2y = \\
+    &=\boxed{-4y(\sin{(x^2+y^2)}+2x^2\cos{(x^2+y^2)})} \\
+    &\boxed{\frac{\partial^3 u}{\partial y^3}} = 
+    \boxed{-4y(3\sin{(x^2+y^2)}+2y^2\cos{(x^2+y^2)})} \\
+    &\boxed{\frac{\partial^3 u}{\partial x^2 \partial y}} = \boxed{-4x(\sin{(x^2+y^2)}+2y^2\cos{(x^2+y^2)}} \\ 
+    &d^3u = 
+    -4x(3\sin{(x^2+y^2)}+2x^2\cos{(x^2+y^2)})dx^3 - \\
+    &-12y(\sin{(x^2+y^2)}+2x^2\cos{(x^2+y^2)})dx^2dy - \\
+    &-12x(\sin{(x^2+y^2)}+2y^2\cos{(x^2+y^2)}dxdy^2
+    -4y(\sin{(x^2+y^2)}+2x^2\cos{(x^2+y^2)})dy^3
+    \end{align*}
+    
+    \item %3.
+    \begin{align*}
+      &d^{10}u \text {, если } u = \ln(x+y) \\
+      &\frac{\partial u}{\partial y} = \frac{\partial u}{\partial x} = \frac{1}{x+y} \\
+      &\frac{\partial^2 u}{\partial y^2} = \frac{\partial^2 u}{\partial x^2} = -\frac{1}{(x+y)^2} \\
+      &\frac{\partial^2 u}{\partial y \partial x} = \frac{\partial^2 u}{\partial x \partial y} = -\frac{1}{(x+y)^2} \\
+      &\text{Заметим закономерность, получим } \frac{\partial^n u}{\partial x^n} =
+      \frac{(-1)^{n-1} (n-1)!}{(x+y)^n}\cdot (dx+dy)^{n} \\
+      &d^{10}u = \frac{- 9!}{(x+y)^{10}}\cdot (dx+dy)^{10} \\
+    .\end{align*}
+    
+    \item %4.
+    \begin{align*}
+     &d^3u \text{, если } u = xyz \\
+     &\frac{\partial u}{\partial x} = yz;\quad
+     \frac{\partial u}{\partial y} = xz;\quad
+     \frac{\partial u}{\partial z} = xy; \\
+     &\frac{\partial^2 u}{\partial x^2} = 0;\quad
+     \frac{\partial^2 u}{\partial y^2} = 0;\quad
+     \frac{\partial^2 u}{\partial z^2} = 0; \\     
+     &\frac{\partial^3 u}{\partial x^3} = 0;\quad
+     \frac{\partial^3 u}{\partial y^3} = 0;\quad
+     \frac{\partial^3 u}{\partial z^3} = 0; \\
+     &\frac{\partial^3 u}{\partial x^2 \partial y} = 0;\quad
+     \frac{\partial^3 u}{\partial x^2 \partial z} = 0;\quad
+     \frac{\partial^3 u}{\partial y^2 \partial x} = 0;\quad
+     \frac{\partial^3 u}{\partial y^2 \partial z} = 0;\quad
+     \frac{\partial^3 u}{\partial z^2 \partial x} = 0;\quad
+     \frac{\partial^3 u}{\partial z^2 \partial y} = 0 \\
+     &\frac{\partial^3 u}{\partial x \partial y \partial z}
+     =\frac{\partial^3 u}{\partial x \partial z \partial y}
+     =\frac{\partial^3 u}{\partial y \partial x \partial z}
+     =\frac{\partial^3 u}{\partial y \partial z \partial x}
+     =\frac{\partial^3 u}{\partial z \partial x \partial y}
+     =\frac{\partial^3 u}{\partial z \partial y \partial x}
+     = 1 \\
+     &d^3u = 6dxdydz
+    \end{align*}
+    
+    \item %5.
+    \begin{align*}
+    &d^6u \text{, если } u = \cos x \cdot \ch y\\
+    &\boxed{d(u)} = \frac{\partial u}{\partial x}dx + \frac{\partial u}{\partial y}dy = \boxed{(-\sin x\cdot\ch y )\,dx+(\cos x \cdot \sh y)\,dy} \\
+    &\boxed{d^{\,2}(u)} = \frac{\partial(d(u))}{\partial x}dx + \frac{\partial(d(u))}{\partial y}dy =  \\
+    &=\boxed{(-\cos x \cdot \ch y)d^2 x + 2\cdot(-\sin x \cdot \sh y) dy\,dx + (\cos x \cdot \ch y)d^2y}\\
+    &\boxed{d^{\,3}(u)} = \frac{\partial(d^{\,2}(u))}{\partial x}dx + \frac{\partial(d^{\,2}(u))}{\partial y}dy =\\
+    &=\boxed{(\sin x \cdot\ch y)d^3 x+3\cdot(-\cos x\cdot \sh y)dy\,d^2x+3\cdot(-\sin x \cdot \ch y)d^2y\,dx+(\cos x \cdot\sh y)d^3y}\\
+    &\mbox{...}\\
+    &\boxed{d^{\,6}(u)} = \frac{\partial^{\,6}u}{\partial^{\,6}x}d^{\,6}x+6\cdot\frac{\partial^{\,6}u}{\partial^{\,5}x\,\partial y}d^{\,5}x\,dy+15\cdot\frac{\partial^{\,6}u}{\partial^{\,4}x\,\partial^{\,2} y}d^{\,4}x\,d^{\,2}y+\\
+    &+20\cdot\frac{\partial^{\,6}u}{\partial^{\,3}x\,\partial^{\,3} y}d^{\,3}x\,d^{\,3}y+15\cdot\frac{\partial^{\,6}u}{\partial^{\,2}x\,\partial^{\,4} y}d^{\,2}x\,d^{\,4}y+6\cdot\frac{\partial^{\,6}u}{\partial x\,\partial^{\,5} y}dx\,d^{\,5}y +\frac{\partial^{\,6}u}{\partial^{\,6}y}d^{\,6}y =\\
+    &=\boxed{(-\cos x \cdot \ch y)d^{\,6} x + 6\cdot(-\sin x\cdot\sh y )\,d^{\,5}x\,dy + 15\cdot(\cos x \cdot \ch y)d^{\,4}x\,d^{\,2}y +} \\
+    &\boxed{+20\cdot(\sin x \cdot \sh y)d^{\,3}x\,d^{\,3}y+15\cdot(-\cos x \cdot \ch y) d^{\,2}x\,d^{\,4}y+6\cdot(-\sin x \cdot \sh y)dx\,d^{\,5}y+}\\
+    &\boxed{+(\cos x \cdot \ch y)d^{\,6}y}
+\end{align*}
+\end{enumerate}
+
+\subsection{Найти производные первого и второго порядков от следующих сложных функций:}
+\begin{enumerate}
+ \item %1.
+ \begin{align*}
+  &u = f(x^2+y^2+z^2) = f(m) \\
+  &du = \frac{\partial f}{\partial m}dm = 
+  \frac{df}{dm}\left(\frac{\partial m}{\partial x}dx +\frac{\partial m}{\partial y}dy
+  +\frac{\partial m}{\partial z}dz\right) = \\
+  &=f_m^{'}\left( 2xdx+2ydy+2zdz)\right) \\
+  &d^2u = \frac{\partial^2 f}{\partial m^2}d^2m = \\
+  &=\frac{\partial^2 f}{\partial m^2}\left(
+  \frac{\partial^2 m}{\partial x^2}dx^2+\frac{\partial^2 m}{\partial y^2}dy^2
+  +\frac{\partial^2 m}{\partial z^2}dz^2
+  +2\frac{\partial^2 m}{\partial x \partial y}dxdy
+  +2\frac{\partial^2 m}{\partial x \partial z}dxdz
+  +2\frac{\partial^2 m}{\partial y \partial z}dydz
+  \right) = \\
+  &=f_m^{''}\left(2dx^2+2dy^2+2dz^2
+  \right)
+ \end{align*}
+ 
+ \item %2.
+ \begin{align*}
+    &u = f(x, \frac{x}{y}) = f(n,m) \\
+    &du = \frac{\partial f}{\partial n}dn + \frac{\partial f}{\partial m}dm = 
+    \frac{\partial f}{\partial n}\left( \frac{\partial n}{\partial x}dx
+    \right) + \frac{\partial f}{\partial m}\left(
+    \frac{\partial m}{\partial x}dx + \frac{\partial m}{\partial y}dy
+    \right) = \\
+    &= f_n^{'}dx+f_m^{'}\left(\frac{1}{y}dx -\frac{x}{y^2}dy \right) \\
+    &d^2u = \frac{\partial^2 f}{\partial n^2}dn^2 +
+    2\frac{\partial^2 f}{\partial n \partial m}dndm+\frac{\partial^2 f}{\partial m^2}dm^2 = \\
+    &= \frac{\partial^2 f}{\partial n^2}\left(\frac{\partial^2 n}{\partial x^2}dx^2\right) + 2\frac{\partial^2 f}{\partial n \partial m}\left(
+    \left(\frac{\partial n}{\partial x}dx\right)\left(\frac{\partial m}{\partial x}dx + \frac{\partial m}{\partial y}dy\right)
+    \right) + \\
+    &+\frac{\partial^2 f}{\partial m^2}\left(
+    \frac{\partial^2 m}{\partial x^2}dx^2+2\frac{\partial^2 m}{\partial x \partial y}dxdy + \frac{\partial^2 f}{\partial y^2}dy^2\right) = \\
+    &= f_{n^2}^{''}\cdot0 + 2f_{nm}^{''}\left(\left(1+\frac{1}{y}\right)dx-\frac{x}{y^2}dy
+    \right) + f_{m^2}^{''}\left(
+    dx^2-2\frac{1}{y^2}dxdy+3\frac{x}{y^3}dy^2
+    \right)
+ \end{align*}
+\end{enumerate}
+
+\section{Интеграл Римана}
+\subsection{Применяя формулу Ньютона-Лейбница, найти следующие интегралы и нарисовать соответствующие криволинецные площади:}
+\begin{enumerate}
+ \item %1.
+ \begin{align*}
+  &\int\limits_{-1}^8\sqrt[3]{x}dx = \left.\frac{3}{4} x^\frac{4}{3} \right|_{-1}^8 = 
+  \frac{3}{4}\cdot 8^\frac{4}{3} - \frac{3}{4}\cdot (-1)^\frac{4}{3} = 
+  \frac{3}{4}\left(16 - 1)\right) = \frac{45}{4} = 11\frac{1}{4}
+ \end{align*}
+ \begin{tikzpicture}
+    \begin{axis}[
+    title = {$\sqrt[3]{x} $} ,
+    xlabel ={$ x $} ,
+    ylabel ={$ y $} ,
+    width = 10cm ,
+    grid = both, minor tick num = 3,
+    ]
+    \addplot[name path = f ,red, domain = 0 : 8,
+    samples = 50,]{x^(1/3)};
+    \addplot[name path = ff ,red, domain = -1 : 0,
+    samples = 50,]{-(-x)^(1/3)};
+    \addplot[red, domain = 0 : 10, samples = 50,]{x^(1/3)};
+    \addplot[red, domain = -10 : 0, samples = 50,]{-(-x)^(1/3)};
+    \addplot[name path = zer, blue, domain = 0 : 8,
+    samples = 100,]{0};
+    \addplot[name path = zerr, blue, domain = -1 : 0,
+    samples = 100,]{0};
+    \addplot[blue, domain = -10 : 10, samples = 20,]{0};
+    \addplot coordinates {(0,-10) (0,10)};
+    \addplot coordinates {(-1,0) (8,0)};
+    \addplot[green!50] fill between[of=zer and f];
+    \addplot[red!50] fill between[of=zerr and ff];
+    \end{axis}
+    \end{tikzpicture} \\
+
+    \item %2.
+    \begin{align*}
+    \int\limits^\pi_0 sin x\,dx = \Big.-\cos x\Big|^\pi_0 = -\cos\pi + \cos0= 1 +1 = 2    
+\end{align*}
+ \begin{tikzpicture}
+    \begin{axis}[
+    title = {$\sin x $} ,
+    xlabel ={$ x $} ,
+    ylabel ={$ y $} ,
+    width = 10cm ,
+    grid = both, minor tick num = 3,
+    ]
+    \addplot[name path = f ,red, domain = 0 : pi,
+    samples = 50,]{sin(deg(x))};
+    \addplot[red, domain = -6 : 6, samples = 50,]{sin(deg(x))};
+    \addplot[name path = zer, blue, domain = 0 : pi,
+    samples = 100,]{0};
+    \addplot[blue, domain = -6 : 6, samples = 20,]{0};
+    \addplot coordinates {(0,-6) (0,6)};
+    \addplot coordinates {(0,0) (pi,0)};
+    \addplot[green!50] fill between[of=zer and f];
+    \end{axis}
+    \end{tikzpicture}
+    
+    \item %3.
+    \begin{align*}
+    \int\limits_{\frac{1}{\sqrt{3}}}^{\sqrt{3}}\frac{dx}{1+x^2} = 
+    \arctg{x}\Big|_{\frac{1}{\sqrt{3}}}^{\sqrt{3}} = 
+    \arctg{\sqrt{3}}-\arctg{\frac{1}{\sqrt{3}}} = 
+    \frac{\pi}{3}-\frac{\pi}{6} = \frac{\pi}{6}
+    \end{align*} \\ [15pt]
+    \begin{tikzpicture}
+    \begin{axis}[
+    title = {$\frac{1}{1+x^2} $} ,
+    xlabel ={$ x $} ,
+    ylabel ={$ y $} ,
+    width = 10cm ,
+    grid = both, minor tick num = 3,
+    ]
+    \addplot[name path = f ,red, domain = 1/ sqrt(3) : sqrt(3),
+    samples = 50,]{1/(1+x^2)};
+    \addplot[red, domain = -5 : 5, samples = 50,]{1/(1+x^2)};
+    \addplot[name path = zer, blue, domain = 1/ sqrt(3) : sqrt(3),
+    samples = 100,]{0};
+    \addplot[blue, domain = -5 : 5, samples = 20,]{0};
+    \addplot coordinates {(0,0) (0,1)};
+    \addplot[green!50] fill between[of=zer and f];
+    \end{axis}
+    \end{tikzpicture}
+    
+    \item %4.
+    \begin{align*}
+     \int\limits_{-\frac{1}{2}}^\frac{1}{2} \frac{dx}{\sqrt{1-x^2}} = 
+     \arcsin x \Big|_{-\frac{1}{2}}^\frac{1}{2} = 
+     \arcsin \frac{1}{2} - \arcsin -\frac{1}{2} = \frac{\pi}{6} + \frac{\pi}{6} = 
+     \frac{\pi}{3}
+    \end{align*}
+
+ \begin{tikzpicture}
+    \begin{axis}[
+    title = {$\frac{1}{\sqrt{1-x^2}} $} ,
+    xlabel ={$ x $} ,
+    ylabel ={$ y $} ,
+    width = 10cm ,
+    grid = both, minor tick num = 3,
+    ]
+    \addplot[name path = f ,red, domain = -1/2 : 1/2,
+    samples = 50,]{1/sqrt(1-x^2)};
+    \addplot[red, domain = -0.75 : 0.75, samples = 50,]{1/sqrt(1-x^2)};
+    \addplot[name path = zer, blue, domain = -1/2 : 1/2,
+    samples = 20,]{0};
+    \addplot coordinates {(0,0) (0,1)};
+    \addplot coordinates {(-1,0) (1,0)};
+    \addplot[green!50] fill between[of=zer and f];
+    \end{axis}
+    \end{tikzpicture}
+    \item %5.
+    \begin{align*}
+     &\int\limits_0^2 |1-x|dx = 
+     \int\limits_0^1 (1-x)dx + \int\limits_1^2 (x-1)dx = 
+     \left.\left( x-\frac{1}{2}x^2 \right)\right|_0^1 +
+     \left.\left( \frac{1}{2}x^2 - x \right)\right|_1^2 = \\
+     &= 1 - \frac{1}{2}\cdot 1^2 - 0 + \frac{1}{2}\cdot 2^2 -2 -
+     \left(\frac{1}{2}\cdot 1^2 - 1\right) = 1
+    \end{align*}
+\begin{tikzpicture}
+    \begin{axis}[
+    title = {$|1-x| $} ,
+    xlabel ={$ x $} ,
+    ylabel ={$ y $} ,
+    width = 10cm ,
+    grid = major
+    ]
+    \addplot[name path = f ,red, domain = 0 : 2,
+    samples = 50,]{abs(1-x)};
+    \addplot[red, domain = -1 : 3, samples = 50,]{abs(1-x)};
+    \addplot[name path = zer, blue, domain = 0 : 2,
+    samples = 20,]{0};
+    \addplot coordinates {(0,0) (0,3)};
+    \addplot coordinates {(-1,0) (3,0)};
+    \addplot[green!50] fill between[of=zer and f];
+    \end{axis}
+    \end{tikzpicture}
+\end{enumerate}
+
+\subsection{Объяснить, почему формальное применение формулы Ньютона-Лейбница приводит к неверным результатам: }
+$$\int\limits_{-1}^1 \frac{dx}{x}$$
+Функция $\frac{1}{x}$ не ограничена на промежутке [-1;1]: в точке 0 она не определена вовсе, значение при приближении слева стремится к $-\infty$, а при приближении справа к $\infty$. Кроме этого, её первообразная разрывна на промежутке [-1;1] в той же точке 0. Из всего этого уже следует невозможность применения формулы Ньютона-Лейбница. \\
+Если вспомнить геометрический смысл определённого интеграла (площадь под графиком функции), то становится понятно, что в в ``обычном'' смысле посчитать его для функции $\frac{1}{x}$ не получится
+
+\subsection{С помощью определённыъ интегралов посчитать пределы следующих сумм:}
+Заметка: из определения интеграла по Риману можно сказать, что:
+\begin{align*}
+ \lim_{n \to \infty}\frac{c}{n}\left( f\left(\frac{c}{n}\right) + 
+ f\left(\frac{2c}{n}\right) + f\left(\frac{3c}{n}\right) + ... +
+ f\left(\frac{(n-1)c}{n}\right) \right) = 
+ \int\limits_0^c f(x)dx
+\end{align*}
+
+\begin{enumerate}
+ \item %1.
+ \begin{align*}
+   &\lim_{n \to \infty} \left(
+   \frac{1}{n^2}+\frac{2}{n^2}+...+\frac{n-1}{n^2} \right) = 
+   \lim_{n \to \infty} \frac{1}{n} \left(
+   \frac{1}{n}+\frac{2}{n}+...+\frac{n-1}{n} \right) = 
+   \int\limits_0^1 x dx = \\
+   &=\left. \frac{x^2}{2} \right|_0^1 = \frac{1}{2}
+ \end{align*}
+ 
+ \item %2.
+ \begin{align*}
+    &\lim\limits_{n \to \infty}\left(\frac{1}{n+1}+\frac{1}{n+2}+\text{...}+\frac{1}{n+n}\right) = 
+    \lim\limits_{n \to \infty}\frac{1}{n}\left(\frac{n}{n+1}+\frac{n}{n+2}+\text{...}+\frac{n}{n+n}\right) = \\
+    &\lim\limits_{n \to \infty}\frac{1}{n}\left(\frac{1}{1+\frac{1}{n}}+\frac{1}{1+\frac{2}{n}}+\frac{1}{1+\frac{3}{n}}+\text{...}+\frac{1}{1+\frac{n}{n}}\right) = 
+    \int\limits_0^1\frac{1}{1+x}dx = \ln{(x+1)} \Big|_0^1 = \ln2
+    \end{align*}
+ 
+ \item %3.
+ \begin{align*}
+  &\lim_{n\to\infty} \frac{\pi}{n}\left(
+  \sin \frac{\pi}{n} + \sin \frac{2\pi}{n} +...+\sin\frac{(n-1)\pi}{n} \right) = 
+  \int\limits_0^\pi \sin x dx  = -\cos x \Big|_0^\pi = \\
+  &= -\cos \pi + \cos 0 = 1+1=2
+ \end{align*}
+\end{enumerate}
+
+\subsection{Вычислить интегралы:}
+\begin{enumerate}
+ \item %1.
+ \begin{align*}
+  &\int\limits_1^2 (x \ln x)^2 dx \\
+  &\int (\ln^2x) x^2 dx \Rightarrow
+  \Big|    u = \ln^2x, dv = x^2 dx \to v = \int x^2dx = \frac{x^3}{3}
+  \Big| \Rightarrow \\ 
+  &\Rightarrow \int (\ln^2x) x^2 dx = (\ln^2x)\frac{x^3}{3} - \int \frac{x^3}{3} 2 \ln x \frac{1}{x} dx = (\ln^2x)\frac{x^3}{3} - \frac{2}{3}\int x^2 \ln x dx = \\
+  &= (\ln^2x)\frac{x^3}{3} - \frac{2}{3}\int \ln x x^2 dx = (\ln^2x)\frac{x^3}{3} -
+  \frac{2}{3}(\ln x  \frac{x^3}{3} - \int \frac{x^3}{3} \frac{1}{x}dx) = \\
+  &=  (\ln^2x)\frac{x^3}{3} - \frac{2}{3}(\ln x  \frac{x^3}{3} - \frac{1}{3}\int x^2 dx) = (\ln^2x)\frac{x^3}{3} - \frac{2}{9}x^3 \ln x + \frac{2x^3}{27} 
+  \int\limits_1^2 (x \ln x)^2 dx = \\
+  &= ((\ln^2x)\frac{x^3}{3} - \frac{2}{9}x^3 \ln x + \frac{2x^3}{27})\Big |_1^2 = \\
+  &= (\ln^22)\frac{2^3}{3} - \frac{2}{9}2^3 \ln 2 + \frac{2 \cdot 2^3}{27} - ((\ln^21)\frac{1^3}{3} - \frac{2}{9}1^3 \ln 1 + \frac{2 \cdot 1^3}{27})=  \\
+  &= (\ln^22)\frac{8}{3} - \frac{8}{9} \ln 2 + \frac{8}{27} - (0 \cdot \frac{1^3}{3} - \frac{2}{9}\cdot 1^3 \cdot 0 + \frac{2}{27})=  \frac{8 \ln^22}{3} - \frac{16 \ln 2}{9} + \frac{14}{27}
+ \end{align*}
+
+ \item %2.
+ \begin{align*}
+    &{\int\limits_{-1}^1 \frac{xdx}{x^2+x+1}} = \int\limits_{-1}^1 \frac{\lr{\frac{1}{2}\lr{2x+1} - \frac{1}{2}}dx}{x^2+x+1} =\frac{1}{2}\int\limits_{-1}^1 \frac{\lr{2x+1}dx}{x^2+x+1} - \frac{1}{2}\int\limits_{-1}^1 \frac{dx}{x^2+x+1} = \\
+    &= \frac{1}{2}\int\limits_{-1}^1 \frac{d\lr{x^2+x+1}}{x^2+x+1} - \frac{1}{2}\int\limits_{-1}^1 \frac{dx}{\lr{x+\frac{1}{2}}^2+\frac{3}{4}}= \\
+    &= \left.\frac{1}{2}\ln\lr{x^2+x+1}\right|^1_{-1} - \left.\frac{1}{\sqrt{3}}\arctg \lr{\frac{2x+1}{\sqrt{3}}}\right|^1_{-1} =\\
+    &= \frac{\ln\lr{3}}{2} - \frac{\ln\lr{1}}{2} - \lr{\frac{\arctg \lr{\sqrt{3}}}{\sqrt{3}}- \frac{\arctg \lr{-\frac{1}{\sqrt{3}}}}{\sqrt{3}}}=\\
+    &= \frac{\ln\lr{3}}{2} - \lr{\frac{\pi}{3\sqrt{3}}+ \frac{\pi}{6\sqrt{3}}}={\frac{\ln\lr{3}}{2} - \frac{\pi}{2\sqrt{3}}}
+\end{align*} 
+
+\item %3.
+\begin{align*}
+    &\int\limits_1^9x\sqrt[3]{1-x}dx \\
+    &\int x\sqrt[3]{1-x}dx \Rightarrow \Big| t = \sqrt[3]{1-x} \Rightarrow x = 1-t^3; dx = -3t^2dt \Big| \Rightarrow 
+    \int{(1-t^3)t*(-3)t^2dt} = \\
+    &= -3\int(t^3-t^6)dt = -3(\frac{1}{4}t^4 - \frac{1}{7}t^7)+c = 
+    -3\left(\frac{1}{4}(1-x)^\frac{4}{3} - \frac{1}{7}(1-x)^\frac{7}{3}\right)+c .\\
+    & \int\limits_1^9x\sqrt[3]{1-x}dx = 
+    -3\left(\frac{1}{4}(1-x)^\frac{4}{3} - \frac{1}{7}(1-x)^\frac{7}{3}\right)\Big|_1^9 = \\
+    &= -3\left(\frac{1}{4}(1-9)^\frac{4}{3} - \frac{1}{7}(1-9)^\frac{7}{3}\right) - 
+    -3\left(\frac{1}{4}(1-1)^\frac{4}{3} - \frac{1}{7}(1-1)^\frac{7}{3}\right) = \\
+    &= -3\left(\frac{1}{4}*16 - \frac{1}{7}*(-128)\right) = 
+    -66\frac{6}{7}
+    \end{align*}
+    
+    \item %4.
+    \begin{align*}
+     &\int_{0}^{2\pi} \frac{dx}{\sin ^4x+\cos ^4x} 
+  = \int_{0}^{2\pi} \frac{4dx}{3+\cos 4x} \Rightarrow
+  \Big| t = 4x, dt=4dx, [0;2\pi] \to [0;8\pi] \Big| \Rightarrow \\
+  &\Rightarrow \int\limits_0^{8\pi} \frac{dt}{3+\cos t} \xrightarrow[\text{симметрия косинуса}]{}
+  8\int\limits_0^{\pi} \frac{dt}{3+\cos t}\Rightarrow \\
+  &\Rightarrow\Big| u = \tan \frac{t}{2}, du = \frac{dt}{2\cos^2\frac{t}{2}} \to dt = 2\frac{du}{1+u^2}, \cos t = \frac{1-u^2}{1+u^2}, [0;\pi] \to [0;\infty] \Big| \Rightarrow \\
+  &\Rightarrow 8\int\limits_0^\infty \frac{1}{3+\frac{1-u^2}{1+u^2}}\frac{2du}{1+u^2} = 
+  16\int\limits_0^\infty \frac{du}{4+2u^2} = 8\int\limits_0^\infty \frac{du}{u^2 +2} = 
+  \left.\frac{8}{\sqrt{2}}\arctan \frac{u}{\sqrt{2}}\right|_0^\infty = \\
+  &= \frac{8}{\sqrt{2}}\left(\frac{\pi}{2} - 0\right) = 2\sqrt{2}\pi
+    \end{align*}
+
+    \item %5.
+    \begin{align*}
+     &\int\limits_0^\pi e^x \cos^2x dx \\
+     &\int e^x \cos^2x dx = \int \frac{e^x \cos2x + e^x}{2}dx = \frac{1}{2} (\int e^x\cos2xdx+\int e^xdx); \\
+     &\rhd\int e^x\cos2xdx \Rightarrow 
+     \Big|    u = e^x, dv = \cos2x dx, v = \int \cos2xdx = \frac{\sin2x}{2}
+     \Big| \Rightarrow \\
+     &\Rightarrow \frac{e^x \sin2x}{2} - \int \frac{e^x \sin2x}{2}dx =  \frac{e^x \sin2x}{2} + 
+     + \frac{e^x \cos2x}{4}- \frac{1}{4} \int e^x \cos2xdx  \\
+     &\frac{5}{4} \int e^x \cos2x dx = \frac{e^x \sin2x}{2} + \frac{e^x \cos2x}{4} \\
+     &\int e^x \cos2x dx = \frac{2e^x \sin2x}{5} + \frac{e^x \cos2x}{5} \lhd \\
+     &\int e^x \cos^2x dx = \int \frac{e^x \cos2x + e^x}{2}dx = \frac{1}{2} (\int e^x\cos2xdx+\int e^xdx)= \\
+     &=\frac{e^x \sin2x}{5} + \frac{e^x \cos2x}{10} + \frac{e^x}{2}  \\
+     &\int\limits_0^\pi e^x \cos^2x dx = (\frac{e^x \sin2x}{5} + \frac{e^x \cos2x}{10} + \frac{e^x}{2}) \Big |_0^\pi = \\
+     &= (\frac{e^\pi \sin2\pi}{5} + \frac{e^\pi \cos2\pi}{10} + \frac{e^\pi}{2}) - (\frac{e^0 \sin0}{5} + \frac{e^0 \cos0}{10} + \frac{e^0}{2})=\\
+     &= \frac{3 e^\pi}{5} - \frac{3}{5}
+    \end{align*}
+\end{enumerate}
+\subsection{Определить знак интеграла: }
+Рассмотрим функцию $f(x) = x\sin x$ на промежутке $[0;2\pi]$. Заметим, что 
+$f(x) > 0$ при $x\in(0;\pi)$ и $f(x)<0$ при $x\in(\pi;2\pi)$ Знак интеграла определяется просто тем, какая из площадей больше - площадь под графиком при $f(x)\geq0$ или плошадь над графиком при $f(x)\leq 0$ (площадь при $f(x)\leq0$ отрицательна) \\ 
+\begin{tikzpicture}
+    \begin{axis}[
+    title = {$x\sin x $} ,
+    xlabel ={$ x $} ,
+    ylabel ={$ y $} ,
+    width = 10cm ,
+    grid = both, minor tick num = 3,
+    ]
+    \addplot[name path = f ,red, domain = 0 : 2*pi,
+    samples = 50,]{x*sin(deg(x))};
+    \addplot[red, domain = -8 : 8, samples = 50,]{x*sin(deg(x))};
+    \addplot[name path = zer, blue, domain = 0 : 2*pi,
+    samples = 100,]{0};
+    \addplot[blue, domain = -8 : 8, samples = 20,]{0};
+    \addplot coordinates {(0,-6) (0,6)};
+    \addplot coordinates {(0,0) (pi,0) (2*pi,0)};
+    \addplot[green!50] fill between[of=zer and f];
+    \end{axis}
+    \end{tikzpicture} \\
+Как видно из графика, модуль площади при $x\in[\pi;2\pi]$ явно больше $\Rightarrow$ знак интеграла минус. Для сущей верности посчитаем это значение и убедимся:
+\begin{align*} 
+    &{\int\limits_0^{2\pi} x\sin x \,dx} = \Big.-x\cos x\Big|_0^{2\pi} + \int\limits_0^{2\pi} \cos x\, dx = -2\pi\cos\lr{2\pi} + \cos\lr{2\pi} - \cos\lr{0} = {-2\pi}\\
+    &\mbox{Ответ: знак минус}
+\end{align*}
+
+\subsection{Какой интеграл больше:}
+$$\int\limits_0^{\frac{\pi}{2}}\sin^{10}xdx \text{ или } 
+    \int\limits_0^{\frac{\pi}{2}}\sin^{2}xdx$$ \\
+    при $x \in \left(0; \frac{\pi}{2}\right) $: 
+    $ 0 < \sin x < 1 $, т.е. 
+    $0 \leq \sin^{10}x < \sin^2 x $. При $x=0$ и $x=\frac{\pi}{2}$: 
+    $\sin^{10}x = \sin^2x $ \\
+    Т.е. можно утверждать, что $S_{sin^{10}x} < S_{sin^2x}$, где 
+    $S_{f(x)} $ - площадь под графиком на $[0, \frac{\pi}{2}]$ \\
+    (обе функции неотрицательные и $sin^{10}x \leq sin^2x$), что равносильно утверждению, что
+    $$\int\limits_0^{\frac{\pi}{2}}\sin^{10}xdx < 
+    \int\limits_0^{\frac{\pi}{2}}\sin^{2}xdx$$
+    \begin{tikzpicture}
+    \begin{axis}[
+    title = {$\sin^{10}x\quad \& \quad \sin^2 x$} ,
+    xlabel ={$ x $} ,
+    ylabel ={$ y $} ,
+    width = 10cm ,
+    grid = both, minor tick num = 3,
+    legend pos = north east
+    ]
+    \legend {
+      $\sin^{2}x$,
+      $\sin^{10}x$
+      };
+    \addplot[name path = f ,red, domain = 0 : pi/2,
+    samples = 50,]{(sin(deg(x)))^2};
+    \addplot[name path = f2 ,blue, domain = 0 : pi/2,
+    samples = 50,]{(sin(deg(x)))^10};
+    \addplot[red, domain = -3 : 3, samples = 50,]{(sin(deg(x)))^2};
+    \addplot[blue, domain = -3 : 3, samples = 50,]{(sin(deg(x)))^10};
+    \addplot[name path = zer, blue, domain = 0 : pi/2,
+    samples = 100,]{0};
+    \addplot[blue, domain = -3 : 3, samples = 20,]{0};
+    \addplot coordinates {(0,0) (0,3)};
+    \addplot coordinates {(0,0) (pi,0) (pi/2,0)};
+    \addplot[red!50] fill between[of=zer and f];
+    \addplot[blue!50] fill between[of=zer and f2];
+    \end{axis}
+    \end{tikzpicture}
+\subsection{Определить среднее значение данных функций в указанных промежутках:}
+Чтобы найти среднее значение функций на промежутках, посчитаем определённый интеграл на данном промежутке (чтобы найти площадь под графиком функции), и поделим получившееся значение на длину промежутка (по сути интерпретируем площадь под графиком как прямоугольник и находим его высоту)
+\begin{enumerate}
+ \item %1.
+ \begin{align*}  
+ &f(x) = x^2 \text{ на } [0,1] \\
+ &\frac{1}{1-0}\int\limits_0^1 x^2dx = \left.\frac{x^3}{3}\right|_0^1 = \frac{1}{3}
+ \end{align*}
+ \item %2.
+ \begin{align*}
+  &f(x) = \sqrt{x} \text{ на } [0,100] \\
+  &\frac{1}{100-0}\int\limits_0^{100} \sqrt{x}dx = \frac{1}{100}\cdot\left.\left(
+  \frac{2}{3}x^\frac{3}{2}\right)\right|_0^{100} = 
+  \frac{1}{100}\cdot\left(\frac{2}{3}\cdot 1000\right) = \frac{20}{3} = 
+  6\frac{2}{3}
+ \end{align*}
+\end{enumerate}
+
+\subsection{Вычислить}
+\begin{enumerate}
+ \item %1.
+\begin{align*}
+    \int\limits_a^\infty \frac{dx}{x^2} \lr{a>0} = \lim\limits_{R\to\infty} \int\limits_a^R \frac{dx}{x^2}=  \lim\limits_{R\to\infty} \lr{\left.-\frac{2}{x^3}\right|_a^R}= \lim\limits_{R\to\infty} \lr{-\frac{2}{R^3}+\frac{2}{a^3}} = \frac{2}{a^3}
+\end{align*}
+\item %2.
+\begin{align*}
+    &\int\limits_0^1\ln xdx \\
+    &\int \ln xdx = x\ln x - \int x\frac{1}{x}dx = x\ln x-x \\
+    &\int\limits_0^1\ln xdx =\lim_{\epsilon \to 0} 
+    (x\ln x - x)\Big|_\epsilon^1 = 
+    1*\ln1 -1 - \lim_{\epsilon \to 0} \left( \epsilon \ln \epsilon - \epsilon \right)= 
+    -1 - 0 = -1 \\
+    & P.s:
+    \lim\limits_{x \to 0}(x\ln x) = 
+    \lim\limits_{x \to 0}\frac{\ln x}{\frac{1}{x}}= 
+    \lim\limits_{x \to 0}\frac{\frac{1}{x}}{-\frac{1}{x^2}}= 
+    \lim\limits_{x \to 0}-x = 0 \\
+    \end{align*}
+    
+    \item %3.
+    \begin{align*}
+  &\int_{-\infty}^{\infty} \frac{\dx}{1+x^2}
+  = \lim_{r \to -\infty} \int_{r}^{0} \frac{dx}{1+x^2} + \lim_{R \to \infty}\int_{0}^{R}\frac{dx}{1+x^2} 
+= \lim_{r\to -\infty} \arctg{x}\Big|^0_r + \lim_{R\to\infty}\arctg{x}\Big|^R_0 = \\
+&= \left(0-\left(-\frac{\pi}{2}\right)\right) + \left(\frac{\pi}{2} - 0\right) 
+=\frac{\pi}{2} + \frac{\pi}{2} = \pi 
+\end{align*}
+
+\item %4.
+\begin{align*}
+ &\int\limits_0^1  \frac{dx}{(2-x)\sqrt{1-x}} \\
+ &\int \frac{dx}{(2-x)\sqrt{1-x}} \Rightarrow 
+\Big|    t=\sqrt{1-x}, dt = -\frac{dx}{2\sqrt{1-x}}, t^2 = 1-x, \hspace{5mm} x =1-t^2
+\Big| \Rightarrow \\
+&\Rightarrow
+\int \frac{dx}{(2-1+t^2)t} = - \int \frac{2tdt}{(t^2+1)t} =  
+ -2 \int \frac{dt}{t^2+1} = \\
+&=-2\arctan t = -2 \arctan \sqrt{1-x}  \\
+&\int\limits_0^1  \frac{dx}{(2-x)\sqrt{1-x}} = \lim_{r\to 1} (-2 \arctan \sqrt{1-x}) \Big |_0^r = -2 \arctan \sqrt{0} + 2 \arctan \sqrt{1} = 2 \cdot \frac{\pi}{4} = \frac{\pi}{2}
+\end{align*}
+\item %5.
+\begin{align*}
+    &\int\limits_0^\infty \frac{x\ln x}{\lr{1+x^2}^2} dx \\
+    &{\int \frac{x\ln x}{\lr{1+x^2}^2} dx} = -\frac{\ln x}{2\lr{1+x^2}} + \int \frac{dx}{2x\lr{1+x^2}} = -\frac{\ln x}{2\lr{1+x^2}} + \int \frac{dx}{2x^3\lr{\frac{1}{x^2}+1}} = \\
+    &\mbox{\footnotesize Первообразная:} {\textstyle \int \frac{xdx}{\lr{1+x^2}^2} = \frac{1}{2}\int \frac{dz}{\lr{z}^2} = -\frac{1}{2z} = -\frac{1}{2\lr{1 + x^2}}} \\
+    &\mbox{\footnotesize и замена: } {\textstyle t\to \frac{1}{x^2}\quad dx = -\frac{x^3dt}{2} }\\
+    &= -\frac{\ln x}{2\lr{1+x^2}} -\frac{1}{4}\int \frac{dt}{1+t} = -\frac{\ln x}{2\lr{1+x^2}} -\frac{1}{4}\ln\lr{1+\frac{1}{x^2}} = {\frac{x^2\ln x}{2\lr{1+x^2}}-\frac{\ln\lr{1+x^2}}{4}} \\ 
+    &{\int\limits_0^\infty \frac{x\ln x}{\lr{1+x^2}^2} dx} =
+    \int\limits_0^1 \frac{x\ln x}{\lr{1+x^2}^2} dx +
+    \int\limits_1^\infty \frac{x\ln x}{\lr{1+x^2}^2} dx = \\
+    &=\lim_{\epsilon\to0}\left.\left(
+    \frac{x^2\ln x}{2\lr{1+x^2}}-\frac{\ln\lr{1+x^2}}{4}
+    \right)\right|_\epsilon^1 +
+    \lim_{R\to\infty}\left.\left(
+    \frac{x^2\ln x}{2\lr{1+x^2}}-\frac{\ln\lr{1+x^2}}{4}
+    \right)\right|_1^R = \\
+    &= -\frac{\ln 2}{4} - \lim_{\epsilon\to0}\left(
+    \frac{\epsilon^2\ln \epsilon}{2\lr{1+\epsilon^2}}-\frac{\ln\lr{1+\epsilon^2}}{4}
+    \right) + 
+    \lim_{R\to\infty}\left(
+    \frac{R^2\ln R}{2\lr{1+R^2}}-\frac{\ln\lr{1+R^2}}{4}
+    \right) +\frac{\ln 2}{4} = \\
+    &=\lim_{\epsilon\to0}\left(
+    \frac{\epsilon^2\ln \epsilon}{2\lr{1+\epsilon^2}}-\frac{\ln\lr{1+\epsilon^2}}{4}
+    \right) + 
+    \lim_{R\to\infty}\left(
+    \frac{R^2\ln R}{2\lr{1+R^2}}-\frac{\ln\lr{1+R^2}}{4}
+    \right).     \\
+    &\lim_{\epsilon\to0}\left(
+    \frac{\epsilon^2\ln \epsilon}{2\lr{1+\epsilon^2}}-\frac{\ln\lr{1+\epsilon^2}}{4}
+    \right) = 
+    \lim_{\epsilon\to0}\left(
+    \frac{\epsilon^2\ln \epsilon}{2\lr{1+\epsilon^2}}\right)-
+    \lim_{\epsilon\to0}\left(\frac{\ln\lr{1+\epsilon^2}}{4}
+    \right) = \\
+    &= \frac{\lim_{\epsilon\to0}\left(\epsilon^2\ln \epsilon\right)}{\lim_{\epsilon\to0}\left(2\lr{1+\epsilon^2}\right)} - 0 = 
+    \frac{1}{2}\lim_{\epsilon\to0}\left(\epsilon^2\ln \epsilon\right) = 
+    \frac{1}{2}\lim_{\epsilon\to0}\left(\frac{\ln \epsilon}{\frac{1}{\epsilon^2}}\right) = \frac{1}{2}\lim_{\epsilon\to0}\left(\frac{\frac{1}{\epsilon}}{-\frac{2}{\epsilon^3}}\right) = \\
+    &= \frac{1}{2}\lim_{\epsilon\to0}\left(-\frac{\epsilon^2}{2}\right) = \boxed{0} \\
+    &\lim_{R\to\infty}\left(
+    \frac{R^2\ln R}{2\lr{1+R^2}}-\frac{\ln\lr{1+R^2}}{4}
+    \right) = 
+    \lim_{R\to\infty}\left(
+    \frac{2R^2\ln R - (1+R^2)\ln(1+R^2)}{4(1+R^2)}
+    \right) = \\
+    &=\frac{1}{4}\lim_{R\to\infty}\left(
+    \frac{2\ln R -\frac{\ln(1+R^2)}{R^2} - \ln(1+R^2)}{(1+\frac{1}{R^2})}
+    \right) = \\
+    &=\frac{1}{4}
+    \frac{\lim_{R\to\infty}\left(2\ln R -\frac{\ln(1+R^2)}{R^2} - \ln(1+R^2)\right)}{\lim_{R\to\infty}(1+\frac{1}{R^2})} = \\
+    &=\frac{1}{4}
+    \lim_{R\to\infty}\left(2\ln R -\frac{\ln(1+R^2)}{R^2} - \ln(1+R^2)\right) = \\
+    &=\lim_{R\to\infty}\left(2\ln R -\ln(1+R^2)\right) - 
+    \lim_{R\to\infty}\left(\frac{\ln(1+R^2)}{R^2}\right) = 
+    \lim_{R\to\infty}\left(\ln \frac{R^2}{1+R^2}\right)- 0 = \\
+    &=\ln\left(\lim_{R\to\infty}\frac{R^2}{1+R^2}\right) = 
+    \ln\left(\lim_{R\to\infty}\frac{1}{1+\frac{1}{R^2}}\right) = \ln 1 = \boxed{0} \\
+    &\int\limits_0^\infty \frac{x\ln x}{\lr{1+x^2}^2} dx = 0 - 0 = 0
+\end{align*}
+\end{enumerate}
+\subsection{Исследовать на сходимость интегралы}
+\begin{enumerate}
+ \item %1.
+ \begin{align*}
+  &\int\limits_0^\infty \frac{x^2dx}{x^4-x^2+1} \\
+  &\text{Единственная ``особенность '' интеграла встречается на $\infty$.} \\
+  &\text{Рассмотрим критерий Коши:} \\
+  &\forall\epsilon>0 \exists \epsilon_1,\epsilon_2 \in U(\infty):
+  \left|\int\limits_{\epsilon_1}^{\epsilon_2} \frac{x^2dx}{x^4-x^2+1}\right| < \epsilon \\
+  &\int\limits_{\epsilon_1}^{\epsilon_2} \frac{x^2dx}{x^4-x^2+1} < 
+  \int\limits_{\epsilon_1}^{\epsilon_2} \frac{x^2dx}{x^4-x^2} = 
+  \int\limits_{\epsilon_1}^{\epsilon_2} \frac{dx}{x^2-1} = 
+  \frac{1}{2}\left(\ln\left|\frac{1-x}{1+x}\right|\right)\Big|_{\epsilon_1}^{\epsilon_2} = \\
+  &=\frac{1}{2}\lim_{\epsilon_2\to\infty}\ln\left|\frac{1-\epsilon_2}{1+\epsilon_2}\right| -
+  \frac{1}{2}\lim_{\epsilon_1\to\infty}\ln\left|\frac{1-\epsilon_1}{1+\epsilon_1}\right| = \\
+  &=\frac{1}{2}\ln\left(\lim_{\epsilon_2\to\infty}\left|\frac{\frac{1}{\epsilon_2}-1}{\frac{1}{\epsilon_2}+1}\right|\right) -
+  \frac{1}{2}\ln\left(\lim_{\epsilon_1\to\infty}\left|\frac{\frac{1}{\epsilon_1}-1}{\frac{1}{\epsilon_1}+1}\right|\right) = \frac{1}{2}(\ln 1 - \ln 1) = 0 < \epsilon \text{, т.е.} \\
+  &\int\limits_0^\infty \frac{x^2dx}{x^4-x^2+1} \text{ сходится} \\
+  &\frac{x^2}{x^4-x^2+1} \geq0 \Rightarrow
+  \int\limits_0^\infty\left| \frac{x^2dx}{x^4-x^2+1}\right| = 
+  \int\limits_0^\infty \frac{x^2dx}{x^4-x^2+1} \Rightarrow \\
+  &\int\limits_0^\infty \frac{x^2dx}{x^4-x^2+1} \text{ сходится абсолютно}
+ \end{align*}
+\item %2.
+\begin{align*}
+ &\int\limits_1^\infty \frac{dx}{x\sqrt[3]{x^2+1}} \\
+ &\int\limits_1^\infty \frac{dx}{x\sqrt[3]{x^2+1}} \leq 
+ \int\limits_1^\infty \frac{dx}{x\sqrt[3]{x^2}} = 
+ \int\limits_1^\infty \frac{dx}{x^\frac{5}{3}} = 
+ \left.\left(-\frac{3}{2}\frac{1}{x^\frac{2}{3}}\right)\right|_1^\infty = \frac{3}{2}
+ \text{, т.е. } \\
+ &\int\limits_1^\infty \frac{dx}{x\sqrt[3]{x^2+1}} \text{ сходится} \\
+ &\frac{1}{x\sqrt[3]{x^2+1}} \geq0 \text{ при }x\in[1;+\infty] \Rightarrow
+ \int\limits_1^\infty \left|\frac{dx}{x\sqrt[3]{x^2+1}}\right| = 
+ \int\limits_1^\infty \frac{dx}{x\sqrt[3]{x^2+1}} \Rightarrow \\
+ &\int\limits_1^\infty \frac{dx}{x\sqrt[3]{x^2+1}} \text{ сходится абсолютно}
+\end{align*}
+\item %3.
+\begin{align*}
+ &\int\limits_0^2 \frac{dx}{\ln x} \\
+ &\text{Особенность в точке 1.} \\
+ &\int\limits_0^2 \frac{dx}{\ln x} = \int\limits_0^1 \frac{dx}{\ln x} +
+ \int\limits_1^2 \frac{dx}{\ln x} \\
+ &\text{Рассмотрим } \int\limits_1^2 \frac{dx}{\ln x} \\
+ &\int\limits_1^2 \frac{dx}{\ln x} > \int\limits_1^2 \frac{dx}{x-1} = 
+ \ln(x-1)\Big|_1^2 = \ln(2-1) - \ln(1-1) = \infty \Rightarrow \\
+ &\int\limits_0^2 \frac{dx}{\ln x} \text{ расходится}
+\end{align*}
+\item %4.
+\begin{align*}
+ &\int\limits_0^\infty \frac{\sin^2x}{x}dx \\
+ &\text{Рассмотрим функцию в окресности 0: } \\
+ &\lim_{x\to0}\frac{sin^2 x}{x} = \lim_{x\to0}\frac{x^2 - \frac{x^4}{3}+\underline{O}(x^6)}{x} = \lim_{x\to0}\left(x-\frac{x^3}{3}+\underline{O}(x^5)\right) = 0 \\
+ &\text{Оставшаяся ``особенность'' - на $\infty$. Рассмотрим критерий Коши} \\
+ &\forall\epsilon>0 \exists \epsilon_1,\epsilon_2 \in U(\infty):
+  \left|\int\limits_{\epsilon_1}^{\epsilon_2} \frac{\sin^2x}{x}dx\right| < \epsilon \\
+ &\int\limits_{\epsilon_1}^{\epsilon_2} \frac{\sin^2x}{x}dx = 
+ \int\limits_{\epsilon_1}^{\epsilon_2} \frac{1-\cos 2x}{2x}dx = 
+ \int\limits_{\epsilon_1}^{\epsilon_2} \frac{1}{2x}dx - 
+ \int\limits_{\epsilon_1}^{\epsilon_2} \frac{\cos2x}{2x}dx = 
+ \left.\frac{\ln x}{2}\right|_{\epsilon_1}^{\epsilon_2} - 
+ \int\limits_{\epsilon_1}^{\epsilon_2} \frac{\cos2x}{2x}dx = \\
+ &=\infty - \infty -
+ \int\limits_{\epsilon_1}^{\epsilon_2} \frac{\cos2x}{2x}dx \text{; Неопределённость, т.е. критерий явно не выполнен} \Rightarrow \\
+ &\int\limits_0^\infty \frac{\sin^2x}{x}dx \text{ расходится}
+\end{align*}
+\item %5.
+$$\int\limits_0^\infty \frac{dx}{x^p\ln^qx}$$
+Рассмотрим $y = \ln x $ и $y = x-1$ при $x \geq 1$. \\
+    \begin{tikzpicture}
+     \begin{axis} [ 
+     title = {$x-1, \ln x$},
+     xlabel = {$x$},
+     ylabel = {$y$},
+     xmin = 0,
+     ymin = 0,
+     legend pos = north west ]
+     \legend {
+     $x-1$,
+     $\ln x$
+     };
+     \addplot{x-1};
+     \addplot{ln(x)};
+     \end{axis}
+    \end{tikzpicture} \\ [15pt]
+    Понятно, что $\ln x \leq x-1$ при $x \geq 1$ (да и на всей оси определения в целом) \\
+    Тогда $\frac{1}{\ln x} \geq \frac{1}{x-1}$, т.е. \\
+    $\frac{1}{x^p\ln^q x} \geq \frac{1}{x^p(x-1)^q}$ (обе функции неотрицательные на 
+    промежутке рассмотрения) \\
+    \begin{tikzpicture}
+     \begin{axis}
+      [
+      title = {$\frac{1}{x^p\ln^q x} \geq \frac{1}{x^p(x-1)^q}$},
+      xlabel = {$x$},
+      ylabel = {$y$},
+      ymin = 0,
+      domain = 0:4,
+      restrict y to domain = 0:10,
+      legend pos = north east
+      ]
+      \legend {
+      $\frac{1}{x^p\ln^q x}$,
+      $\frac{1}{x^p(x-1)^q}$,
+      (p=q=1)
+      };
+      \addplot[blue, samples = 100]{1/(x*ln(x))};
+      \addplot[red, samples = 100]{1/(x*(x-1))};
+      \end{axis}
+    \end{tikzpicture} \\
+    \begin{enumerate}
+     \item
+     Для $p > 0, q > 0 $:
+     \begin{align*}
+      &\frac{1}{x^p(x-1)^q} = 
+     \frac{A_1}{x}+\frac{A_2}{x^2}+...+\frac{A_p}{x^p} +
+     \frac{B_1}{(x-1)}+\frac{B_2}{(x-1)^2}+...+\frac{B_q}{(x-1)^q} \\
+     &\text{т.е. }
+     \int\frac{dx}{x^p(x-1)^q} = 
+     A_1\ln x -\frac{A_2}{x} - \frac{A_3}{2x^2}- ... - \frac{A_p}{(p-1)x^{p-1}} + \\
+     &+ B_1\ln (x-1) - \frac{B_2}{x-1} -...- \frac{B_q}{(q-1)(x-1)^{q-1}} \\
+     &\text{Подсчёт интеграла} \int\limits_1^\infty\frac{dx}{x^p(x-1)^q} 
+     \text{ сведётся  к пределу } \\
+     &\lim_{R \to \infty} \left( A_1 \ln R + B_1 \ln (R-1)\right) = \infty
+     \end{align*}
+     т.е. интеграл не сойдётся (можно сказать, что площадь под графиком бесконечна)
+     Но, как мы установили, $\frac{1}{x^p\ln^q x} \geq \frac{1}{x^p(x-1)^q}$ на рассматриваемом промежутке
+     (и обе функции неотрицательны), т.е.
+     площадь под графиком $\frac{1}{x^p\ln^q x}$ \Big(она же $\int\limits_1^\infty \frac{dx}{x^p\ln^qx}$\Big)
+     больше площади под графиком $\frac{1}{x^p(x-1)^q}$, которая, как мы установили, бесконечна.
+     Отсюда получается очевидный вывод, что площадь под графиком 
+     $\frac{1}{x^p\ln^q x}$
+     тоже бесконечна, или, иными словами, $\int\limits_1^\infty \frac{dx}{x^p\ln^qx}$ разойдётся.
+     \item
+     Для $p > 0, q = 0$:
+     \begin{align*}
+      &\int\limits_1^\infty \frac{dx}{x^p} = 
+     \lim_{R \to \infty}\left.-\frac{1}{(p-1)x^{p-1}}\right|_1^R = \frac{1}{p-1} 
+     \text{при $p>1$. При $p = 1$ интеграл разойдётся} \\
+     &\text{В этом пункте нам даже не нужна была замена логарифма на x-1}
+     \end{align*}
+     \item
+     Для $p > 0,q < 0$:
+     \begin{align*}
+      &t = -q, t>0. \\
+      &\int\limits_1^\infty \frac{dx}{x^p\ln^qx} = 
+      \int\limits_1^\infty \frac{\ln^t x}{x^p}dx \\
+      &\text{Проинтегрируем по частям: } \\
+      &\int\frac{\ln^t x}{x^p}dx =
+      -\frac{\ln^t x}{(p-1)x^{p-1}} +\frac{t}{p-1}\int\frac{\ln^{t-1}x}{x^p}
+      \text{(для $p>1$)}\\
+      &\text{Получили формулу понижения степени, из чего получается: } \\
+      &\int\limits_1^\infty \frac{\ln^t xdx}{x^p} = 
+      \lim_{R\to\infty}\left.\left(-C_0\frac{\ln^t x}{x^{p-1}} -C_1\frac{\ln^t-1 x}{x^{p-1}} -... - C_t\frac{1}{x^{p-1}}\right)\right|_1^R \\
+      &\boxed{\text{Заметка: } 
+      \forall a \in R, b>0: \lim_{x\to\infty}\frac{\ln^a x}{x^b} = 0} \\
+      &\int\limits_1^\infty \frac{\ln^t xdx}{x^p} = 0 -\left(-C_t\right) = C_t \Rightarrow \text{сходится} \\
+      &\text{для p=1: }\int\limits_1^\infty\frac{\ln^t x}{x^p}dx = \left.\frac{\ln^{t+1}x}{t+1}\right|_1^\infty = \infty \Rightarrow \text{не сходится}
+     \end{align*}
+     \item
+     Для $p=0, q>0$:
+     \begin{align*}
+      &\int\limits_1^\infty \frac{dx}{(x-1)^q} =
+     \left.-\frac{1}{(q-1)(x-1)^{q-1}}\right|_1^\infty \text{(при q>1)} = \\ 
+     &=\lim_{R \to \infty}-\frac{1}{(q-1)(R-1)^{q-1}} - 
+     \lim_{\epsilon \to 1+0}-\frac{1}{(q-1)(\epsilon-1)^{q-1}} =
+     \infty. \\ 
+     &\text{при $q=1$:} \int\limits_1^\infty \frac{1}{(x-1)^q} =
+     \left. \ln (x-1) \right|_1^\infty = 
+     \lim_{R \to \infty} \ln (R-1) - \lim_{\epsilon \to 1+0} \ln (\epsilon -1) = \infty. \\
+     &\text{ Делаем аналогичный пункту 1 вывод}
+     \end{align*}
+     \item
+     Для $p=q=0$:
+     \begin{align*}
+      &\int\limits_1^\infty dx = \lim_{R \to \infty} x \Big|_1^R = \infty. \text{ (т.е. разойдётся)}
+     \end{align*}
+     \item
+     Для $p=0,q<0$:
+     \begin{align*}
+      &t = -q, t>0. \\
+      &\int\limits_1^\infty \frac{dx}{x^p\ln^qx} =
+      \int\limits_1^\infty \ln^t x dx.\quad \text{$\ln^t x$ - монотонно возрастающая функция} \\
+      &\text{ т.е. очевидно расходится}
+     \end{align*}
+     \item
+     Для $p < 0, q > 0$:
+     \begin{align*}
+      &t = -p, t>0. \\
+      &\int\limits_1^\infty\frac{dx}{x^p\ln^qx} = 
+      \int\limits_1^\infty\frac{x^t}{\ln^qx}dx \geq 
+      \int\limits_1^\infty\frac{x^t}{(x-1)^q}dx \\
+      &\frac{x^t}{(x-1)^q}:
+     \end{align*}
+     ситуация подобна пункту a). После деления числителя на знаменатель (для $t \geq q$) или разложения на дроби (для $t<q$) останется дробь вида $\frac{C}{x-1}$, которая после взятия интеграла станет логарифмом, стремящимся к $\infty$ при $x\to\infty$, т.е. интеграл расходится \\
+     Можно было сказать и проще, что $\frac{x^t}{(x-1)^q}\to\infty$ при $x\to\infty$ (поскольку логарифм растёт медленнее любой степенной функции, при стремлении x на бесконечность функция начнёт возрастать)
+     \item
+     Для $p < 0, q = 0$:
+     \begin{align*}
+      &t = -p, t>0. \\
+      &\int\limits_1^\infty\frac{dx}{x^p\ln^qx} = 
+      \int\limits_1^\infty x^tdx = \frac{x^{t+1}}{t+1}\Big|_1^\infty = \infty \Rightarrow \text{расходится}
+     \end{align*}
+     \item $p<0, q<0$:
+     \begin{align*}
+      &a = -p, a>0; b = -q, q>0  \\
+      &\int\limits_1^\infty\frac{dx}{x^p\ln^qx} = 
+      \int\limits_1^\infty x^a\ln^bxdx
+     \end{align*}
+     Очевидно, что при $x\geq1:\quad x^a\ln^bx$ - монотонно возрастающая функция, т.е. интеграл расходится 
+    \end{enumerate}
+Итог: интеграл сходится при $p>1,q\leq0$
+\end{enumerate}
+
+\subsection{Найти площади фигур, ограниченных кривыми заданными в прямоугольных координатах: }
+\begin{enumerate}
+ \item 
+ $y = x^2, x+y = 2$ \\
+ Найдём точки пересечения: 
+ \begin{align*}
+  &y = x^2 \\
+  &x + y = 2 \to x +x^2 = 2 \\
+  &x^2 +x -2 = 0 \Rightarrow x=-2;x=1 \\
+  & S = \left|
+  \int\limits_{-2}^1 x^2dx - \int\limits_{-2}^1 (2-x)dx
+  \right| = 
+  \left|
+  \left.\left(\frac{x^3}{3}\right)\right|_{-2}^1 - \left.\left(2x - \frac{x^2}{2}\right)\right|_{-2}^1
+  \right| = \\
+  &=
+  \left|
+  \frac{1}{3} + \frac{8}{3} -2 +\frac{1}{2} -4 -\frac{4}{2}
+  \right| = 4.5
+ \end{align*}
+\begin{tikzpicture}
+    \begin{axis}[
+    title = {$x^2; x+y = 2 $} ,
+    xlabel ={$ x $} ,
+    ylabel ={$ y $} ,
+    width = 10cm ,
+    grid = major
+    ]
+    \addplot[name path = f ,red, domain = -2 : 1,
+    samples = 50,]{x^2};
+    \addplot[red, domain = -3 : 3, samples = 50,]{x^2};
+    \addplot[name path = f2, blue, domain = -2 : 1,
+    samples = 20,]{2-x};
+    \addplot[blue, domain = -3 : 3, samples = 50,]{2-x};
+    \addplot[black] coordinates {(0,0) (0,6)};
+    \addplot[black] coordinates {(-3,0) (3,0)};
+    \addplot[green!50] fill between[of=f2 and f];
+    \end{axis}
+    \end{tikzpicture}
+\item
+$y = 2x-x^2, x+y = 0$  
+Найдём точки пересечения: 
+\begin{align*}
+ &y = 2x - x^2 \\
+ &x + y = 0 \to x +2x-x^2=0\\
+ &x^2-3x=0 \Rightarrow x=0;x=3\\
+ & S = \left|
+  \int\limits_0^3 (2x-x^2)dx - \int\limits_0^3 (-x)dx
+  \right| = 
+  \left|
+  \left.\left(x^2 - \frac{x^3}{3}\right)\right|_0^3 -
+  \left.\left(-\frac{x^2}{2}\right)\right|_0^3
+  \right| = \\
+  &=
+  \left|
+  9 - 9 +\frac{9}{2}
+  \right| = 4.5
+\end{align*}
+\begin{tikzpicture}
+    \begin{axis}[
+    title = {$y=2x-x^2; x+y = 0 $} ,
+    xlabel ={$ x $} ,
+    ylabel ={$ y $} ,
+    width = 10cm ,
+    grid = major
+    ]
+    \addplot[name path = f ,red, domain = 0 : 3,
+    samples = 50,]{2*x-x^2};
+    \addplot[red, domain = -2 : 4, samples = 50,]{2*x-x^2};
+    \addplot[name path = f2, blue, domain = 0 : 3,
+    samples = 20,]{-x};
+    \addplot[blue, domain = -2 : 4, samples = 50,]{-x};
+    \addplot[black] coordinates {(0,-6) (0,2)};
+    \addplot[black] coordinates {(-2,0) (4,0)};
+    \addplot[green!50] fill between[of=f2 and f];
+    \end{axis}
+    \end{tikzpicture}
+\item
+$y=2^x,y=2,x=0$
+Найдём точки пересечения: 
+\begin{align*}
+ &(y=2^x) \& (y=2): (1,2) \\
+ &(y=2^x) \& (x=0): (0,1) \\
+ &(y=2) \& (x=0): (0,2) \\
+ & S = \left|
+  \int\limits_0^1 (2^x)dx - \int\limits_0^1 (2)dx
+  \right| = 
+  \left|
+  \left.\left(\frac{2^x}{\ln 2}\right)\right|_0^1 - 
+  \left(2x\right)\Big|_0^1
+  \right| =   
+  \left|
+  \frac{2}{\ln 2} - \frac{1}{\ln 2} - 2
+  \right| = 2 - \frac{1}{\ln 2}
+\end{align*}
+\begin{tikzpicture}
+    \begin{axis}[
+    title = {$y=2^x,y=2,x=0$} ,
+    xlabel ={$ x $} ,
+    ylabel ={$ y $} ,
+    width = 10cm ,
+    grid = major
+    ]
+    \addplot[name path = f ,red, domain = 0 : 1,
+    samples = 50,]{2^x};
+    \addplot[red, domain = -2 : 2, samples = 50,]{2^x};
+    \addplot[name path = f2, blue, domain = 0 : 1,
+    samples = 20,]{2};
+    \addplot[blue, domain = -2 : 2, samples = 50,]{2};
+    \addplot[black] coordinates {(0,0) (0,2)};
+    \addplot[brown] coordinates {(0,1) (0,2)};
+    \addplot[black] coordinates {(-2,0) (2,0)};
+    \addplot[green!50] fill between[of=f2 and f];
+    \end{axis}
+    \end{tikzpicture}
+\item
+\begin{align*}
+     &\frac{x^2}{4}+\frac{y^2}{9} = 1
+    \end{align*}
+    \begin{tikzpicture}
+     \begin{axis}
+      [
+      title = эллипс,
+      xlabel = {$x$},
+      ylabel = {$y$},
+      ymin = -4,
+      ymax = 4,
+      xmin = -4,
+      xmax = 4,
+      grid = major
+      ]
+      \addplot[name path = f,red, samples = 500]{3*(1-(x^2/4))^(1/2)};
+      \addplot[name path = f2,blue, samples = 500]{-3*(1-(x^2/4))^(1/2)};
+      \addplot[green!50] fill between[of=f2 and f];
+     \end{axis}
+    \end{tikzpicture} \\
+    \begin{align*}
+     &\frac{x^2}{4}+\frac{y^2}{9} = 1 \\
+     &y = \pm 3 \sqrt{1-\frac{x^2}{4}} \text{; y=0 при x=2;-2} \\
+     &\int\limits_{-2}^2 3 \sqrt{1-\frac{x^2}{4}}dx \\
+     &\int 3 \sqrt{1-\frac{x^2}{4}}dx = 
+     3\int \sqrt{1-\left(\frac{x}{2}\right)^2}dx = 
+     \Big| \frac{x}{2} = \sin t; \frac{dx}{2} = \cos t dt \Big| = 
+     3\int\sqrt{1-\sin^2t}*2\cos t dt = \\
+     &= 6\int \cos^2 t dt = 6\int \frac{\cos 2t + 1}{2}dt = 
+     6\int \frac{\cos 2t}{2}dt + 3\int dt = 6\frac{\sin 2t}{4} + 3t + c = \\
+     &= 3\sin t \cos t + 3t + c 
+     = 3\frac{x}{2}\sqrt{1-\frac{x^2}{4}} + 3 \arcsin \frac{x}{2} + c \\
+     &\int\limits_{-2}^2 3 \sqrt{1-\frac{x^2}{4}}dx = 
+     \left. 3\frac{x}{2}\sqrt{1-\frac{x^2}{4}} + 3 \arcsin \frac{x}{2} \right|_{-2}^2 = 
+     3 \left(\arcsin 1 - \arcsin (-1) \right) = 3\pi \\
+     &\text{Понятно, что площадь нижней части графика тоже равна $3\pi$.} \\
+     &\text{Т.е. общая площадь равна $6\pi$}
+    \end{align*}
+\end{enumerate}
+
+\section{Равномерная сходимость}
+\subsection{Исследовать на равномерную сходимость интегралы:}
+\begin{enumerate}
+ \item 
+ \begin{align*}
+  &\int\limits_0^\infty e^{-ax}\sin x dx, (0<a<\infty) \\
+  &\text{Рассмотрим критерий Коши:} \\
+  &\forall \epsilon > 0 \hspace{5pt} \exists C>0 : \forall c_2>c_1>C, \forall a\in(0,\infty):
+  \left|\int\limits_{c_1}^{c_2} e^{-ax}\sin x dx \right| < \epsilon \\
+  &c_1 = 2k\pi, c_2 = (2k+1)\pi \text{ (такие k найдутся для любого C)}: \\
+  &\left|\int\limits_0^\infty e^{-ax}\sin x dx \right| = 
+  \int\limits_{2k\pi}^{(2k+1)\pi} e^{-ax}\sin x dx \geq
+  e^{-a(2k+1)\pi}\int\limits_{2k\pi}^{(2k+1)\pi}\sin x dx = \\
+  &=e^{-a(2k+1)\pi}\left(-\cos x\right)\Big|_{2k\pi}^{(2k+1)\pi} = 
+  2e^{-a(2k+1)\pi} \\
+  &\text{Если, например, $a=\frac{1}{(2k+1)\pi}$}: \\
+  &\left|\int\limits_{c_1}^{c_2} e^{-ax}\sin x dx \right| \geq \frac{2}{e}
+  \text{, т.е. критерий не выполнен $\Rightarrow$} \\
+  &\text{интеграл НЕ сходится равномерно}
+  \end{align*}
+\item
+\begin{align*}
+ &\int\limits_1^\infty x^\alpha e^{-x}dx, (a<\alpha<b) \\ 
+ &\text{В рамках данной задачи будем рассматривать числа $a$ и $b$ как} \\
+ &\text{КОНКРЕТНО заданные параметры} \\
+ &\int\limits_1^\infty x^\alpha e^{-x}dx \leq \int\limits_1^\infty x^b e^{-x}dx = 
+ -e^{-x}(x^b+d_1x^{b-1}+...+d_b)\Big|_1^\infty = 
+ \frac{1+d_1+...+d_b}{e} \Rightarrow \\
+ &\text{исходный интеграл сходится равномерно по признаку Вейерштрасса}
+\end{align*}
+\item
+\begin{align*}
+ &\int\limits_{-\infty}^\infty \frac{\cos ax}{1+x^2}dx =
+ \int\limits_{-\infty}^0 \frac{\cos ax}{1+x^2}dx + 
+ \int\limits_0^\infty \frac{\cos ax}{1+x^2}dx, (-\infty \leq a \leq \infty) \\
+ &\left|\int\limits_0^\infty \frac{\cos ax}{1+x^2}dx\right| \leq 
+ \int\limits_0^\infty \frac{dx}{1+x^2} = 
+ \arctan x \Big|_0^\infty = \frac{\pi}{2} \Rightarrow \\
+ &\int\limits_0^\infty \frac{\cos ax}{1+x^2}dx \text{ равномерно сходится по признаку Вейерштрасса} \\
+ &\text{Проведя агналогичное рассуждение для }
+ \int\limits_{-\infty}^0 \frac{\cos ax}{1+x^2}dx \\
+ &\text{получаем, что }
+ \int\limits_{-\infty}^\infty \frac{\cos ax}{1+x^2}dx
+ \text{ сходится равномерно}
+\end{align*}
+\item
+\begin{align*}
+  &\int\limits_0^\infty \frac{dx}{(x-a)^2+1}, (0\leq a \leq \infty) \\
+  &\text{Рассмотрим критерий Коши:} \\
+  &\forall \epsilon > 0 \hspace{5pt} \exists C>0 : \forall c_2>c_1>C, \forall a\in(0,\infty):
+  \left|\int\limits_{c_1}^{c_2} \frac{dx}{(x-a)^2+1} \right| < \epsilon \\
+  &\int\limits_{c_1}^{c_2} \frac{dx}{(x-a)^2+1} = 
+  \arctan (x-a) \Big|_{c_1}^{c_2} = 
+  \arctan(c_2-a) - \arctan(c_1-a) \\
+  &\text{Пусть, например: } a=c_1; c_2=2 c_1. \text{ Тогда:} \\
+  &\int\limits_{c_1}^{c_2} \frac{dx}{(x-a)^2+1} = 
+  \arctan c_1 - \arctan 0 = \arctan c_1 > \epsilon \Rightarrow \\
+  &\int\limits_0^\infty \frac{dx}{(x-a)^2+1}\text{ НЕ сходится равномерно (проблема при $a\to\infty$)}
+\end{align*}
+\item
+\begin{align*}
+ &\int\limits_0^\infty \frac{\sin x}{x}e^{-ax}dx \\
+ &\text{По упрощённому признаку Абеля, если} \\
+ &\exists C >0: \forall a, x>0: \left|e^{-ax}\right|\leq C \text{ и } \\
+ &\int\limits_0^\infty \frac{\sin x}{x}dx \text{ сходится, то } \\
+ &\int\limits_0^\infty \frac{\sin x}{x}e^{-ax}dx \text{ сходится равномерно.} \\
+ &\text{Для } a>0,x>0: e^{-ax} \leq 1 \\
+ &\text{Теперь разберёмся с }\int\limits_0^\infty \frac{\sin x}{x}dx \\
+ &\int\limits_0^\infty \frac{\sin x}{x}dx = 
+ \int\limits_0^1 \frac{\sin x}{x}dx + \int\limits_1^\infty \frac{\sin x}{x}dx \\
+ &\lim_{x\to0}\frac{\sin x}{x} = \lim_{x\to0}\frac{x-\frac{x^3}{3!}+\underline{O}(x^5)}{x} = \lim_{x\to0}(1-\frac{x^2}{6}+\underline{O}(x^4)) = 1 \\
+ &\lim_{x\to1}\frac{\sin x}{x} = \sin 1 \text{, т.е. на промежутке $[0,1]$ проблем нет} \\
+ &\int\limits_1^\infty \frac{\sin x}{x}dx = 
+ \left.-\frac{\cos x}{x}\right|_1^\infty - \int_1^\infty \frac{\cos x}{x^2} = 
+ \cos 1 - \int_1^\infty \frac{\cos x}{x^2} \\
+ &\int_1^\infty \frac{\cos x}{x^2} \leq \int_1^\infty \frac{1}{x^2} = 
+ \left.-\frac{1}{x}\right|_1^\infty = 1 \text{, т.е. }
+ \int_1^\infty \frac{\cos x}{x^2} \text{ сходится }\Rightarrow \\
+ &\int\limits_1^\infty \frac{\sin x}{x}dx \text{ сходится, т.е. } \\
+ &\int\limits_0^\infty \frac{\sin x}{x}dx \text{ сходится } \Rightarrow \\
+ &\int\limits_0^\infty \frac{\sin x}{x}e^{-ax}dx \text{ сходится равномерно (при a>0)}
+\end{align*}
+\end{enumerate}
+\subsection{Вычислить интегралы: }
+\begin{enumerate}
+ \item 
+ \begin{align*}
+  &\int\limits_0^\infty \frac{e^{-\alpha x}-e^{-\beta x}}{x}dx, (\alpha>0,\beta>0) \\
+  &I(\alpha) = \int\limits_0^\infty \frac{e^{-\alpha x}-e^{-\beta x}}{x}dx; I(\beta) = 0  \\
+  &I^{'}(\alpha) = 
+  \frac{\partial}{\partial \alpha}\int\limits_0^\infty \frac{e^{-\alpha x}-e^{-\beta x}}{x}dx = 
+  \int\limits_0^\infty\frac{-xe^{-\alpha x}}{x}dx = -\int\limits_0^\infty e^{-\alpha x}dx = 
+  \left.\frac{e^{-\alpha x}}{\alpha}\right|_0^\infty = -\frac{1}{\alpha} \\
+  &I^{'}(\alpha) = -\frac{1}{\alpha} \\
+  &I(\alpha) = -\int \frac{1}{\alpha}d\alpha = -\ln(\alpha) + c; I(\beta) = 0 \Rightarrow -\ln(\beta) + c = 0 \Rightarrow c = \ln(\beta) \\
+  &I(\alpha) = \int\limits_0^\infty \frac{e^{-\alpha x}-e^{-\beta x}}{x}dx = \ln(\beta) - \ln(\alpha)
+ \end{align*}
+\item
+\begin{align*}
+ &\int\limits_0^1 \frac{\ln(1-\alpha^2x^2)}{x^2\sqrt{1-x^2}}dx, (|\alpha| < 1) \\
+ &\int\limits_0^1 \frac{\ln(1-\alpha^2x^2)}{x^2\sqrt{1-x^2}}dx \Rightarrow 
+ \Big| x = \cos \phi; dx = -\sin\phi d\phi; [0,1]\to[\frac{\pi}{2},0] \Big| \Rightarrow \\
+ &\Rightarrow -\int\limits_\frac{\pi}{2}^0 \frac{\ln(1-\alpha^2\cos^2\phi)}{\cos^2\phi\sqrt{1-\cos^2\phi}}\sin\phi d\phi = 
+ \int\limits_0^\frac{\pi}{2}\frac{\ln(1-\alpha^2\cos^2\phi)}{\cos^2\phi}d\phi \Rightarrow \\
+ &\Rightarrow\Big| t=\tan\phi; dt=\frac{d\phi}{\cos^2\phi}; cos^2\phi = \frac{1}{\tan^2\phi+1} = \frac{1}{t^2+1}; [0,\frac{\pi}{2}]\to[0,\infty]\Big|\Rightarrow \\
+ &\Rightarrow\int\limits_0^\infty\ln\left(1-\frac{\alpha^2}{t^2+1}\right)dt = 
+ \int\limits_0^\infty\ln\left(\frac{t^2+1-\alpha^2}{t^2+1}\right)dt = 
+ \int\limits_0^\infty \left(\ln(t^2+1-\alpha^2) - \ln(t^2+1)\right)dt = \\
+ &= \left.t\ln\left(1-\frac{\alpha^2}{t^2+1}\right)\right|_0^\infty - 
+ \int\limits_0^\infty t\left(\frac{2t}{t^2+1-\alpha^2} - \frac{2t}{t^2+1}\right) \\
+ &\lim_{t\to0}t\ln\left(1-\frac{\alpha^2}{t^2+1}\right) = 0; \\
+ &\lim_{t\to\infty}t\ln\left(1-\frac{\alpha^2}{t^2+1}\right) = 0 \Rightarrow \\
+ &\left.t\ln\left(1-\frac{\alpha^2}{t^2+1}\right)\right|_0^\infty - 
+ \int\limits_0^\infty t\left(\frac{2t}{t^2+1-\alpha^2} - \frac{2t}{t^2+1}\right) = 
+ -\int\limits_0^\infty t\left(\frac{2t}{t^2+1-\alpha^2} - \frac{2t}{t^2+1}\right) = \\
+ &=-2\int\limits_0^\infty \left(\frac{t^2}{t^2+1-\alpha^2} - \frac{t^2}{t^2+1}\right) = 
+ -2\int\limits_0^\infty \left(
+ \frac{t^2+1-\alpha^2 -(1-\alpha^2)}{t^2+1-\alpha^2} - \frac{t^2+1-1}{t^2+1}
+ \right) = \\
+ &=2\int\limits_0^\infty\left(
+ \frac{1-\alpha^2}{t^2+1-\alpha^2} - \frac{1}{t^2+1}
+ \right) = 
+ 2\int\limits_0^\infty\frac{1-\alpha^2}{t^2+1-\alpha^2}dt - 2\int\limits_0^\infty\frac{dt}{t^2+1} = \\
+ &=2\int\limits_0^\infty\frac{1}{\left(\frac{t}{\sqrt{1-\alpha^2}}\right)^2+1}dt -
+ 2\int\limits_0^\infty\frac{dt}{t^2+1} = 
+ 2\sqrt{1-\alpha^2}\int\limits_0^\infty\frac{d(\frac{t}{\sqrt{1-\alpha^2}})}{\left(\frac{t}{\sqrt{1-\alpha^2}}\right)^2+1} - 2\int\limits_0^\infty\frac{dt}{t^2+1} = \\
+ &=2(\sqrt{1-\alpha^2}-1)\int\limits_0^\infty\frac{dt}{t^2+1} = 
+ 2(\sqrt{1-\alpha^2}-1)\cdot\frac{\pi}{2} = \pi(\sqrt{1-\alpha^2}-1)
+\end{align*}
+
+\end{enumerate}
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+\end{document}
