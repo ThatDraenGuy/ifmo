@@ -1,0 +1,5 @@
+required_for value plantera
+
+recommended_at_tier value pre_boss
+
+recommends_boss value duke_fishron

@@ -1,0 +1,537 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/draen/ontologies/2023/8/terraria/"
+     xml:base="http://www.semanticweb.org/draen/ontologies/2023/8/terraria/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:terraria="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/draen/ontologies/2023/8/terraria"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled -->
+
+    <owl:AnnotationProperty rdf:about="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/draen/ontologies/2023/8/terraria#blocked_by -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#blocked_by">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#unlocks"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#boss"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/draen/ontologies/2023/8/terraria#recommended_at_tier -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#recommended_at_tier">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#recommends_boss"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#boss"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#progression_tier"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/draen/ontologies/2023/8/terraria#recommends_boss -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#recommends_boss"/>
+    
+
+
+    <!-- http://www.semanticweb.org/draen/ontologies/2023/8/terraria#required_for -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#required_for">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#unlocks"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/draen/ontologies/2023/8/terraria#required_tier -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#required_tier">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#boss"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#progression_tier"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/draen/ontologies/2023/8/terraria#unlocks -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#unlocks">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#boss"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/draen/ontologies/2023/8/terraria#health -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#health">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#boss"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/draen/ontologies/2023/8/terraria#progression_tier_value -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#progression_tier_value">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#progression_tier"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/draen/ontologies/2023/8/terraria#boss -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#boss"/>
+    
+
+
+    <!-- http://www.semanticweb.org/draen/ontologies/2023/8/terraria#progression_tier -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#progression_tier"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/draen/ontologies/2023/8/terraria#beetle -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#beetle">
+        <rdf:type rdf:resource="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#progression_tier"/>
+        <terraria:blocked_by rdf:resource="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#golem"/>
+        <terraria:progression_tier_value rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</terraria:progression_tier_value>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/draen/ontologies/2023/8/terraria#brain_of_cthulhu -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#brain_of_cthulhu">
+        <rdf:type rdf:resource="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#boss"/>
+        <terraria:recommended_at_tier rdf:resource="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#pre_boss"/>
+        <terraria:health rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2125</terraria:health>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/draen/ontologies/2023/8/terraria#celestial -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#celestial">
+        <rdf:type rdf:resource="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#progression_tier"/>
+        <terraria:blocked_by rdf:resource="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#lunatic_cultist"/>
+        <terraria:progression_tier_value rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</terraria:progression_tier_value>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/draen/ontologies/2023/8/terraria#chlorophyte -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#chlorophyte">
+        <rdf:type rdf:resource="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#progression_tier"/>
+        <terraria:blocked_by rdf:resource="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#skeletron_prime"/>
+        <terraria:blocked_by rdf:resource="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#the_destroyer"/>
+        <terraria:blocked_by rdf:resource="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#the_twins"/>
+        <terraria:progression_tier_value rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</terraria:progression_tier_value>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/draen/ontologies/2023/8/terraria#deerclops -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#deerclops">
+        <rdf:type rdf:resource="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#boss"/>
+        <terraria:recommended_at_tier rdf:resource="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#shadow"/>
+        <terraria:health rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">11900</terraria:health>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/draen/ontologies/2023/8/terraria#duke_fishron -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#duke_fishron">
+        <rdf:type rdf:resource="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#boss"/>
+        <terraria:blocked_by rdf:resource="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#wall_of_flesh"/>
+        <terraria:recommended_at_tier rdf:resource="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#beetle"/>
+        <terraria:health rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">78000</terraria:health>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/draen/ontologies/2023/8/terraria#eater_of_worlds -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#eater_of_worlds">
+        <rdf:type rdf:resource="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#boss"/>
+        <terraria:recommended_at_tier rdf:resource="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#pre_boss"/>
+        <terraria:health rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">15120</terraria:health>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/draen/ontologies/2023/8/terraria#ectoplasm -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#ectoplasm">
+        <rdf:type rdf:resource="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#progression_tier"/>
+        <terraria:blocked_by rdf:resource="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#plantera"/>
+        <terraria:progression_tier_value rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</terraria:progression_tier_value>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/draen/ontologies/2023/8/terraria#empress_of_light -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#empress_of_light">
+        <rdf:type rdf:resource="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#boss"/>
+        <terraria:blocked_by rdf:resource="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#plantera"/>
+        <terraria:recommended_at_tier rdf:resource="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#ectoplasm"/>
+        <terraria:health rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">98000</terraria:health>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/draen/ontologies/2023/8/terraria#eye_of_chtulhu -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#eye_of_chtulhu">
+        <rdf:type rdf:resource="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#boss"/>
+        <terraria:recommended_at_tier rdf:resource="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#pre_boss"/>
+        <terraria:health rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3640</terraria:health>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/draen/ontologies/2023/8/terraria#golem -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#golem">
+        <rdf:type rdf:resource="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#boss"/>
+        <terraria:blocked_by rdf:resource="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#plantera"/>
+        <terraria:recommended_at_tier rdf:resource="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#ectoplasm"/>
+        <terraria:health rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">90000</terraria:health>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/draen/ontologies/2023/8/terraria#king_slime -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#king_slime">
+        <rdf:type rdf:resource="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#boss"/>
+        <terraria:recommended_at_tier rdf:resource="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#pre_boss"/>
+        <terraria:health rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2800</terraria:health>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/draen/ontologies/2023/8/terraria#luminite -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#luminite">
+        <rdf:type rdf:resource="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#progression_tier"/>
+        <terraria:blocked_by rdf:resource="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#moon_lord"/>
+        <terraria:progression_tier_value rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">9</terraria:progression_tier_value>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/draen/ontologies/2023/8/terraria#lunatic_cultist -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#lunatic_cultist">
+        <rdf:type rdf:resource="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#boss"/>
+        <terraria:blocked_by rdf:resource="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#golem"/>
+        <terraria:recommended_at_tier rdf:resource="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#beetle"/>
+        <terraria:health rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">48000</terraria:health>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/draen/ontologies/2023/8/terraria#molten -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#molten">
+        <rdf:type rdf:resource="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#progression_tier"/>
+        <terraria:blocked_by rdf:resource="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#eater_of_worlds"/>
+        <terraria:progression_tier_value rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</terraria:progression_tier_value>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/draen/ontologies/2023/8/terraria#moon_lord -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#moon_lord">
+        <rdf:type rdf:resource="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#boss"/>
+        <terraria:blocked_by rdf:resource="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#lunatic_cultist"/>
+        <terraria:recommended_at_tier rdf:resource="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#celestial"/>
+        <terraria:health rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">217500</terraria:health>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/draen/ontologies/2023/8/terraria#plantera -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#plantera">
+        <rdf:type rdf:resource="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#boss"/>
+        <terraria:blocked_by rdf:resource="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#skeletron_prime"/>
+        <terraria:blocked_by rdf:resource="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#the_destroyer"/>
+        <terraria:blocked_by rdf:resource="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#the_twins"/>
+        <terraria:recommended_at_tier rdf:resource="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#chlorophyte"/>
+        <terraria:health rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">42000</terraria:health>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/draen/ontologies/2023/8/terraria#pre_boss -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#pre_boss">
+        <rdf:type rdf:resource="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#progression_tier"/>
+        <terraria:progression_tier_value rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</terraria:progression_tier_value>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/draen/ontologies/2023/8/terraria#queen_bee -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#queen_bee">
+        <rdf:type rdf:resource="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#boss"/>
+        <terraria:recommended_at_tier rdf:resource="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#molten"/>
+        <terraria:health rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4760</terraria:health>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/draen/ontologies/2023/8/terraria#queen_slime -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#queen_slime">
+        <rdf:type rdf:resource="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#boss"/>
+        <terraria:blocked_by rdf:resource="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#wall_of_flesh"/>
+        <terraria:recommended_at_tier rdf:resource="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#titanium"/>
+        <terraria:health rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">28800</terraria:health>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/draen/ontologies/2023/8/terraria#shadow -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#shadow">
+        <rdf:type rdf:resource="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#progression_tier"/>
+        <terraria:blocked_by rdf:resource="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#skeletron"/>
+        <terraria:progression_tier_value rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</terraria:progression_tier_value>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/draen/ontologies/2023/8/terraria#skeletron -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#skeletron">
+        <rdf:type rdf:resource="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#boss"/>
+        <terraria:recommended_at_tier rdf:resource="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#molten"/>
+        <terraria:health rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8800</terraria:health>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/draen/ontologies/2023/8/terraria#skeletron_prime -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#skeletron_prime">
+        <rdf:type rdf:resource="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#boss"/>
+        <terraria:blocked_by rdf:resource="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#wall_of_flesh"/>
+        <terraria:recommended_at_tier rdf:resource="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#titanium"/>
+        <terraria:health rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">42000</terraria:health>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/draen/ontologies/2023/8/terraria#the_destroyer -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#the_destroyer">
+        <rdf:type rdf:resource="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#boss"/>
+        <terraria:blocked_by rdf:resource="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#wall_of_flesh"/>
+        <terraria:recommended_at_tier rdf:resource="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#titanium"/>
+        <terraria:health rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">120000</terraria:health>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/draen/ontologies/2023/8/terraria#the_twins -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#the_twins">
+        <rdf:type rdf:resource="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#boss"/>
+        <terraria:blocked_by rdf:resource="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#wall_of_flesh"/>
+        <terraria:recommended_at_tier rdf:resource="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#titanium"/>
+        <terraria:health rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">64500</terraria:health>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/draen/ontologies/2023/8/terraria#titanium -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#titanium">
+        <rdf:type rdf:resource="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#progression_tier"/>
+        <terraria:blocked_by rdf:resource="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#wall_of_flesh"/>
+        <terraria:progression_tier_value rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</terraria:progression_tier_value>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/draen/ontologies/2023/8/terraria#wall_of_flesh -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#wall_of_flesh">
+        <rdf:type rdf:resource="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#boss"/>
+        <terraria:recommended_at_tier rdf:resource="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#shadow"/>
+        <terraria:health rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">11200</terraria:health>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Rules
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/draen/ontologies/2023/8/terraria/Boss">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/draen/ontologies/2023/8/terraria/Tier">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/draen/ontologies/2023/8/terraria/BlockingBoss">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>required_tier</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#boss"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/draen/ontologies/2023/8/terraria/Boss"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#progression_tier"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/draen/ontologies/2023/8/terraria/Tier"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#blocked_by"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/draen/ontologies/2023/8/terraria/Boss"/>
+                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/draen/ontologies/2023/8/terraria/BlockingBoss"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#blocked_by"/>
+                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/draen/ontologies/2023/8/terraria/Tier"/>
+                                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/draen/ontologies/2023/8/terraria/BlockingBoss"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/draen/ontologies/2023/8/terraria#required_tier"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/draen/ontologies/2023/8/terraria/Boss"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/draen/ontologies/2023/8/terraria/Tier"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi -->
+
