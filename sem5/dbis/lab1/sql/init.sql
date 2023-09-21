@@ -1,4 +1,4 @@
-CREATE TABLE celesital_body_type (
+CREATE TABLE IF NOT EXISTS celesital_body_type (
   celestial_body_type_id serial8 NOT NULL, 
   celestial_body_type_name varchar(100) NOT NULL, 
   CONSTRAINT celesital_body_type_pk PRIMARY KEY (celestial_body_type_id), 
@@ -10,7 +10,7 @@ CREATE TABLE celesital_body_type (
   )
 );
 
-CREATE TABLE hypothesis (
+CREATE TABLE IF NOT EXISTS hypothesis (
   hypothesis_id serial8 NOT NULL, 
   hypothesis_name varchar(100) NOT NULL, 
   description text NOT NULL, 
@@ -23,7 +23,7 @@ CREATE TABLE hypothesis (
   )
 );
 
-CREATE TABLE celestial_body (
+CREATE TABLE IF NOT EXISTS celestial_body (
   celestial_body_id serial8 NOT NULL, 
   celestial_body_name varchar(100) NOT NULL, 
   diameter float8 NOT NULL, 
@@ -49,7 +49,7 @@ CREATE TABLE celestial_body (
   CONSTRAINT celestial_body_fk FOREIGN KEY (celestial_body_type_id) REFERENCES celesital_body_type(celestial_body_type_id)
 );
 
-CREATE TABLE hypothesis_related_celestial_body (
+CREATE TABLE IF NOT EXISTS hypothesis_related_celestial_body (
   hypothesis_id int8 NOT NULL, 
   celestial_body_id int8 NOT NULL, 
   CONSTRAINT hypothesis_celestial_body_pk PRIMARY KEY (
@@ -59,7 +59,7 @@ CREATE TABLE hypothesis_related_celestial_body (
   CONSTRAINT hypothesis_celestial_body_fk_1 FOREIGN KEY (celestial_body_id) REFERENCES celestial_body(celestial_body_id)
 );
 
-CREATE TABLE hypothetical_celestial_body (
+CREATE TABLE IF NOT EXISTS hypothetical_celestial_body (
   hypothetical_celestial_body_id serial8 NOT NULL, 
   hypothetical_celestial_body_name varchar(100) NULL, 
   diameter_lower_bound float8 NULL, 
@@ -73,7 +73,7 @@ CREATE TABLE hypothetical_celestial_body (
   CONSTRAINT theoretical_celestial_body_fk_1 FOREIGN KEY (hypothesis_id) REFERENCES hypothesis(hypothesis_id)
 );
 
-CREATE TABLE orbit (
+CREATE TABLE IF NOT EXISTS orbit (
   orbiting_celestial_body_id int8 NOT NULL, 
   main_celestial_body_id int8 NOT NULL, 
   eccentricity float8 NOT NULL, 
@@ -135,4 +135,22 @@ CREATE TABLE orbit (
   ), 
   CONSTRAINT orbit_fk FOREIGN KEY (orbiting_celestial_body_id) REFERENCES celestial_body(celestial_body_id), 
   CONSTRAINT orbit_fk_1 FOREIGN KEY (main_celestial_body_id) REFERENCES celestial_body(celestial_body_id)
+);
+
+CREATE TABLE IF NOT EXISTS human (
+  human_id serial8 NOT NULL, 
+  human_name varchar(100) NOT NULL, 
+  human_surname varchar(100) NOT NULL, 
+  human_age int8 NOT NULL, 
+  human_gender bool NOT NULL, 
+  CONSTRAINT human_pk PRIMARY KEY (human_id)
+);
+
+CREATE TABLE IF NOT EXISTS discovery (
+  celestial_body_id int8 NOT NULL, 
+  discovery_date date NOT NULL, 
+  discovered_by_id int8 NOT NULL, 
+  CONSTRAINT discovery_pk PRIMARY KEY (celestial_body_id), 
+  CONSTRAINT discovery_fk_1 FOREIGN KEY (celestial_body_id) REFERENCES celestial_body(celestial_body_id), 
+  CONSTRAINT discovery_fk_2 FOREIGN KEY (discovered_by_id) REFERENCES human(human_id)
 );

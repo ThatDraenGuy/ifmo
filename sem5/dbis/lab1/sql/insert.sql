@@ -1,3 +1,5 @@
+TRUNCATE TABLE celesital_body_type CASCADE;
+ALTER SEQUENCE celesital_body_type_celestial_body_type_id_seq RESTART WITH 1;
 INSERT INTO celesital_body_type (celestial_body_type_name) 
 VALUES 
   ('Star'), 
@@ -6,6 +8,8 @@ VALUES
   ('Asteroid');
 
 
+TRUNCATE TABLE hypothesis cascade;
+ALTER SEQUENCE hypothesis_hypothesis_id_seq RESTART WITH 1;
 INSERT INTO hypothesis (hypothesis_name, description) 
 VALUES 
   (
@@ -16,6 +20,8 @@ VALUES
   );
 
 
+TRUNCATE TABLE celestial_body cascade;
+ALTER SEQUENCE celestial_body_celestial_body_id_seq RESTART WITH 1;
 INSERT INTO celestial_body (
   celestial_body_name, diameter, mass, 
   celestial_body_type_id
@@ -31,6 +37,7 @@ VALUES
   ('Moon', 3474.0, 0.0123, 3);
 
 
+TRUNCATE TABLE hypothesis_related_celestial_body cascade;
 INSERT INTO hypothesis_related_celestial_body (
   hypothesis_id, celestial_body_id
 ) 
@@ -43,6 +50,8 @@ VALUES
   (2, 8);
 
 
+TRUNCATE TABLE hypothetical_celestial_body cascade;
+ALTER SEQUENCE hypothetical_celestial_body_hypothetical_celestial_body_id_seq RESTART WITH 1;
 INSERT INTO hypothetical_celestial_body (
   hypothetical_celestial_body_name, 
   diameter_lower_bound, diameter_higher_bound, 
@@ -57,6 +66,7 @@ VALUES
   );
 
 
+TRUNCATE TABLE orbit cascade;
 INSERT INTO orbit (
   orbiting_celestial_body_id, main_celestial_body_id, 
   eccentricity, semimajor_axis, inclanation, 
@@ -92,3 +102,25 @@ VALUES
     8, 7, 0.055, 0.00257, 5.145, 125.08, 
     318.5, 135.27
   );
+
+
+TRUNCATE TABLE human cascade;
+ALTER SEQUENCE human_human_id_seq RESTART WITH 1;
+INSERT INTO human (
+  human_name, human_surname, human_age, 
+  human_gender
+) 
+values 
+  ('Oleg', 'Shipulin', 19, true), 
+  ('Charles', 'Perrine', 83, true), 
+  ('Seth', 'Nicholson', 71, true);
+
+
+TRUNCATE TABLE discovery cascade;
+INSERT INTO discovery (
+  celestial_body_id, discovery_date, 
+  discovered_by_id
+) 
+values 
+  (3, '5.01.1905', 2), 
+  (4, '6.07.1938', 3)
