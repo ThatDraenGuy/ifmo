@@ -151,6 +151,6 @@ CREATE TABLE IF NOT EXISTS discovery (
   discovery_date date NOT NULL, 
   discovered_by_id int8 NOT NULL, 
   CONSTRAINT discovery_pk PRIMARY KEY (celestial_body_id), 
-  CONSTRAINT discovery_fk_1 FOREIGN KEY (celestial_body_id) REFERENCES celestial_body(celestial_body_id), 
-  CONSTRAINT discovery_fk_2 FOREIGN KEY (discovered_by_id) REFERENCES human(human_id)
+  CONSTRAINT discovery_fk FOREIGN KEY (celestial_body_id) REFERENCES celestial_body(celestial_body_id), 
+  CONSTRAINT discovery_fk_1 FOREIGN KEY (discovered_by_id) REFERENCES human(human_id)
 );

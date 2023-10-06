@@ -1,0 +1,15 @@
+DROP TABLE IF EXISTS celesital_body_type CASCADE;
+
+DROP TABLE IF EXISTS celestial_body CASCADE;
+
+DROP TABLE IF EXISTS discovery CASCADE;
+
+DROP TABLE IF EXISTS human CASCADE;
+
+DROP TABLE IF EXISTS hypothesis CASCADE;
+
+DROP TABLE IF EXISTS hypothesis_related_celestial_body CASCADE;
+
+DROP TABLE IF EXISTS hypothetical_celestial_body CASCADE;
+
+DROP TABLE IF EXISTS orbit CASCADE;
