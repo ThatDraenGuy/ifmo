@@ -6,6 +6,8 @@ class KNN:
     def __init__(self, k: int, col_names: list[str]):
         self.k = k
         self.col_names = col_names
+        self.x = None
+        self.y = None
     
     def _prepare_x(self, x):
         return np.array(x[self.col_names])
@@ -18,6 +20,9 @@ class KNN:
         self.y = self._prepare_y(y)
 
     def predict(self, x):
+        if self.x is None or self.y is None:
+            raise Exception('not yet trained')
+
         x = self._prepare_x(x)
         answer = []
 
