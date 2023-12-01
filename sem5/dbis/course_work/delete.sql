@@ -1,0 +1,27 @@
+alter sequence ability_ability_id_seq restart with 1;
+truncate ability cascade;
+truncate ability_scores cascade;
+alter sequence battle_battle_id_seq restart with 1;
+truncate battle cascade;
+alter sequence character_character_id_seq restart with 1;
+truncate "character" cascade;
+alter sequence condition_condition_id_seq restart with 1;
+truncate "condition" cascade;
+alter sequence creature_type_creature_type_id_seq restart with 1;
+truncate creature_type  cascade;
+truncate current_conditions  cascade;
+alter sequence current_stats_current_stats_id_seq restart with 1;
+truncate current_stats  cascade;
+alter sequence damage_type_damage_type_id_seq restart with 1;
+truncate damage_type  cascade;
+truncate damage_type_modifiers  cascade;
+truncate dice_type  cascade;
+truncate initiative_entry  cascade;
+alter sequence player_player_id_seq restart with 1;
+truncate player  cascade;
+truncate proficient_skills  cascade;
+alter sequence skill_skill_id_seq restart with 1;
+truncate skill  cascade;
+alter sequence stat_block_stat_block_id_seq restart with 1;
+truncate stat_block  cascade;
+
