@@ -1,0 +1,409 @@
+Circuit: * C:\users\salieri\Code\ifmo\sem6\cdesign\lab1\4bit_adder_test2.asc
+
+WARNING: Node X1:X1:X1:N001 is floating.
+WARNING: Node X1:X1:X1:N003 is floating.
+WARNING: Node X1:X1:X1:N004 is floating.
+WARNING: Node X1:X1:X1:N005 is floating.
+WARNING: Node X1:X1:X2:N001 is floating.
+WARNING: Node X1:X1:X2:N003 is floating.
+WARNING: Node X1:X1:X2:N004 is floating.
+WARNING: Node X1:X1:X2:N005 is floating.
+WARNING: Node X1:X1:X3:N001 is floating.
+WARNING: Node X1:X1:X3:N003 is floating.
+WARNING: Node X1:X1:X3:N004 is floating.
+WARNING: Node X1:X1:X3:N005 is floating.
+WARNING: Node X1:X1:X4:N001 is floating.
+WARNING: Node X1:X1:X4:N003 is floating.
+WARNING: Node X1:X1:X4:N004 is floating.
+WARNING: Node X1:X1:X4:N005 is floating.
+WARNING: Node X1:X1:X5:N001 is floating.
+WARNING: Node X1:X1:X5:N003 is floating.
+WARNING: Node X1:X1:X5:N004 is floating.
+WARNING: Node X1:X1:X5:N005 is floating.
+WARNING: Node X1:X1:X6:N001 is floating.
+WARNING: Node X1:X1:X6:N003 is floating.
+WARNING: Node X1:X1:X6:N004 is floating.
+WARNING: Node X1:X1:X6:N005 is floating.
+WARNING: Node X1:X1:X7:N001 is floating.
+WARNING: Node X1:X1:X7:N003 is floating.
+WARNING: Node X1:X1:X7:N004 is floating.
+WARNING: Node X1:X1:X7:N005 is floating.
+WARNING: Node X1:X1:X8:N001 is floating.
+WARNING: Node X1:X1:X8:N003 is floating.
+WARNING: Node X1:X1:X8:N004 is floating.
+WARNING: Node X1:X1:X8:N005 is floating.
+WARNING: Node X1:X1:X9:N001 is floating.
+WARNING: Node X1:X1:X9:N003 is floating.
+WARNING: Node X1:X1:X9:N004 is floating.
+WARNING: Node X1:X1:X9:N005 is floating.
+WARNING: Node X1:X2:X1:N001 is floating.
+WARNING: Node X1:X2:X1:N003 is floating.
+WARNING: Node X1:X2:X1:N004 is floating.
+WARNING: Node X1:X2:X1:N005 is floating.
+WARNING: Node X1:X2:X2:N001 is floating.
+WARNING: Node X1:X2:X2:N003 is floating.
+WARNING: Node X1:X2:X2:N004 is floating.
+WARNING: Node X1:X2:X2:N005 is floating.
+WARNING: Node X1:X2:X3:N001 is floating.
+WARNING: Node X1:X2:X3:N003 is floating.
+WARNING: Node X1:X2:X3:N004 is floating.
+WARNING: Node X1:X2:X3:N005 is floating.
+WARNING: Node X1:X2:X4:N001 is floating.
+WARNING: Node X1:X2:X4:N003 is floating.
+WARNING: Node X1:X2:X4:N004 is floating.
+WARNING: Node X1:X2:X4:N005 is floating.
+WARNING: Node X1:X2:X5:N001 is floating.
+WARNING: Node X1:X2:X5:N003 is floating.
+WARNING: Node X1:X2:X5:N004 is floating.
+WARNING: Node X1:X2:X5:N005 is floating.
+WARNING: Node X1:X2:X6:N001 is floating.
+WARNING: Node X1:X2:X6:N003 is floating.
+WARNING: Node X1:X2:X6:N004 is floating.
+WARNING: Node X1:X2:X6:N005 is floating.
+WARNING: Node X1:X2:X7:N001 is floating.
+WARNING: Node X1:X2:X7:N003 is floating.
+WARNING: Node X1:X2:X7:N004 is floating.
+WARNING: Node X1:X2:X7:N005 is floating.
+WARNING: Node X1:X2:X8:N001 is floating.
+WARNING: Node X1:X2:X8:N003 is floating.
+WARNING: Node X1:X2:X8:N004 is floating.
+WARNING: Node X1:X2:X8:N005 is floating.
+WARNING: Node X1:X2:X9:N001 is floating.
+WARNING: Node X1:X2:X9:N003 is floating.
+WARNING: Node X1:X2:X9:N004 is floating.
+WARNING: Node X1:X2:X9:N005 is floating.
+WARNING: Node X1:X3:X1:N001 is floating.
+WARNING: Node X1:X3:X1:N003 is floating.
+WARNING: Node X1:X3:X1:N004 is floating.
+WARNING: Node X1:X3:X1:N005 is floating.
+WARNING: Node X1:X3:X2:N001 is floating.
+WARNING: Node X1:X3:X2:N003 is floating.
+WARNING: Node X1:X3:X2:N004 is floating.
+WARNING: Node X1:X3:X2:N005 is floating.
+WARNING: Node X1:X3:X3:N001 is floating.
+WARNING: Node X1:X3:X3:N003 is floating.
+WARNING: Node X1:X3:X3:N004 is floating.
+WARNING: Node X1:X3:X3:N005 is floating.
+WARNING: Node X1:X3:X4:N001 is floating.
+WARNING: Node X1:X3:X4:N003 is floating.
+WARNING: Node X1:X3:X4:N004 is floating.
+WARNING: Node X1:X3:X4:N005 is floating.
+WARNING: Node X1:X3:X5:N001 is floating.
+WARNING: Node X1:X3:X5:N003 is floating.
+WARNING: Node X1:X3:X5:N004 is floating.
+WARNING: Node X1:X3:X5:N005 is floating.
+WARNING: Node X1:X3:X6:N001 is floating.
+WARNING: Node X1:X3:X6:N003 is floating.
+WARNING: Node X1:X3:X6:N004 is floating.
+WARNING: Node X1:X3:X6:N005 is floating.
+WARNING: Node X1:X3:X7:N001 is floating.
+WARNING: Node X1:X3:X7:N003 is floating.
+WARNING: Node X1:X3:X7:N004 is floating.
+WARNING: Node X1:X3:X7:N005 is floating.
+WARNING: Node X1:X3:X8:N001 is floating.
+WARNING: Node X1:X3:X8:N003 is floating.
+WARNING: Node X1:X3:X8:N004 is floating.
+WARNING: Node X1:X3:X8:N005 is floating.
+WARNING: Node X1:X3:X9:N001 is floating.
+WARNING: Node X1:X3:X9:N003 is floating.
+WARNING: Node X1:X3:X9:N004 is floating.
+WARNING: Node X1:X3:X9:N005 is floating.
+WARNING: Node X1:X4:X1:N001 is floating.
+WARNING: Node X1:X4:X1:N003 is floating.
+WARNING: Node X1:X4:X1:N004 is floating.
+WARNING: Node X1:X4:X1:N005 is floating.
+WARNING: Node X1:X4:X2:N001 is floating.
+WARNING: Node X1:X4:X2:N003 is floating.
+WARNING: Node X1:X4:X2:N004 is floating.
+WARNING: Node X1:X4:X2:N005 is floating.
+WARNING: Node X1:X4:X3:N001 is floating.
+WARNING: Node X1:X4:X3:N003 is floating.
+WARNING: Node X1:X4:X3:N004 is floating.
+WARNING: Node X1:X4:X3:N005 is floating.
+WARNING: Node X1:X4:X4:N001 is floating.
+WARNING: Node X1:X4:X4:N003 is floating.
+WARNING: Node X1:X4:X4:N004 is floating.
+WARNING: Node X1:X4:X4:N005 is floating.
+WARNING: Node X1:X4:X5:N001 is floating.
+WARNING: Node X1:X4:X5:N003 is floating.
+WARNING: Node X1:X4:X5:N004 is floating.
+WARNING: Node X1:X4:X5:N005 is floating.
+WARNING: Node X1:X4:X6:N001 is floating.
+WARNING: Node X1:X4:X6:N003 is floating.
+WARNING: Node X1:X4:X6:N004 is floating.
+WARNING: Node X1:X4:X6:N005 is floating.
+WARNING: Node X1:X4:X7:N001 is floating.
+WARNING: Node X1:X4:X7:N003 is floating.
+WARNING: Node X1:X4:X7:N004 is floating.
+WARNING: Node X1:X4:X7:N005 is floating.
+WARNING: Node X1:X4:X8:N001 is floating.
+WARNING: Node X1:X4:X8:N003 is floating.
+WARNING: Node X1:X4:X8:N004 is floating.
+WARNING: Node X1:X4:X8:N005 is floating.
+WARNING: Node X1:X4:X9:N001 is floating.
+WARNING: Node X1:X4:X9:N003 is floating.
+WARNING: Node X1:X4:X9:N004 is floating.
+WARNING: Node X1:X4:X9:N005 is floating.
+
+WARNING: Less than two connections to node x1:x1:x1:n001.  This node is used by m:x1:x1:x1:1.
+WARNING: Less than two connections to node x1:x1:x1:n003.  This node is used by m:x1:x1:x1:2.
+WARNING: Less than two connections to node x1:x1:x1:n004.  This node is used by m:x1:x1:x1:3.
+WARNING: Less than two connections to node x1:x1:x1:n005.  This node is used by m:x1:x1:x1:4.
+WARNING: Less than two connections to node x1:x1:x2:n001.  This node is used by m:x1:x1:x2:1.
+WARNING: Less than two connections to node x1:x1:x2:n003.  This node is used by m:x1:x1:x2:2.
+WARNING: Less than two connections to node x1:x1:x2:n004.  This node is used by m:x1:x1:x2:3.
+WARNING: Less than two connections to node x1:x1:x2:n005.  This node is used by m:x1:x1:x2:4.
+WARNING: Less than two connections to node x1:x1:x3:n001.  This node is used by m:x1:x1:x3:1.
+WARNING: Less than two connections to node x1:x1:x3:n003.  This node is used by m:x1:x1:x3:2.
+WARNING: Less than two connections to node x1:x1:x3:n004.  This node is used by m:x1:x1:x3:3.
+WARNING: Less than two connections to node x1:x1:x3:n005.  This node is used by m:x1:x1:x3:4.
+WARNING: Less than two connections to node x1:x1:x4:n001.  This node is used by m:x1:x1:x4:1.
+WARNING: Less than two connections to node x1:x1:x4:n003.  This node is used by m:x1:x1:x4:2.
+WARNING: Less than two connections to node x1:x1:x4:n004.  This node is used by m:x1:x1:x4:3.
+WARNING: Less than two connections to node x1:x1:x4:n005.  This node is used by m:x1:x1:x4:4.
+WARNING: Less than two connections to node x1:x1:x5:n001.  This node is used by m:x1:x1:x5:1.
+WARNING: Less than two connections to node x1:x1:x5:n003.  This node is used by m:x1:x1:x5:2.
+WARNING: Less than two connections to node x1:x1:x5:n004.  This node is used by m:x1:x1:x5:3.
+WARNING: Less than two connections to node x1:x1:x5:n005.  This node is used by m:x1:x1:x5:4.
+WARNING: Less than two connections to node x1:x1:x6:n001.  This node is used by m:x1:x1:x6:1.
+WARNING: Less than two connections to node x1:x1:x6:n003.  This node is used by m:x1:x1:x6:2.
+WARNING: Less than two connections to node x1:x1:x6:n004.  This node is used by m:x1:x1:x6:3.
+WARNING: Less than two connections to node x1:x1:x6:n005.  This node is used by m:x1:x1:x6:4.
+WARNING: Less than two connections to node x1:x1:x7:n001.  This node is used by m:x1:x1:x7:1.
+WARNING: Less than two connections to node x1:x1:x7:n003.  This node is used by m:x1:x1:x7:2.
+WARNING: Less than two connections to node x1:x1:x7:n004.  This node is used by m:x1:x1:x7:3.
+WARNING: Less than two connections to node x1:x1:x7:n005.  This node is used by m:x1:x1:x7:4.
+WARNING: Less than two connections to node x1:x1:x8:n001.  This node is used by m:x1:x1:x8:1.
+WARNING: Less than two connections to node x1:x1:x8:n003.  This node is used by m:x1:x1:x8:2.
+WARNING: Less than two connections to node x1:x1:x8:n004.  This node is used by m:x1:x1:x8:3.
+WARNING: Less than two connections to node x1:x1:x8:n005.  This node is used by m:x1:x1:x8:4.
+WARNING: Less than two connections to node x1:x1:x9:n001.  This node is used by m:x1:x1:x9:1.
+WARNING: Less than two connections to node x1:x1:x9:n003.  This node is used by m:x1:x1:x9:2.
+WARNING: Less than two connections to node x1:x1:x9:n004.  This node is used by m:x1:x1:x9:3.
+WARNING: Less than two connections to node x1:x1:x9:n005.  This node is used by m:x1:x1:x9:4.
+WARNING: Less than two connections to node x1:x2:x1:n001.  This node is used by m:x1:x2:x1:1.
+WARNING: Less than two connections to node x1:x2:x1:n003.  This node is used by m:x1:x2:x1:2.
+WARNING: Less than two connections to node x1:x2:x1:n004.  This node is used by m:x1:x2:x1:3.
+WARNING: Less than two connections to node x1:x2:x1:n005.  This node is used by m:x1:x2:x1:4.
+WARNING: Less than two connections to node x1:x2:x2:n001.  This node is used by m:x1:x2:x2:1.
+WARNING: Less than two connections to node x1:x2:x2:n003.  This node is used by m:x1:x2:x2:2.
+WARNING: Less than two connections to node x1:x2:x2:n004.  This node is used by m:x1:x2:x2:3.
+WARNING: Less than two connections to node x1:x2:x2:n005.  This node is used by m:x1:x2:x2:4.
+WARNING: Less than two connections to node x1:x2:x3:n001.  This node is used by m:x1:x2:x3:1.
+WARNING: Less than two connections to node x1:x2:x3:n003.  This node is used by m:x1:x2:x3:2.
+WARNING: Less than two connections to node x1:x2:x3:n004.  This node is used by m:x1:x2:x3:3.
+WARNING: Less than two connections to node x1:x2:x3:n005.  This node is used by m:x1:x2:x3:4.
+WARNING: Less than two connections to node x1:x2:x4:n001.  This node is used by m:x1:x2:x4:1.
+WARNING: Less than two connections to node x1:x2:x4:n003.  This node is used by m:x1:x2:x4:2.
+WARNING: Less than two connections to node x1:x2:x4:n004.  This node is used by m:x1:x2:x4:3.
+WARNING: Less than two connections to node x1:x2:x4:n005.  This node is used by m:x1:x2:x4:4.
+WARNING: Less than two connections to node x1:x2:x5:n001.  This node is used by m:x1:x2:x5:1.
+WARNING: Less than two connections to node x1:x2:x5:n003.  This node is used by m:x1:x2:x5:2.
+WARNING: Less than two connections to node x1:x2:x5:n004.  This node is used by m:x1:x2:x5:3.
+WARNING: Less than two connections to node x1:x2:x5:n005.  This node is used by m:x1:x2:x5:4.
+WARNING: Less than two connections to node x1:x2:x6:n001.  This node is used by m:x1:x2:x6:1.
+WARNING: Less than two connections to node x1:x2:x6:n003.  This node is used by m:x1:x2:x6:2.
+WARNING: Less than two connections to node x1:x2:x6:n004.  This node is used by m:x1:x2:x6:3.
+WARNING: Less than two connections to node x1:x2:x6:n005.  This node is used by m:x1:x2:x6:4.
+WARNING: Less than two connections to node x1:x2:x7:n001.  This node is used by m:x1:x2:x7:1.
+WARNING: Less than two connections to node x1:x2:x7:n003.  This node is used by m:x1:x2:x7:2.
+WARNING: Less than two connections to node x1:x2:x7:n004.  This node is used by m:x1:x2:x7:3.
+WARNING: Less than two connections to node x1:x2:x7:n005.  This node is used by m:x1:x2:x7:4.
+WARNING: Less than two connections to node x1:x2:x8:n001.  This node is used by m:x1:x2:x8:1.
+WARNING: Less than two connections to node x1:x2:x8:n003.  This node is used by m:x1:x2:x8:2.
+WARNING: Less than two connections to node x1:x2:x8:n004.  This node is used by m:x1:x2:x8:3.
+WARNING: Less than two connections to node x1:x2:x8:n005.  This node is used by m:x1:x2:x8:4.
+WARNING: Less than two connections to node x1:x2:x9:n001.  This node is used by m:x1:x2:x9:1.
+WARNING: Less than two connections to node x1:x2:x9:n003.  This node is used by m:x1:x2:x9:2.
+WARNING: Less than two connections to node x1:x2:x9:n004.  This node is used by m:x1:x2:x9:3.
+WARNING: Less than two connections to node x1:x2:x9:n005.  This node is used by m:x1:x2:x9:4.
+WARNING: Less than two connections to node x1:x3:x1:n001.  This node is used by m:x1:x3:x1:1.
+WARNING: Less than two connections to node x1:x3:x1:n003.  This node is used by m:x1:x3:x1:2.
+WARNING: Less than two connections to node x1:x3:x1:n004.  This node is used by m:x1:x3:x1:3.
+WARNING: Less than two connections to node x1:x3:x1:n005.  This node is used by m:x1:x3:x1:4.
+WARNING: Less than two connections to node x1:x3:x2:n001.  This node is used by m:x1:x3:x2:1.
+WARNING: Less than two connections to node x1:x3:x2:n003.  This node is used by m:x1:x3:x2:2.
+WARNING: Less than two connections to node x1:x3:x2:n004.  This node is used by m:x1:x3:x2:3.
+WARNING: Less than two connections to node x1:x3:x2:n005.  This node is used by m:x1:x3:x2:4.
+WARNING: Less than two connections to node x1:x3:x3:n001.  This node is used by m:x1:x3:x3:1.
+WARNING: Less than two connections to node x1:x3:x3:n003.  This node is used by m:x1:x3:x3:2.
+WARNING: Less than two connections to node x1:x3:x3:n004.  This node is used by m:x1:x3:x3:3.
+WARNING: Less than two connections to node x1:x3:x3:n005.  This node is used by m:x1:x3:x3:4.
+WARNING: Less than two connections to node x1:x3:x4:n001.  This node is used by m:x1:x3:x4:1.
+WARNING: Less than two connections to node x1:x3:x4:n003.  This node is used by m:x1:x3:x4:2.
+WARNING: Less than two connections to node x1:x3:x4:n004.  This node is used by m:x1:x3:x4:3.
+WARNING: Less than two connections to node x1:x3:x4:n005.  This node is used by m:x1:x3:x4:4.
+WARNING: Less than two connections to node x1:x3:x5:n001.  This node is used by m:x1:x3:x5:1.
+WARNING: Less than two connections to node x1:x3:x5:n003.  This node is used by m:x1:x3:x5:2.
+WARNING: Less than two connections to node x1:x3:x5:n004.  This node is used by m:x1:x3:x5:3.
+WARNING: Less than two connections to node x1:x3:x5:n005.  This node is used by m:x1:x3:x5:4.
+WARNING: Less than two connections to node x1:x3:x6:n001.  This node is used by m:x1:x3:x6:1.
+WARNING: Less than two connections to node x1:x3:x6:n003.  This node is used by m:x1:x3:x6:2.
+WARNING: Less than two connections to node x1:x3:x6:n004.  This node is used by m:x1:x3:x6:3.
+WARNING: Less than two connections to node x1:x3:x6:n005.  This node is used by m:x1:x3:x6:4.
+WARNING: Less than two connections to node x1:x3:x7:n001.  This node is used by m:x1:x3:x7:1.
+WARNING: Less than two connections to node x1:x3:x7:n003.  This node is used by m:x1:x3:x7:2.
+WARNING: Less than two connections to node x1:x3:x7:n004.  This node is used by m:x1:x3:x7:3.
+WARNING: Less than two connections to node x1:x3:x7:n005.  This node is used by m:x1:x3:x7:4.
+WARNING: Less than two connections to node x1:x3:x8:n001.  This node is used by m:x1:x3:x8:1.
+WARNING: Less than two connections to node x1:x3:x8:n003.  This node is used by m:x1:x3:x8:2.
+WARNING: Less than two connections to node x1:x3:x8:n004.  This node is used by m:x1:x3:x8:3.
+WARNING: Less than two connections to node x1:x3:x8:n005.  This node is used by m:x1:x3:x8:4.
+WARNING: Less than two connections to node x1:x3:x9:n001.  This node is used by m:x1:x3:x9:1.
+WARNING: Less than two connections to node x1:x3:x9:n003.  This node is used by m:x1:x3:x9:2.
+WARNING: Less than two connections to node x1:x3:x9:n004.  This node is used by m:x1:x3:x9:3.
+WARNING: Less than two connections to node x1:x3:x9:n005.  This node is used by m:x1:x3:x9:4.
+WARNING: Less than two connections to node x1:x4:x1:n001.  This node is used by m:x1:x4:x1:1.
+WARNING: Less than two connections to node x1:x4:x1:n003.  This node is used by m:x1:x4:x1:2.
+WARNING: Less than two connections to node x1:x4:x1:n004.  This node is used by m:x1:x4:x1:3.
+WARNING: Less than two connections to node x1:x4:x1:n005.  This node is used by m:x1:x4:x1:4.
+WARNING: Less than two connections to node x1:x4:x2:n001.  This node is used by m:x1:x4:x2:1.
+WARNING: Less than two connections to node x1:x4:x2:n003.  This node is used by m:x1:x4:x2:2.
+WARNING: Less than two connections to node x1:x4:x2:n004.  This node is used by m:x1:x4:x2:3.
+WARNING: Less than two connections to node x1:x4:x2:n005.  This node is used by m:x1:x4:x2:4.
+WARNING: Less than two connections to node x1:x4:x3:n001.  This node is used by m:x1:x4:x3:1.
+WARNING: Less than two connections to node x1:x4:x3:n003.  This node is used by m:x1:x4:x3:2.
+WARNING: Less than two connections to node x1:x4:x3:n004.  This node is used by m:x1:x4:x3:3.
+WARNING: Less than two connections to node x1:x4:x3:n005.  This node is used by m:x1:x4:x3:4.
+WARNING: Less than two connections to node x1:x4:x4:n001.  This node is used by m:x1:x4:x4:1.
+WARNING: Less than two connections to node x1:x4:x4:n003.  This node is used by m:x1:x4:x4:2.
+WARNING: Less than two connections to node x1:x4:x4:n004.  This node is used by m:x1:x4:x4:3.
+WARNING: Less than two connections to node x1:x4:x4:n005.  This node is used by m:x1:x4:x4:4.
+WARNING: Less than two connections to node x1:x4:x5:n001.  This node is used by m:x1:x4:x5:1.
+WARNING: Less than two connections to node x1:x4:x5:n003.  This node is used by m:x1:x4:x5:2.
+WARNING: Less than two connections to node x1:x4:x5:n004.  This node is used by m:x1:x4:x5:3.
+WARNING: Less than two connections to node x1:x4:x5:n005.  This node is used by m:x1:x4:x5:4.
+WARNING: Less than two connections to node x1:x4:x6:n001.  This node is used by m:x1:x4:x6:1.
+WARNING: Less than two connections to node x1:x4:x6:n003.  This node is used by m:x1:x4:x6:2.
+WARNING: Less than two connections to node x1:x4:x6:n004.  This node is used by m:x1:x4:x6:3.
+WARNING: Less than two connections to node x1:x4:x6:n005.  This node is used by m:x1:x4:x6:4.
+WARNING: Less than two connections to node x1:x4:x7:n001.  This node is used by m:x1:x4:x7:1.
+WARNING: Less than two connections to node x1:x4:x7:n003.  This node is used by m:x1:x4:x7:2.
+WARNING: Less than two connections to node x1:x4:x7:n004.  This node is used by m:x1:x4:x7:3.
+WARNING: Less than two connections to node x1:x4:x7:n005.  This node is used by m:x1:x4:x7:4.
+WARNING: Less than two connections to node x1:x4:x8:n001.  This node is used by m:x1:x4:x8:1.
+WARNING: Less than two connections to node x1:x4:x8:n003.  This node is used by m:x1:x4:x8:2.
+WARNING: Less than two connections to node x1:x4:x8:n004.  This node is used by m:x1:x4:x8:3.
+WARNING: Less than two connections to node x1:x4:x8:n005.  This node is used by m:x1:x4:x8:4.
+WARNING: Less than two connections to node x1:x4:x9:n001.  This node is used by m:x1:x4:x9:1.
+WARNING: Less than two connections to node x1:x4:x9:n003.  This node is used by m:x1:x4:x9:2.
+WARNING: Less than two connections to node x1:x4:x9:n004.  This node is used by m:x1:x4:x9:3.
+WARNING: Less than two connections to node x1:x4:x9:n005.  This node is used by m:x1:x4:x9:4.
+WARNING: Less than two connections to node a1.  This node is used by v2.
+WARNING: Less than two connections to node a2.  This node is used by v3.
+WARNING: Less than two connections to node a3.  This node is used by v4.
+WARNING: Less than two connections to node b3.  This node is used by v5.
+WARNING: Less than two connections to node b2.  This node is used by v6.
+WARNING: Less than two connections to node b1.  This node is used by v7.
+Warning: toxe, toxp and dtox all given and toxe != toxp + dtox; dtox ignored.
+Warning: toxe, toxp and dtox all given and toxe != toxp + dtox; dtox ignored.
+Warning: toxe, toxp and dtox all given and toxe != toxp + dtox; dtox ignored.
+Warning: toxe, toxp and dtox all given and toxe != toxp + dtox; dtox ignored.
+Warning: toxe, toxp and dtox all given and toxe != toxp + dtox; dtox ignored.
+Warning: toxe, toxp and dtox all given and toxe != toxp + dtox; dtox ignored.
+Warning: toxe, toxp and dtox all given and toxe != toxp + dtox; dtox ignored.
+Warning: toxe, toxp and dtox all given and toxe != toxp + dtox; dtox ignored.
+Warning: toxe, toxp and dtox all given and toxe != toxp + dtox; dtox ignored.
+Warning: toxe, toxp and dtox all given and toxe != toxp + dtox; dtox ignored.
+Warning: toxe, toxp and dtox all given and toxe != toxp + dtox; dtox ignored.
+Warning: toxe, toxp and dtox all given and toxe != toxp + dtox; dtox ignored.
+Warning: toxe, toxp and dtox all given and toxe != toxp + dtox; dtox ignored.
+Warning: toxe, toxp and dtox all given and toxe != toxp + dtox; dtox ignored.
+Warning: toxe, toxp and dtox all given and toxe != toxp + dtox; dtox ignored.
+Warning: toxe, toxp and dtox all given and toxe != toxp + dtox; dtox ignored.
+Warning: toxe, toxp and dtox all given and toxe != toxp + dtox; dtox ignored.
+Warning: toxe, toxp and dtox all given and toxe != toxp + dtox; dtox ignored.
+Warning: toxe, toxp and dtox all given and toxe != toxp + dtox; dtox ignored.
+Warning: toxe, toxp and dtox all given and toxe != toxp + dtox; dtox ignored.
+Warning: toxe, toxp and dtox all given and toxe != toxp + dtox; dtox ignored.
+Warning: toxe, toxp and dtox all given and toxe != toxp + dtox; dtox ignored.
+Warning: toxe, toxp and dtox all given and toxe != toxp + dtox; dtox ignored.
+Warning: toxe, toxp and dtox all given and toxe != toxp + dtox; dtox ignored.
+Warning: toxe, toxp and dtox all given and toxe != toxp + dtox; dtox ignored.
+Warning: toxe, toxp and dtox all given and toxe != toxp + dtox; dtox ignored.
+Warning: toxe, toxp and dtox all given and toxe != toxp + dtox; dtox ignored.
+Warning: toxe, toxp and dtox all given and toxe != toxp + dtox; dtox ignored.
+Warning: toxe, toxp and dtox all given and toxe != toxp + dtox; dtox ignored.
+Warning: toxe, toxp and dtox all given and toxe != toxp + dtox; dtox ignored.
+Warning: toxe, toxp and dtox all given and toxe != toxp + dtox; dtox ignored.
+Warning: toxe, toxp and dtox all given and toxe != toxp + dtox; dtox ignored.
+Warning: toxe, toxp and dtox all given and toxe != toxp + dtox; dtox ignored.
+Warning: toxe, toxp and dtox all given and toxe != toxp + dtox; dtox ignored.
+Warning: toxe, toxp and dtox all given and toxe != toxp + dtox; dtox ignored.
+Warning: toxe, toxp and dtox all given and toxe != toxp + dtox; dtox ignored.
+Warning: toxe, toxp and dtox all given and toxe != toxp + dtox; dtox ignored.
+Warning: toxe, toxp and dtox all given and toxe != toxp + dtox; dtox ignored.
+Warning: toxe, toxp and dtox all given and toxe != toxp + dtox; dtox ignored.
+Warning: toxe, toxp and dtox all given and toxe != toxp + dtox; dtox ignored.
+Warning: toxe, toxp and dtox all given and toxe != toxp + dtox; dtox ignored.
+Warning: toxe, toxp and dtox all given and toxe != toxp + dtox; dtox ignored.
+Warning: toxe, toxp and dtox all given and toxe != toxp + dtox; dtox ignored.
+Warning: toxe, toxp and dtox all given and toxe != toxp + dtox; dtox ignored.
+Warning: toxe, toxp and dtox all given and toxe != toxp + dtox; dtox ignored.
+Warning: toxe, toxp and dtox all given and toxe != toxp + dtox; dtox ignored.
+Warning: toxe, toxp and dtox all given and toxe != toxp + dtox; dtox ignored.
+Warning: toxe, toxp and dtox all given and toxe != toxp + dtox; dtox ignored.
+Warning: toxe, toxp and dtox all given and toxe != toxp + dtox; dtox ignored.
+Warning: toxe, toxp and dtox all given and toxe != toxp + dtox; dtox ignored.
+Warning: toxe, toxp and dtox all given and toxe != toxp + dtox; dtox ignored.
+Warning: toxe, toxp and dtox all given and toxe != toxp + dtox; dtox ignored.
+Warning: toxe, toxp and dtox all given and toxe != toxp + dtox; dtox ignored.
+Warning: toxe, toxp and dtox all given and toxe != toxp + dtox; dtox ignored.
+Warning: toxe, toxp and dtox all given and toxe != toxp + dtox; dtox ignored.
+Warning: toxe, toxp and dtox all given and toxe != toxp + dtox; dtox ignored.
+Warning: toxe, toxp and dtox all given and toxe != toxp + dtox; dtox ignored.
+Warning: toxe, toxp and dtox all given and toxe != toxp + dtox; dtox ignored.
+Warning: toxe, toxp and dtox all given and toxe != toxp + dtox; dtox ignored.
+Warning: toxe, toxp and dtox all given and toxe != toxp + dtox; dtox ignored.
+Warning: toxe, toxp and dtox all given and toxe != toxp + dtox; dtox ignored.
+Warning: toxe, toxp and dtox all given and toxe != toxp + dtox; dtox ignored.
+Warning: toxe, toxp and dtox all given and toxe != toxp + dtox; dtox ignored.
+Warning: toxe, toxp and dtox all given and toxe != toxp + dtox; dtox ignored.
+Warning: toxe, toxp and dtox all given and toxe != toxp + dtox; dtox ignored.
+Warning: toxe, toxp and dtox all given and toxe != toxp + dtox; dtox ignored.
+Warning: toxe, toxp and dtox all given and toxe != toxp + dtox; dtox ignored.
+Warning: toxe, toxp and dtox all given and toxe != toxp + dtox; dtox ignored.
+Warning: toxe, toxp and dtox all given and toxe != toxp + dtox; dtox ignored.
+Warning: toxe, toxp and dtox all given and toxe != toxp + dtox; dtox ignored.
+Warning: toxe, toxp and dtox all given and toxe != toxp + dtox; dtox ignored.
+Warning: toxe, toxp and dtox all given and toxe != toxp + dtox; dtox ignored.
+Early termination of direct N-R iteration.
+Direct Newton iteration failed to find .op point.  (Use ".option noopiter" to skip.)
+Starting Gmin stepping
+Gmin = 10
+Gmin = 1.07374
+Gmin = 0.115292
+Gmin = 0.0123794
+Gmin = 0.00132923
+Gmin = 0.000142725
+Gmin = 1.5325e-05
+Gmin = 1.6455e-06
+Gmin = 1.76685e-07
+Gmin = 1.89714e-08
+Gmin = 2.03704e-09
+Gmin = 2.18725e-10
+Gmin = 2.34854e-11
+Gmin = 2.52173e-12
+Gmin = 2.70769e-13
+Gmin = 0
+Gmin stepping succeeded in finding the operating point.
+
+
+Date: Mon Feb 26 18:08:16 2024
+Total elapsed time: 0.846 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 3623
+traniter = 3170
+tranpoints = 1077
+accept = 854
+rejected = 223
+matrix size = 810
+fillins = 896
+solver = Normal
+Avg thread counts: 6.8/3.2/1.6/1.2
+Matrix Compiler1: 196.83 KB object code size  45.4/16.1/[10.0]
+Matrix Compiler2: 113.15 KB object code size  15.9/13.0/[7.8]
+
