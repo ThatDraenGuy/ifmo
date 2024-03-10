@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="func_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="func_tb" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="645260000fs"></ZoomStartTime>
+      <ZoomEndTime time="982260001fs"></ZoomEndTime>
+      <Cursor1Time time="889260000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="175"></NameColumnWidth>
+      <ValueColumnWidth column_width="142"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="13" />
+   <wvobject type="logic" fp_name="/func_tb/clk">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/func_tb/rst">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/func_tb/a">
+      <obj_property name="ElementShortName">a[7:0]</obj_property>
+      <obj_property name="ObjectShortName">a[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/func_tb/b">
+      <obj_property name="ElementShortName">b[7:0]</obj_property>
+      <obj_property name="ObjectShortName">b[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/func_tb/start">
+      <obj_property name="ElementShortName">start</obj_property>
+      <obj_property name="ObjectShortName">start</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/func_tb/busy">
+      <obj_property name="ElementShortName">busy</obj_property>
+      <obj_property name="ObjectShortName">busy</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/func_tb/y">
+      <obj_property name="ElementShortName">y[11:0]</obj_property>
+      <obj_property name="ObjectShortName">y[11:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/func_tb/func/busy_sqrt">
+      <obj_property name="ElementShortName">busy_sqrt</obj_property>
+      <obj_property name="ObjectShortName">busy_sqrt</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/func_tb/func/busy_mul">
+      <obj_property name="ElementShortName">busy_mul</obj_property>
+      <obj_property name="ObjectShortName">busy_mul</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/func_tb/func/state">
+      <obj_property name="ElementShortName">state[1:0]</obj_property>
+      <obj_property name="ObjectShortName">state[1:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/func_tb/func/start_sqrt">
+      <obj_property name="ElementShortName">start_sqrt</obj_property>
+      <obj_property name="ObjectShortName">start_sqrt</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/func_tb/func/start_mul">
+      <obj_property name="ElementShortName">start_mul</obj_property>
+      <obj_property name="ObjectShortName">start_mul</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/func_tb/func/sqrt_b">
+      <obj_property name="ElementShortName">sqrt_b[3:0]</obj_property>
+      <obj_property name="ObjectShortName">sqrt_b[3:0]</obj_property>
+   </wvobject>
+</wave_config>

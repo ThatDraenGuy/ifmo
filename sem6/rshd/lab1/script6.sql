@@ -14,18 +14,14 @@ DO $$DECLARE
 BEGIN
     DROP TABLE IF EXISTS temp_pivot;
 
-    cat_stmt = '
-        SELECT ''"Атрибут" text, ''
-        || string_agg(DISTINCT attname::text, '' text, ''  ORDER BY attname::text)
-        || '' text''
-        FROM pg_class class
-        JOIN pg_namespace space ON class.relnamespace = space.oid
-        JOIN pg_attribute attr ON attr.attrelid = class.oid
-        WHERE class.relname = '':table_name'' AND attnum > 0 AND space.nspname = '':schema_name'';
-    ';
-    cat_stmt = replace(cat_stmt, ':table_name', table_name);
-    cat_stmt = replace(cat_stmt, ':schema_name', schema_name);
-    EXECUTE cat_stmt INTO categories;
+    SELECT '"Атрибут" text, '
+        || string_agg(DISTINCT attname::text, ' text, '  ORDER BY attname::text)
+        || ' text'
+    FROM pg_class class
+    JOIN pg_namespace space ON class.relnamespace = space.oid
+    JOIN pg_attribute attr ON attr.attrelid = class.oid
+    WHERE class.relname = table_name AND attnum > 0 AND space.nspname = schema_name
+    INTO categories;
 
     stmt = 'CREATE TEMPORARY TABLE temp_pivot AS SELECT * FROM crosstab(''
     WITH attributes AS (
